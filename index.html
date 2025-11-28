@@ -20,138 +20,171 @@
 <body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-blue-500 selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800">
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-white tracking-tight">Mohammed<span class="text-blue-500">Marzouq</span></a>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#about" class="hover:text-blue-400 transition">About</a>
                 <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Simulations & Projects</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Simulations</a>
                 <a href="#code" class="hover:text-blue-400 transition">Code</a>
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+                <a href="#testimonials" class="hover:text-blue-400 transition">Recommendations</a>
             </div>
+            <!-- Mobile Menu Button (Hidden on Desktop) -->
+             <button class="md:hidden text-slate-300 hover:text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="container mx-auto px-6 text-center">
-            <!-- Optional Profile Picture Placeholder -->
-            <div class="mb-8 relative inline-block">
-                <!-- REPLACE 'profile.jpg' with your actual photo file path. If no photo, remove this img tag. -->
-                <img src="https://ui-avatars.com/api/?name=Mohammed+Marzouq&background=3b82f6&color=fff&size=200" alt="Mohammed Marzouq" class="w-32 h-32 rounded-full border-4 border-slate-800 shadow-2xl mx-auto object-cover">
-            </div>
             
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Senior Software Engineer <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Mendix & C# Specialist</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Bridging the gap between <strong>High-Code Engineering</strong> and <strong>Rapid Application Development</strong>. 
                 Leveraging 10+ years of complex logic architecture to build scalable Mendix solutions.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/20">
+                <a href="#contact" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/20 transform hover:-translate-y-1">
                     Contact Me
                 </a>
-                <a href="#projects" class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition border border-slate-700">
+                <a href="#projects" class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition border border-slate-700 transform hover:-translate-y-1">
                     View Simulations
                 </a>
+            </div>
+            
+            <!-- Key Stats / Highlights -->
+            <div class="mt-16 grid grid-cols-3 gap-4 max-w-3xl mx-auto text-center border-t border-slate-800 pt-8">
+                <div>
+                    <div class="text-3xl font-bold text-white">10+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Years Exp</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">B.A.Sc.</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">ICT Degree</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">Certified</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide">Mendix Dev</div>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- About / The "Bridge" Section -->
-    <section id="about" class="py-20 bg-slate-800/50">
+    <section id="about" class="py-20 bg-slate-900">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-white mb-8">Engineering Philosophy</h2>
-                <p class="text-lg text-slate-300 leading-relaxed mb-6">
-                    I am a Senior Developer pivoting from the world of <strong>Real-Time Simulation</strong> to <strong>Enterprise Low-Code</strong>. 
-                    My background is unique: I don't just drag-and-drop; I engineer.
-                </p>
-                <p class="text-lg text-slate-300 leading-relaxed">
-                    Having spent a decade architecting complex state machines and physics systems in Unity (C#) and Unreal Engine, 
-                    I found a natural parallel in <strong>Mendix</strong>. I bring a "Senior Engineer" mindset to Low-Code development—focusing 
-                    on clean architecture, logic optimization, and scalability.
-                </p>
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white mb-4">Engineering Philosophy</h2>
+                    <div class="h-1 w-20 bg-blue-500 mx-auto rounded"></div>
+                </div>
+                
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <p class="text-lg text-slate-300 leading-relaxed mb-6 text-center">
+                        I am a Senior Developer pivoting from the world of <strong>Real-Time Simulation</strong> to <strong>Enterprise Low-Code</strong>. 
+                        My background is unique: I don't just drag-and-drop; I engineer.
+                    </p>
+                    <p class="text-lg text-slate-300 leading-relaxed text-center">
+                        Having spent a decade architecting complex state machines and physics systems in Unity (C#) and Unreal Engine, 
+                        I found a natural parallel in <strong>Mendix</strong>. I bring a "Senior Engineer" mindset to Low-Code development—focusing 
+                        on clean architecture, logic optimization, and scalability.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications & Skills -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12">
                 
                 <!-- Certifications -->
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-                        <i class="fas fa-certificate text-blue-500 mr-3"></i> Certifications
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-certificate text-blue-500 mr-3"></i> Key Certifications
                     </h3>
-                    <ul class="space-y-4">
-                        <li class="bg-slate-800 p-4 rounded-lg border-l-4 border-blue-500 flex justify-between items-center">
+                    <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                        <!-- Mendix First -->
+                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-blue-500 flex justify-between items-center shadow-md">
                             <div>
-                                <span class="block font-bold text-white">Mendix Rapid Developer</span>
+                                <span class="block font-bold text-white text-lg">Mendix Rapid Developer</span>
                                 <span class="text-sm text-slate-400">Siemens / Mendix</span>
                             </div>
-                            <i class="fas fa-check-circle text-green-500"></i>
-                        </li>
-                        <!-- List shortened for visual impact, keeping the most relevant ones -->
-                        <li class="bg-slate-800 p-4 rounded-lg border-l-4 border-slate-600">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        </div>
+                        
+                        <!-- Leadership & Agile -->
+                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md">
                             <span class="block font-bold text-white">Agile Software Development</span>
                             <span class="text-sm text-slate-400">Creating an Agile Culture</span>
-                        </li>
-                        <li class="bg-slate-800 p-4 rounded-lg border-l-4 border-slate-600">
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md">
                             <span class="block font-bold text-white">Managing & Leading Developers</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
-                        </li>
-                        <li class="bg-slate-800 p-4 rounded-lg border-l-4 border-slate-600">
-                            <span class="block font-bold text-white">Inclusive Tech: Code Reviews</span>
-                            <span class="text-sm text-slate-400">Humane Code Reviews</span>
-                        </li>
-                        <li class="bg-slate-800 p-4 rounded-lg border-l-4 border-slate-600">
+                        </div>
+
+                        <!-- Technical -->
+                         <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md">
                             <span class="block font-bold text-white">Unreal Engine 5 Essential Training</span>
-                            <span class="text-sm text-slate-400">Real-Time Logic</span>
-                        </li>
-                    </ul>
+                            <span class="text-sm text-slate-400">LinkedIn Learning</span>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md">
+                            <span class="block font-bold text-white">Inclusive Tech: Code Reviews</span>
+                            <span class="text-sm text-slate-400">Conducting Humane Code Reviews</span>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md">
+                            <span class="block font-bold text-white">Pre-Incubation Program</span>
+                            <span class="text-sm text-slate-400">DELITELABS (Business/Startup)</span>
+                        </div>
+                         <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md">
+                            <span class="block font-bold text-white">Design of Games for Learning</span>
+                            <span class="text-sm text-slate-400">MITx on edX</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Technical Skills -->
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-                        <i class="fas fa-code text-blue-500 mr-3"></i> Tech Stack
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-layer-group text-blue-500 mr-3"></i> Tech Stack
                     </h3>
                     
-                    <div class="mb-6">
-                        <h4 class="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Enterprise & Low-Code</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full border border-blue-800">Mendix</span>
-                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full border border-blue-800">Agile / Scrum</span>
-                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full border border-blue-800">Business Analysis</span>
-                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full border border-blue-800">Jira</span>
+                    <div class="mb-8">
+                        <h4 class="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4 border-b border-slate-700 pb-2">Enterprise & Low-Code</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Mendix</span>
+                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Agile / Scrum</span>
+                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Business Analysis</span>
+                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Jira</span>
+                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Strategy</span>
                         </div>
                     </div>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Languages & Logic</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">C# (Expert)</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Visual Scripting</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">OOP</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Java (Basic)</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">SQL</span>
+                    <div class="mb-8">
+                        <h4 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">Languages & Logic</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">C# (Expert)</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Visual Scripting</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">OOP</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Java (Basic)</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">SQL</span>
                         </div>
                     </div>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Simulation & Real-Time</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">System Architecture</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Performance Tuning</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Unity</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Unreal Engine 5</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Git / GitHub</span>
+                    <div class="mb-8">
+                        <h4 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">Simulation & Tools</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">System Architecture</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unity</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unreal Engine 5</span>
+                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Git / GitHub</span>
                         </div>
                     </div>
                 </div>
@@ -159,106 +192,129 @@
         </div>
     </section>
 
-    <!-- Projects (The Proof) -->
-    <section id="projects" class="py-20 bg-slate-900">
+    <!-- Featured Projects (Simulations) -->
+    <section id="projects" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Interactive Simulations & Platforms</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Interactive Simulations & Platforms</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Selected high-complexity projects demonstrating architecture, networking, and physics logic.</p>
+            </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project 1: Homaysa -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
-                    <!-- Placeholder Image - Replace src with your screenshot -->
-                    <div class="h-48 bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center">
-                        <i class="fas fa-network-wired text-4xl text-white/50"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300">
+                    <!-- Video Embed or Thumbnail -->
+                    <div class="relative h-48 bg-black overflow-hidden group-hover:opacity-100">
+                         <!-- Fallback for no thumbnail, typically you'd put an <img> here -->
+                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/xXxgG-rS_XE?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Homaysa (Metaverse Platform)</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Architected a scalable real-time networked platform supporting massive user concurrency. Managed cloud infrastructure, auth, and data sync.
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Homaysa (Metaverse Platform)</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Architected a scalable real-time networked platform supporting massive user concurrency. Managed cloud infrastructure, auth, and data sync. Secured incubation from Unilever.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">C#</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Cloud Networking</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Architecture</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">C# Networking</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Cloud Sync</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=xXxgG-rS_XE" target="_blank" class="block text-center w-full py-2 border border-blue-500 text-blue-400 rounded hover:bg-blue-500 hover:text-white transition">
+                        <a href="https://www.youtube.com/watch?v=xXxgG-rS_XE" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch System Demo
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 2: Sniper's Ground -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-green-900 to-teal-900 flex items-center justify-center">
-                        <i class="fas fa-crosshairs text-4xl text-white/50"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300">
+                    <div class="relative h-48 bg-black overflow-hidden">
+                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/YnWBuqUFfqw?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Physics Simulation Network</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Engineered a high-performance simulation (Sniper's Ground) using complex physics calculations and optimized C# algorithms with UDP networking.
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Physics Simulation Network</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Engineered a high-performance simulation using complex physics calculations and optimized C# algorithms with UDP networking logic.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Unity (C#)</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Physics</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">UDP</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity (C#)</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Physics Math</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=YnWBuqUFfqw" target="_blank" class="block text-center w-full py-2 border border-blue-500 text-blue-400 rounded hover:bg-blue-500 hover:text-white transition">
+                        <a href="https://www.youtube.com/watch?v=YnWBuqUFfqw" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch Simulation
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 3: AR Horror -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-red-900 to-orange-900 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-4xl text-white/50"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300">
+                    <div class="relative h-48 bg-black overflow-hidden">
+                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/Fr0I8jnykEk?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">AR & Speech Recognition</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Developed a pioneering mobile application using Augmented Reality and voice processing APIs ahead of market trends.
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">AR & Voice Recognition</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            Developed a pioneering mobile application utilizing Augmented Reality APIs and Speech Recognition for immersive user interaction.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Augmented Reality</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Voice API</span>
-                            <span class="text-xs bg-slate-700 text-blue-300 px-2 py-1 rounded">Mobile</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR Logic</span>
+                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">API Integration</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=Fr0I8jnykEk" target="_blank" class="block text-center w-full py-2 border border-blue-500 text-blue-400 rounded hover:bg-blue-500 hover:text-white transition">
+                        <a href="https://www.youtube.com/watch?v=Fr0I8jnykEk" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch Demo
                         </a>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Archive Link for the "19 Projects" -->
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 text-sm mb-4">These 3 projects represent my most complex engineering work.</p>
+                <a href="https://alsharefee.itch.io/" target="_blank" class="inline-flex items-center text-slate-400 hover:text-white transition border-b border-slate-600 hover:border-white pb-1">
+                    <i class="fas fa-archive mr-2"></i> View Full Indie Game Archive (19+ Projects)
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Open Source Code -->
-    <section id="code" class="py-20 bg-slate-800/50">
+    <!-- Open Source Code (High-Code Proof) -->
+    <section id="code" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-10 text-center">Open Source Contributions</h2>
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">Open Source C# Architecture</h2>
             <div class="max-w-4xl mx-auto space-y-6">
                 
-                <a href="https://github.com/alsharefee/Ball-Physics-Game" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group">
-                    <div class="flex justify-between items-start">
+                <a href="https://github.com/alsharefee/Ball-Physics-Game" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
+                    <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Complete Physics Game Engine</h3>
-                            <p class="text-slate-400 text-sm mt-2">A complete open-source game project in C# demonstrating object-oriented physics interactions.</p>
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Complete Physics Game Engine</h3>
+                                <span class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">C#</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-2">A complete open-source game project in C# demonstrating object-oriented physics interactions, inheritance, and collision logic.</p>
+                            <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                                <span><i class="fas fa-star text-yellow-500 mr-1"></i> 5 Stars</span>
+                                <span><i class="fas fa-code-branch mr-1"></i> Architecture Demo</span>
+                            </div>
                         </div>
-                        <div class="text-slate-500 group-hover:text-white">
+                        <div class="text-slate-500 group-hover:text-white shrink-0">
                             <i class="fab fa-github text-2xl"></i>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://github.com/alsharefee/3D-Maze-Generator" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group">
-                    <div class="flex justify-between items-start">
+                <a href="https://github.com/alsharefee/3D-Maze-Generator" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
+                    <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Procedural Maze Generator Plugin</h3>
-                            <p class="text-slate-400 text-sm mt-2">A C# tool/plugin for generating 3D structures algorithmically. Demonstrates recursive logic and algorithmic optimization.</p>
+                             <div class="flex items-center gap-3">
+                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Procedural Maze Generator Plugin</h3>
+                                <span class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">Algorithms</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-2">A C# tool for generating 3D structures algorithmically. Demonstrates recursive logic, algorithmic optimization, and editor scripting.</p>
+                             <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                                <span><i class="fas fa-star text-yellow-500 mr-1"></i> 4 Stars</span>
+                                <span><i class="fas fa-cube mr-1"></i> Procedural Generation</span>
+                            </div>
                         </div>
-                        <div class="text-slate-500 group-hover:text-white">
+                        <div class="text-slate-500 group-hover:text-white shrink-0">
                             <i class="fab fa-github text-2xl"></i>
                         </div>
                     </div>
@@ -268,50 +324,93 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20">
+    <!-- Testimonials / Recommendations -->
+    <section id="testimonials" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Recommendations</h2>
+            <h2 class="text-3xl font-bold text-white mb-16 text-center">Professional Recommendations</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 
                 <!-- Rec 1 -->
-                <div class="bg-slate-800 p-8 rounded-lg relative">
-                    <i class="fas fa-quote-left text-blue-900/50 text-6xl absolute top-4 left-4 -z-0"></i>
-                    <p class="text-slate-300 italic mb-6 relative z-10">"One of the finest I've come across. If you ever need someone to deliver under pressure, no slip-ups, just results, Mohammed is your man! I highly recommend Mohammed as he accepts challenges with passion."</p>
-                    <div>
-                        <span class="block font-bold text-white">Vipin Thaikattu</span>
-                        <span class="text-sm text-slate-500">Director of Admissions | Student Success Advocate</span>
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl">
+                    <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-4 text-blue-400">
+                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"One of the finest I've come across. If you ever need someone to deliver under pressure, no slip-ups, just results, Mohammed is your man! I highly recommend Mohammed as he accepts challenges with passion."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">V</div>
+                            <div>
+                                <span class="block font-bold text-white">Vipin Thaikattu</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of Admissions</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Rec 2 -->
-                <div class="bg-slate-800 p-8 rounded-lg relative">
-                    <i class="fas fa-quote-left text-blue-900/50 text-6xl absolute top-4 left-4 -z-0"></i>
-                    <p class="text-slate-300 italic mb-6 relative z-10">"Mohammed is a passionate and self-motivated Developer. He has earned a lot of experience ranging from design to interactive development... He always strives to learn new things everyday."</p>
-                    <div>
-                        <span class="block font-bold text-white">Anmar Hamad</span>
-                        <span class="text-sm text-slate-500">AI Creative Technologist & Cloud Tech Expert</span>
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl">
+                    <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
+                    <div class="relative z-10">
+                         <div class="flex items-center gap-2 mb-4 text-blue-400">
+                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Mohammed is a passionate and self-motivated Developer... He always strives to learn new things everyday that gains him an added value towards his vast existent knowledge."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <div>
+                                <span class="block font-bold text-white">Anmar Hamad</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">AI Creative Technologist</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Rec 3 -->
-                <div class="bg-slate-800 p-8 rounded-lg relative">
-                    <i class="fas fa-quote-left text-blue-900/50 text-6xl absolute top-4 left-4 -z-0"></i>
-                    <p class="text-slate-300 italic mb-6 relative z-10">"Both smart and professional. Experienced, deadline oriented and intelligent person."</p>
-                    <div>
-                        <span class="block font-bold text-white">Ahmed Aly ElBasty</span>
-                        <span class="text-sm text-slate-500">Program Manager @ saib Bank</span>
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl">
+                    <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
+                    <div class="relative z-10">
+                         <div class="flex items-center gap-2 mb-4 text-blue-400">
+                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Both smart and professional. Experienced, deadline oriented and intelligent person."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <div>
+                                <span class="block font-bold text-white">Ahmed Aly ElBasty</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Program Manager @ saib Bank</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                  <!-- Rec 4 -->
-                 <div class="bg-slate-800 p-8 rounded-lg relative">
-                    <i class="fas fa-quote-left text-blue-900/50 text-6xl absolute top-4 left-4 -z-0"></i>
-                    <p class="text-slate-300 italic mb-6 relative z-10">"He was always so curious and eager to learn more... He developed an incredibly addictive game on Android called 'Get Rich'. He carefully considers other people's opinions."</p>
-                    <div>
-                        <span class="block font-bold text-white">Momo Hawary</span>
-                        <span class="text-sm text-slate-500">Director of Marketing & Film</span>
+                 <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl">
+                    <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
+                    <div class="relative z-10">
+                         <div class="flex items-center gap-2 mb-4 text-blue-400">
+                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"He developed an incredibly addictive game on Android called 'Get Rich'. Upon completion, he was already starting to brainstorm himself... He carefully considers other people's opinions."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                            <div>
+                                <span class="block font-bold text-white">Momo Hawary</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of Marketing & Film</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Bonus: Fiverr Summary Card -->
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 relative shadow-inner flex flex-col items-center justify-center text-center">
+                    <h3 class="text-slate-400 font-bold uppercase tracking-widest mb-2">Freelance Clients</h3>
+                    <div class="text-5xl font-bold text-white mb-2">5.0 <span class="text-2xl text-slate-500">/ 5</span></div>
+                    <div class="text-yellow-500 text-lg mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-500 text-sm">"What a legend... Got my VR project working... an absolute gent!"</p>
+                    <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank" class="mt-4 text-blue-500 hover:text-white text-sm">View all 6 client reviews</a>
                 </div>
 
             </div>
@@ -319,35 +418,35 @@
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="bg-slate-950 py-16">
+    <footer id="contact" class="bg-slate-950 py-16 border-t border-slate-900">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
             <p class="text-slate-400 mb-8 max-w-xl mx-auto">
                 I am currently based in <strong>Schagen, North Holland</strong> and open to hybrid or remote opportunities in <strong>Mendix Development</strong> and <strong>Simulation Engineering</strong>.
             </p>
             
-            <div class="flex justify-center gap-6 mb-12">
-                <a href="mailto:alsharefee@gmail.com" class="flex items-center gap-2 text-white hover:text-blue-400 transition text-lg">
-                    <i class="fas fa-envelope"></i> Email Me
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:alsharefee@gmail.com" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope text-blue-500"></i> alsharefee@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/alsharefee/" target="_blank" class="flex items-center gap-2 text-white hover:text-blue-400 transition text-lg">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                <a href="https://www.linkedin.com/in/alsharefee/" target="_blank" class="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded text-white transition flex items-center justify-center gap-3 shadow-lg shadow-blue-900/30">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                 </a>
-                <a href="https://github.com/alsharefee" target="_blank" class="flex items-center gap-2 text-white hover:text-blue-400 transition text-lg">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="https://github.com/alsharefee" target="_blank" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
+                    <i class="fab fa-github text-slate-400"></i> GitHub
                 </a>
             </div>
 
-            <!-- Optional Fiverr Link (Small & Discrete) -->
-            <div class="border-t border-slate-800 pt-8">
-                <p class="text-slate-500 text-sm">
-                    Interested in Freelance Game Dev services? 
-                    <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank" class="text-slate-400 hover:text-white underline decoration-dotted">View Freelance Portfolio</a>
-                </p>
-            </div>
+            <!-- Language Pills -->
+             <div class="mb-12 flex justify-center gap-3">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">Languages:</span>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Arabic (Native)</span>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">English (B2)</span>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Dutch (B1)</span>
+             </div>
             
             <div class="mt-8 text-slate-600 text-sm">
-                &copy; 2025 Mohammed Marzouq. All rights reserved.
+                &copy; 2025 Mohammed Marzouq. <br class="md:hidden">Designed for Enterprise Engineering.
             </div>
         </div>
     </footer>
