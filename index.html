@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Marzouq | Senior Software Engineer & Mendix Developer</title>
-    <meta name="description" content="Portfolio of Mohammed Marzouq — Senior Software Engineer with 10+ years in XR, Real-Time Simulation, and Certified Mendix Low-Code development.">
+    <meta name="description"
+        content="Portfolio of Mohammed Marzouq — Senior Software Engineer with 10+ years in XR, Real-Time Simulation, and Certified Mendix Low-Code development.">
     <meta name="author" content="Mohammed Marzouq">
     <meta name="theme-color" content="#0f172a">
     <link rel="canonical" href="https://alsharefee.github.io/portfolio/">
@@ -12,7 +14,8 @@
     <!-- Open Graph / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mohammed Marzouq | Senior Software Engineer & Mendix Developer">
-    <meta property="og:description" content="10+ years in XR and Real-Time Simulation. Now building on enterprise Low-Code with Mendix.">
+    <meta property="og:description"
+        content="10+ years in XR and Real-Time Simulation. Now building on enterprise Low-Code with Mendix.">
     <meta property="og:url" content="https://alsharefee.github.io/portfolio/">
     <meta property="og:image" content="https://img.youtube.com/vi/xXxgG-rS_XE/maxresdefault.jpg">
 
@@ -23,7 +26,8 @@
     <meta name="twitter:image" content="https://img.youtube.com/vi/xXxgG-rS_XE/maxresdefault.jpg">
 
     <!-- Favicon (inline SVG monogram) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-size='36' font-weight='800' fill='%233b82f6'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-size='36' font-weight='800' fill='%233b82f6'%3EM%3C/text%3E%3C/svg%3E">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -58,89 +62,180 @@
 
     <style>
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
 
         /* Focus-visible for keyboard users */
-        :focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; border-radius: 4px; }
+        :focus-visible {
+            outline: 2px solid #60a5fa;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
 
         /* --- BACKGROUND ANIMATION STYLES --- */
         .bg-grid {
             background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         @keyframes pulse-orb {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.35; transform: scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.35;
+                transform: scale(1.1);
+            }
         }
+
         .animate-pulse-orb {
             animation: pulse-orb 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
         /* --- SCROLL INDICATOR ANIMATION --- */
         @keyframes bounce-chevron {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-8px);
+            }
+
+            60% {
+                transform: translateY(-4px);
+            }
         }
-        .animate-bounce-chevron { animation: bounce-chevron 2s infinite; }
+
+        .animate-bounce-chevron {
+            animation: bounce-chevron 2s infinite;
+        }
 
         /* --- SCROLL REVEAL --- */
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-        .reveal.is-visible { opacity: 1; transform: none; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
 
         /* --- ACTIVE NAV LINK --- */
-        .nav-link.is-active { color: #60a5fa; }
+        .nav-link.is-active {
+            color: #60a5fa;
+        }
 
         /* --- LITE YOUTUBE (thumbnail click-to-play) --- */
         .lite-yt {
-            position: relative; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
             cursor: pointer;
         }
+
         .lite-yt::before {
-            content: ""; position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,.55) 100%);
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, .55) 100%);
         }
+
         .lite-yt .lite-yt-play {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 64px; height: 44px; border-radius: 10px;
-            background: rgba(30, 41, 59, .85); border: 1px solid rgba(148, 163, 184, .3);
-            display: flex; align-items: center; justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(30, 41, 59, .85);
+            border: 1px solid rgba(148, 163, 184, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: transform .2s ease, background .2s ease;
         }
-        .lite-yt:hover .lite-yt-play { background: #dc2626; transform: translate(-50%, -50%) scale(1.05); }
+
+        .lite-yt:hover .lite-yt-play {
+            background: #dc2626;
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
         .lite-yt .lite-yt-play::after {
-            content: ""; display: block; width: 0; height: 0;
-            border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent;
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 14px solid #fff;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
             margin-left: 4px;
         }
 
         /* Respect reduced-motion */
         @media (prefers-reduced-motion: reduce) {
-            .animate-pulse-orb, .animate-bounce-chevron { animation: none; }
-            .reveal { opacity: 1; transform: none; transition: none; }
+
+            .animate-pulse-orb,
+            .animate-bounce-chevron {
+                animation: none;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
     </style>
 </head>
+
 <body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-blue-500 selection:text-white">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white tracking-tight">Mohammed<span class="text-blue-500">Marzouq</span></a>
+            <a href="#" class="text-xl font-bold text-white tracking-tight">Mohammed<span
+                    class="text-blue-500">Marzouq</span></a>
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
                 <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
                 <a href="#code" class="nav-link hover:text-blue-400 transition">Code</a>
                 <a href="#testimonials" class="nav-link hover:text-blue-400 transition">Recommendations</a>
                 <a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a>
-                <a href="#contact" class="ml-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg shadow-blue-500/20">Contact</a>
+                <a href="#contact"
+                    class="ml-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg shadow-blue-500/20">Contact</a>
             </div>
             <!-- Mobile Menu Button (Hidden on Desktop) -->
-             <button id="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+            <button id="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                class="md:hidden text-slate-300 hover:text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
@@ -158,20 +253,26 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen flex flex-col justify-center">
-        
+    <header
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen flex flex-col justify-center">
+
         <!-- Background Grid Effect (1) -->
         <div class="absolute inset-0 z-0 opacity-10 bg-grid"></div>
-        
+
         <!-- Floating Gradient Orbs (2 & 3) -->
-        <div class="absolute top-1/4 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[160px] opacity-20 animate-pulse-orb"></div>
-        <div class="absolute bottom-0 -left-60 w-[500px] h-[500px] bg-cyan-600 rounded-full blur-[180px] opacity-20 animate-pulse-orb" style="animation-delay: 3s;"></div> 
-        
+        <div
+            class="absolute top-1/4 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[160px] opacity-20 animate-pulse-orb">
+        </div>
+        <div class="absolute bottom-0 -left-60 w-[500px] h-[500px] bg-cyan-600 rounded-full blur-[180px] opacity-20 animate-pulse-orb"
+            style="animation-delay: 3s;"></div>
+
         <div class="container mx-auto px-6 text-center relative z-10">
-            
-            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-slate-700 bg-slate-800/60 text-xs text-slate-400 uppercase tracking-widest">
+
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-slate-700 bg-slate-800/60 text-xs text-slate-400 uppercase tracking-widest">
                 <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 Open to opportunities &middot; North Holland, NL
@@ -181,23 +282,28 @@
                 Senior Software Engineer
             </h1>
             <div class="text-2xl md:text-4xl font-bold mb-8 leading-tight">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">XR Expert</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">XR
+                    Expert</span>
                 <span class="text-slate-600 mx-2">/</span>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Certified Mendix Developer</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Certified Mendix
+                    Developer</span>
             </div>
 
             <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                After a decade in XR, Simulations and Game Development, I'm expanding my skills into enterprise low-code development with Mendix.
+                After a decade in XR, Simulations and Game Development, I'm expanding my skills into enterprise low-code
+                development with Mendix.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
+                <a href="#contact"
+                    class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
                     Contact Me
                 </a>
-                <a href="#projects" class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition border border-slate-700 transform hover:-translate-y-1">
+                <a href="#projects"
+                    class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg transition border border-slate-700 transform hover:-translate-y-1">
                     View Projects
                 </a>
             </div>
-            
+
             <!-- Key Stats / Highlights -->
             <div class="mt-20 grid grid-cols-3 gap-4 max-w-3xl mx-auto text-center border-t border-slate-800 pt-8">
                 <div>
@@ -216,7 +322,8 @@
         </div>
 
         <!-- Scroll Down Indicator (Creative Addition) -->
-        <a href="#about" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-blue-500 hover:text-blue-400 transition p-3 rounded-full">
+        <a href="#about"
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-blue-500 hover:text-blue-400 transition p-3 rounded-full">
             <i class="fas fa-chevron-down text-2xl animate-bounce-chevron"></i>
         </a>
     </header>
@@ -230,15 +337,19 @@
                     <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
                     <div class="h-1 w-20 bg-blue-500 mx-auto rounded"></div>
                 </div>
-                
+
                 <div class="reveal bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-xl">
                     <p class="text-lg text-slate-300 leading-relaxed mb-6 text-center">
-                        I am a Senior Developer and Solution Architect with over 10 years of experience building complex,  <strong>Real-Time Simulation</strong>, interactive systems. 
-                        Expanding to <strong>Enterprise Low-Code</strong>. My expertise sits at the intersection of Enterprise Engineering and Immersive Technology.
+                        I am a Senior Developer with over 10 years of experience building complex, games,
+                        <strong>Real-Time Simulation</strong>, and interactive systems.
+                        Expanding to <strong>Enterprise Low-Code</strong>. My expertise sits at the intersection of
+                        Enterprise Engineering and Immersive Technology.
                     </p>
                     <p class="text-lg text-slate-300 leading-relaxed mb-6 text-center">
-                        Having spent a decade architecting complex state machines and physics systems in <strong>Unity (C#)</strong> and <strong>Unreal Engine</strong>, 
-                        I found a natural parallel in <strong>Mendix</strong>. I bring a "Senior Engineer" mindset to Low-Code development, focusing 
+                        Having spent more than a decade architecting complex state machines and physics systems in
+                        <strong>Unity (C#)</strong> and <strong>Unreal Engine</strong>,
+                        I found a natural parallel in <strong>Mendix</strong>. I bring a "Senior Engineer" mindset to
+                        Low-Code development, focusing
                         on clean architecture, logic optimization, and scalability.
                     </p>
 
@@ -250,82 +361,121 @@
         </div>
     </section>
 
-  
+
 
     <!-- Featured Projects (Simulations) -->
     <section id="projects" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Simulations / XR Projects</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Selected high-complexity projects demonstrating architecture, networking, and physics logic.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Games / Simulations / XR Projects</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Selected high-complexity projects demonstrating
+                    architecture, networking, and physics logic.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Project 1: Homaysa -->
-                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                <div
+                    class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                        <div class="lite-yt" data-video-id="xXxgG-rS_XE" style="background-image: url('https://i.ytimg.com/vi/xXxgG-rS_XE/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play Homaysa video">
+                        <div class="lite-yt" data-video-id="xXxgG-rS_XE"
+                            style="background-image: url('https://i.ytimg.com/vi/xXxgG-rS_XE/hqdefault.jpg');"
+                            role="button" tabindex="0" aria-label="Play Homaysa video">
                             <span class="lite-yt-play" aria-hidden="true"></span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Homaysa (Metaverse Platform)</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Homaysa
+                            (Metaverse Platform)</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                            Architected a scalable real-time networked platform supporting massive user concurrency. Managed infrastructure, Voice Chat, auth, and data sync. Secured incubation from Unilever.
+                            Architected a scalable real-time networked platform supporting massive user concurrency.
+                            Managed infrastructure, Voice Chat, auth, and data sync. Secured incubation from Unilever.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Virtual Reality</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Voice Chat</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR Simulation</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Virtual
+                                Reality</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Voice
+                                Chat</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR
+                                Simulation</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=xXxgG-rS_XE" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
+                        <a href="https://www.youtube.com/watch?v=xXxgG-rS_XE" target="_blank"
+                            class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 2: Sniper's Ground -->
-                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                <div
+                    class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                        <div class="lite-yt" data-video-id="1V8csaKqblU" style="background-image: url('https://i.ytimg.com/vi/1V8csaKqblU/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play AR app video">
+                        <div class="lite-yt" data-video-id="1V8csaKqblU"
+                            style="background-image: url('https://i.ytimg.com/vi/1V8csaKqblU/hqdefault.jpg');"
+                            role="button" tabindex="0" aria-label="Play AR app video">
                             <span class="lite-yt-play" aria-hidden="true"></span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Augmented Reality App</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Augmented
+                            Reality App</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                            A realistic Augmented Reality (AR) simulation built on Unity C# and ARKit that demonstrates advanced real-time 3D object placement and dynamic light/shadow rendering on physical surfaces.
+                            A realistic Augmented Reality (AR) simulation built on Unity C# and ARKit that demonstrates
+                            advanced real-time 3D object placement and dynamic light/shadow rendering on physical
+                            surfaces.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity (C#)</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Apple ARKit</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">API Integration</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity
+                                (C#)</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Apple
+                                ARKit</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">API
+                                Integration</span>
                         </div>
-                        <a href="https://youtube.com/shorts/1V8csaKqblU" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
+                        <a href="https://youtube.com/shorts/1V8csaKqblU" target="_blank"
+                            class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 3: AR Horror -->
-                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                <div
+                    class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                        <div class="lite-yt" data-video-id="RALHsddU-wo" style="background-image: url('https://i.ytimg.com/vi/RALHsddU-wo/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play AR tracking video">
+                        <div class="lite-yt" data-video-id="RALHsddU-wo"
+                            style="background-image: url('https://i.ytimg.com/vi/RALHsddU-wo/hqdefault.jpg');"
+                            role="button" tabindex="0" aria-label="Play AR tracking video">
                             <span class="lite-yt-play" aria-hidden="true"></span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">AR Tracking</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">AR Tracking
+                        </h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                            An interactive Augmented Reality (AR) application featuring real-time human foot tracking and physics engine integration to simulate digital object interaction (football) with the user's physical body.
+                            An interactive Augmented Reality (AR) application featuring real-time human foot tracking
+                            and physics engine integration to simulate digital object interaction (football) with the
+                            user's physical body.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR Logic</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR Simulation</span>
-                            <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR Physics</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                Logic</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                Simulation</span>
+                            <span
+                                class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                Physics</span>
                         </div>
-                        <a href="https://youtube.com/shorts/RALHsddU-wo" target="_blank" class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
+                        <a href="https://youtube.com/shorts/RALHsddU-wo" target="_blank"
+                            class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
                             <i class="fas fa-play mr-2"></i> Watch
                         </a>
                     </div>
@@ -336,31 +486,40 @@
             <!-- Archive Link for the "19 Projects" -->
             <div class="mt-12 text-center">
                 <p class="text-slate-500 text-sm mb-4">There are more 👇</p>
-                <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank" class="inline-flex items-center text-slate-400 hover:text-white transition border-b border-slate-600 hover:border-white pb-1">
+                <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank"
+                    class="inline-flex items-center text-slate-400 hover:text-white transition border-b border-slate-600 hover:border-white pb-1">
                     <i class="fas fa-archive mr-2"></i> View Full Indie Game Archive (19+ Projects)
                 </a>
             </div>
         </div>
     </section>
 
-     <!-- Open Source Code (High-Code Proof) -->
+    <!-- Open Source Code (High-Code Proof) -->
     <section id="code" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-white mb-10 text-center">Open Source Work</h2>
             <div class="max-w-4xl mx-auto space-y-6">
 
-                <a href="https://marketplace.mendix.com/link/component/252933" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition group shadow-md relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl shadow-sm">NEW</div>
-                    
+                <a href="https://marketplace.mendix.com/link/component/252933" target="_blank"
+                    class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition group shadow-md relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl shadow-sm">
+                        NEW</div>
+
                     <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
                         <div>
                             <div class="flex items-center gap-3">
-                                <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition">Mendix Gamification Engine</h3>
-                                <span class="bg-purple-900/50 text-purple-200 text-xs px-2 py-0.5 rounded border border-purple-800">Mendix</span>
+                                <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition">Mendix
+                                    Gamification Engine</h3>
+                                <span
+                                    class="bg-purple-900/50 text-purple-200 text-xs px-2 py-0.5 rounded border border-purple-800">Mendix</span>
                             </div>
-                            <p class="text-slate-400 text-sm mt-2">A plug-and-play XP, Leveling, and Badge system for enterprise Mendix apps. Features a non-intrusive association architecture, automated logic, and open-source foundation.</p>
+                            <p class="text-slate-400 text-sm mt-2">A plug-and-play XP, Leveling, and Badge system for
+                                enterprise Mendix apps. Features a non-intrusive association architecture, automated
+                                logic, and open-source foundation.</p>
                             <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
-                                <span><i class="fas fa-check-circle text-green-500 mr-1"></i> Marketplace Verified</span>
+                                <span><i class="fas fa-check-circle text-green-500 mr-1"></i> Marketplace
+                                    Verified</span>
                                 <span><i class="fas fa-puzzle-piece mr-1"></i> Utility Module</span>
                             </div>
                         </div>
@@ -369,15 +528,20 @@
                         </div>
                     </div>
                 </a>
-                
-                <a href="https://github.com/alsharefee/Ball-Physics-Game" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
+
+                <a href="https://github.com/alsharefee/Ball-Physics-Game" target="_blank"
+                    class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
                     <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
                         <div>
                             <div class="flex items-center gap-3">
-                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Complete Physics Game</h3>
-                                <span class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">C#</span>
+                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Complete
+                                    Physics Game</h3>
+                                <span
+                                    class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">C#</span>
                             </div>
-                            <p class="text-slate-400 text-sm mt-2">A complete open-source game project in Unity C# demonstrating object-oriented physics interactions, inheritance, and collision logic.</p>
+                            <p class="text-slate-400 text-sm mt-2">A complete open-source game project in Unity C#
+                                demonstrating object-oriented physics interactions, inheritance, and collision logic.
+                            </p>
                             <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
                                 <span><i class="fas fa-star text-yellow-500 mr-1"></i> 5 Stars</span>
                                 <span><i class="fas fa-code-branch mr-1"></i>Physics Game</span>
@@ -389,15 +553,20 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/alsharefee/3D-Maze-Generator" target="_blank" class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
+                <a href="https://github.com/alsharefee/3D-Maze-Generator" target="_blank"
+                    class="block bg-slate-900 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group shadow-md">
                     <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
                         <div>
-                             <div class="flex items-center gap-3">
-                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Procedural Maze Generator Plugin</h3>
-                                <span class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">Algorithms</span>
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Procedural
+                                    Maze Generator Plugin</h3>
+                                <span
+                                    class="bg-blue-900/50 text-blue-200 text-xs px-2 py-0.5 rounded border border-blue-800">Algorithms</span>
                             </div>
-                            <p class="text-slate-400 text-sm mt-2">A Unity C# tool for generating 3D structures algorithmically. Demonstrates recursive logic, algorithmic optimization, and editor scripting.</p>
-                             <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                            <p class="text-slate-400 text-sm mt-2">A Unity C# tool for generating 3D structures
+                                algorithmically. Demonstrates recursive logic, algorithmic optimization, and editor
+                                scripting.</p>
+                            <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
                                 <span><i class="fas fa-star text-yellow-500 mr-1"></i> 4 Stars</span>
                                 <span><i class="fas fa-cube mr-1"></i> Procedural Generation</span>
                             </div>
@@ -417,85 +586,117 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-white mb-16 text-center">Professional Recommendations</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                
+
                 <!-- Rec 1 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
+                <div
+                    class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
                     <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
                     <div class="relative z-10">
                         <div class="flex items-center gap-2 mb-4 text-blue-400">
-                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-slate-300 italic mb-6 leading-relaxed">"One of the finest I've come across. If you ever need someone to deliver under pressure, no slip ups, just results, Mohammed is your man! I highly recommend Mohammed as he accepts challenges with passion."</p>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"One of the finest I've come across. If
+                            you ever need someone to deliver under pressure, no slip ups, just results, Mohammed is your
+                            man! I highly recommend Mohammed as he accepts challenges with passion."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">V</div>
+                            <div
+                                class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">
+                                V</div>
                             <div>
                                 <span class="block font-bold text-white">Vipin Thaikattu</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of Admissions</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of
+                                    Admissions</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Rec 2 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
+                <div
+                    class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
                     <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
                     <div class="relative z-10">
-                         <div class="flex items-center gap-2 mb-4 text-blue-400">
-                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="flex items-center gap-2 mb-4 text-blue-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Mohammed is a passionate and self-motivated Developer... He always strives to learn new things everyday that gains him an added value towards his vast existent knowledge."</p>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Mohammed is a passionate and
+                            self-motivated Developer... He always strives to learn new things everyday that gains him an
+                            added value towards his vast existent knowledge."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <div
+                                class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">
+                                A</div>
                             <div>
                                 <span class="block font-bold text-white">Anmar Hamad</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wide">AI Creative Technologist</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">AI Creative
+                                    Technologist</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Bonus: Fiverr Summary Card (MOVED and set to span 2 columns) -->
-                <div class="md:col-span-2 bg-slate-900 p-8 rounded-xl border border-slate-800 relative shadow-inner flex flex-col items-center justify-center text-center">
+                <div
+                    class="md:col-span-2 bg-slate-900 p-8 rounded-xl border border-slate-800 relative shadow-inner flex flex-col items-center justify-center text-center">
                     <h3 class="text-slate-400 font-bold uppercase tracking-widest mb-2">Freelance Clients</h3>
-                    <div class="text-5xl font-bold text-white mb-2">5.0 <span class="text-2xl text-slate-500">/ 5</span></div>
-                    <div class="text-yellow-500 text-lg mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="text-5xl font-bold text-white mb-2">5.0 <span class="text-2xl text-slate-500">/ 5</span>
                     </div>
-                    <p class="text-slate-500 text-sm">"What a legend... Got my VR project working... an absolute gent!"</p>
-                    <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank" class="mt-4 text-blue-500 hover:text-white text-sm">View all 6 client reviews</a>
+                    <div class="text-yellow-500 text-lg mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-500 text-sm">"What a legend... Got my VR project working... an absolute gent!"
+                    </p>
+                    <a href="https://www.fiverr.com/users/alsharefee/portfolio" target="_blank"
+                        class="mt-4 text-blue-500 hover:text-white text-sm">View all 6 client reviews</a>
                 </div>
 
                 <!-- Rec 3 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
+                <div
+                    class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
                     <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
                     <div class="relative z-10">
-                         <div class="flex items-center gap-2 mb-4 text-blue-400">
-                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="flex items-center gap-2 mb-4 text-blue-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Both smart and professional. Experienced, deadline oriented and intelligent person."</p>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"Both smart and professional. Experienced,
+                            deadline oriented and intelligent person."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <div
+                                class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">
+                                A</div>
                             <div>
                                 <span class="block font-bold text-white">Ahmed Aly ElBasty</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wide">Program Manager @ saib Bank</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Program Manager @ saib
+                                    Bank</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                 <!-- Rec 4 -->
-                 <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
+                <!-- Rec 4 -->
+                <div
+                    class="bg-slate-800 p-8 rounded-xl border border-slate-700 relative shadow-xl hover:shadow-2xl hover:border-purple-600/50 transition duration-200">
                     <i class="fas fa-quote-right text-blue-900/30 text-6xl absolute top-6 right-6 -z-0"></i>
                     <div class="relative z-10">
-                         <div class="flex items-center gap-2 mb-4 text-blue-400">
-                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="flex items-center gap-2 mb-4 text-blue-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-slate-300 italic mb-6 leading-relaxed">"He developed an incredibly addictive game on Android called 'Get Rich'. Upon completion, he was already starting to brainstorm himself... He carefully considers other people's opinions."</p>
+                        <p class="text-slate-300 italic mb-6 leading-relaxed">"He developed an incredibly addictive game
+                            on Android called 'Get Rich'. Upon completion, he was already starting to brainstorm
+                            himself... He carefully considers other people's opinions."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                            <div
+                                class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-white font-bold">
+                                M</div>
                             <div>
                                 <span class="block font-bold text-white">Momo Hawary</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of Marketing & Film</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-wide">Director of Marketing &
+                                    Film</span>
                             </div>
                         </div>
                     </div>
@@ -504,11 +705,11 @@
         </div>
     </section>
 
-      <!-- Certifications & Skills -->
+    <!-- Certifications & Skills -->
     <section id="skills" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12">
-                
+
                 <!-- Certifications -->
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
@@ -516,82 +717,97 @@
                     </h3>
                     <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                         <!-- Mendix First -->
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-blue-500 flex justify-between items-center shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-blue-500 flex justify-between items-center shadow-md hover:scale-[1.01] transition duration-200">
                             <div>
                                 <span class="block font-bold text-white text-lg">Mendix Rapid Developer</span>
                                 <span class="text-sm text-slate-400">Siemens / Mendix</span>
                             </div>
                             <i class="fas fa-check-circle text-green-500 text-xl"></i>
                         </div>
-                        
+
                         <!-- Leadership & Agile -->
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Agile Software Development</span>
                             <span class="text-sm text-slate-400">Creating an Agile Culture</span>
                         </div>
-                       <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Managing & Leading Developers</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Coaching Skills for Leaders and Managers</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Succeeding as a First Time Tech Manager</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Moving from Developer to Engineering Manager</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
-                            <span class="block font-bold text-white">The Manager's Guide to Difficult Conversations</span>
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+                            <span class="block font-bold text-white">The Manager's Guide to Difficult
+                                Conversations</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                        
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
+
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-purple-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Inclusive Tech: Code Reviews</span>
                             <span class="text-sm text-slate-400">Conducting Humane Code Reviews</span>
                         </div>
 
                         <!-- Technical -->
-                         <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Unreal Engine 5 Essential Training</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
                         </div>
-                      
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md hover:scale-[1.01] transition duration-200">
+
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-slate-600 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">C++ Essential Training</span>
                             <span class="text-sm text-slate-400">LinkedIn Learning</span>
-                        </div>                        
-                        
-                        
+                        </div>
+
+
                         <!-- Gamification -->
-                         <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-pink-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-pink-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Designing Gamification</span>
                             <span class="text-sm text-slate-400">Gabe Zichermann</span>
                         </div>
 
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-pink-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-pink-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Design of Games for Learning</span>
                             <span class="text-sm text-slate-400">MITx on edX</span>
                         </div>
 
                         <!-- Entrepreneurship -->
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-yellow-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-yellow-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Exploring Entrepreneurship</span>
                             <span class="text-sm text-slate-400">The National Fund for SME Development</span>
                         </div>
 
-                        <div class="bg-slate-900 p-4 rounded-lg border-l-4 border-yellow-500 shadow-md hover:scale-[1.01] transition duration-200">
+                        <div
+                            class="bg-slate-900 p-4 rounded-lg border-l-4 border-yellow-500 shadow-md hover:scale-[1.01] transition duration-200">
                             <span class="block font-bold text-white">Pre Incubation Program</span>
                             <span class="text-sm text-slate-400">DELITELABS (Business/Startup)</span>
                         </div>
 
-                        
 
-                        
+
+
                     </div>
                 </div>
 
@@ -600,36 +816,65 @@
                     <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
                         <i class="fas fa-layer-group text-blue-500 mr-3"></i> Tech Stack
                     </h3>
-                    
+
                     <div class="mb-8">
-                        <h4 class="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4 border-b border-slate-700 pb-2">Enterprise & Low Code</h4>
+                        <h4
+                            class="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4 border-b border-slate-700 pb-2">
+                            Enterprise & Low Code</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Mendix</span>
-                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Agile / Scrum</span>
-                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Full SDLC</span>
-                            <span class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Strategy</span>
+                            <span
+                                class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Mendix</span>
+                            <span
+                                class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Agile
+                                / Scrum</span>
+                            <span
+                                class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Full
+                                SDLC</span>
+                            <span
+                                class="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-lg border border-blue-800/50 hover:bg-blue-900/60 transition cursor-default">Strategy</span>
                         </div>
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">Languages & Logic</h4>
+                        <h4
+                            class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">
+                            Languages & Logic</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">C# (Expert)</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Visual Scripting</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">OOP</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Java (Basic)</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">SQL</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">C#
+                                (Expert)</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Visual
+                                Scripting</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">OOP</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Java
+                                (Basic)</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">SQL</span>
                         </div>
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">Simulation & Tools</h4>
+                        <h4
+                            class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4 border-b border-slate-700 pb-2">
+                            Simulation & Tools</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">System Architecture</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unity</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unreal Engine 5</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Virtual Reality</span>
-                            <span class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Git / GitHub</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">System
+                                Architecture</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unity</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Unreal
+                                Engine 5</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Virtual
+                                Reality</span>
+                            <span
+                                class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Git
+                                / GitHub</span>
                         </div>
                     </div>
                 </div>
@@ -642,37 +887,45 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
             <p class="text-slate-400 mb-8 max-w-xl mx-auto">
-                I am currently based in <strong>North Holland</strong> and open to opportunities in <strong>Mendix Development</strong>, Game Development and <strong>Simulation Engineering</strong>.
+                I am currently based in <strong>North Holland</strong> and open to opportunities in <strong>Mendix
+                    Development</strong>, Game Development and <strong>Simulation Engineering</strong>.
             </p>
-            
+
             <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
-                <a href="mailto:alsharefee@gmail.com" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
+                <a href="mailto:alsharefee@gmail.com"
+                    class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
                     <i class="fas fa-envelope text-blue-500"></i> alsharefee@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/alsharefee/" target="_blank" class="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded text-white transition flex items-center justify-center gap-3 shadow-lg shadow-blue-900/30">
+                <a href="https://www.linkedin.com/in/alsharefee/" target="_blank"
+                    class="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded text-white transition flex items-center justify-center gap-3 shadow-lg shadow-blue-900/30">
                     <i class="fab fa-linkedin"></i> Connect on LinkedIn
                 </a>
-                <a href="https://github.com/alsharefee" target="_blank" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
+                <a href="https://github.com/alsharefee" target="_blank"
+                    class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded text-white transition flex items-center justify-center gap-3">
                     <i class="fab fa-github text-slate-400"></i> GitHub
                 </a>
             </div>
 
             <!-- Language Pills -->
-             <div class="mb-12 flex justify-center gap-3">
+            <div class="mb-12 flex justify-center gap-3">
                 <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">Languages:</span>
-                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Arabic (Native)</span>
-                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">English (B2+)</span>
-                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Dutch (B1)</span>
-             </div>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Arabic
+                    (Native)</span>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">English
+                    (B2+)</span>
+                <span class="text-xs bg-slate-900 text-slate-400 px-2 py-1 rounded border border-slate-800">Dutch
+                    (B1)</span>
+            </div>
 
             <!-- Optional Fiverr Link (Small & Discrete) -->
             <div class="border-t border-slate-800 pt-8">
                 <p class="text-slate-500 text-sm">
-                    Interested in Freelance Game Dev services? 
-                    <a href="https://www.fiverr.com/alsharefee?public_mode=true" target="_blank" class="text-slate-400 hover:text-white underline decoration-dotted">View Freelance Portfolio</a>
+                    Interested in Freelance Game Dev services?
+                    <a href="https://www.fiverr.com/alsharefee?public_mode=true" target="_blank"
+                        class="text-slate-400 hover:text-white underline decoration-dotted">View Freelance Portfolio</a>
                 </p>
             </div>
-            
+
             <div class="mt-8 text-slate-600 text-sm">
                 &copy; <span id="footer-year">2026</span> Mohammed Marzouq.
             </div>
@@ -752,31 +1005,5 @@
         sections.forEach(s => spyObserver.observe(s));
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
