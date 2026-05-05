@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Marzouq | Senior Software Engineer & Mendix Developer</title>
-    <meta name="description" content="Portfolio of Mohammed Marzouq, Senior Software Engineer specializing in Mendix, C#, and Real-Time Simulation.">
+    <meta name="description" content="Portfolio of Mohammed Marzouq — Senior Software Engineer with 10+ years in XR, Real-Time Simulation, and Certified Mendix Low-Code development.">
+    <meta name="author" content="Mohammed Marzouq">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://alsharefee.github.io/portfolio/">
+
+    <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mohammed Marzouq | Senior Software Engineer & Mendix Developer">
+    <meta property="og:description" content="10+ years in XR and Real-Time Simulation. Now building on enterprise Low-Code with Mendix.">
+    <meta property="og:url" content="https://alsharefee.github.io/portfolio/">
+    <meta property="og:image" content="https://img.youtube.com/vi/xXxgG-rS_XE/maxresdefault.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohammed Marzouq | Senior Software Engineer">
+    <meta name="twitter:description" content="XR, Simulation, and Certified Mendix Developer.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/xXxgG-rS_XE/maxresdefault.jpg">
+
+    <!-- Favicon (inline SVG monogram) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-size='36' font-weight='800' fill='%233b82f6'%3EM%3C/text%3E%3C/svg%3E">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="preconnect" href="https://www.youtube.com">
+
     <!-- Tailwind CSS for rapid, professional styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD: Person schema for richer search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Marzouq",
+      "jobTitle": "Senior Software Engineer",
+      "description": "Senior Software Engineer specializing in XR, Real-Time Simulation, and Mendix Low-Code.",
+      "email": "mailto:alsharefee@gmail.com",
+      "url": "https://alsharefee.github.io/portfolio/",
+      "sameAs": [
+        "https://www.linkedin.com/in/alsharefee/",
+        "https://github.com/alsharefee",
+        "https://www.fiverr.com/alsharefee"
+      ],
+      "knowsAbout": ["Mendix", "Unity", "Unreal Engine", "C#", "Virtual Reality", "Augmented Reality", "Real-Time Simulation"],
+      "address": { "@type": "PostalAddress", "addressRegion": "North Holland", "addressCountry": "NL" }
+    }
+    </script>
+
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -16,9 +63,12 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
+        /* Focus-visible for keyboard users */
+        :focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; border-radius: 4px; }
+
         /* --- BACKGROUND ANIMATION STYLES --- */
         .bg-grid {
-            background-image: radial-gradient(#1e3a8a 1px, transparent 1px); 
+            background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
             background-size: 40px 40px;
         }
         @keyframes pulse-orb {
@@ -31,18 +81,47 @@
 
         /* --- SCROLL INDICATOR ANIMATION --- */
         @keyframes bounce-chevron {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-8px);
-            }
-            60% {
-                transform: translateY(-4px);
-            }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
         }
-        .animate-bounce-chevron {
-            animation: bounce-chevron 2s infinite;
+        .animate-bounce-chevron { animation: bounce-chevron 2s infinite; }
+
+        /* --- SCROLL REVEAL --- */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.is-visible { opacity: 1; transform: none; }
+
+        /* --- ACTIVE NAV LINK --- */
+        .nav-link.is-active { color: #60a5fa; }
+
+        /* --- LITE YOUTUBE (thumbnail click-to-play) --- */
+        .lite-yt {
+            position: relative; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            cursor: pointer;
+        }
+        .lite-yt::before {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,.55) 100%);
+        }
+        .lite-yt .lite-yt-play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 64px; height: 44px; border-radius: 10px;
+            background: rgba(30, 41, 59, .85); border: 1px solid rgba(148, 163, 184, .3);
+            display: flex; align-items: center; justify-content: center;
+            transition: transform .2s ease, background .2s ease;
+        }
+        .lite-yt:hover .lite-yt-play { background: #dc2626; transform: translate(-50%, -50%) scale(1.05); }
+        .lite-yt .lite-yt-play::after {
+            content: ""; display: block; width: 0; height: 0;
+            border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent;
+            margin-left: 4px;
+        }
+
+        /* Respect reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-pulse-orb, .animate-bounce-chevron { animation: none; }
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
     </style>
 </head>
@@ -52,15 +131,16 @@
     <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-white tracking-tight">Mohammed<span class="text-blue-500">Marzouq</span></a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-                <a href="#code" class="hover:text-blue-400 transition">Code</a>
-                <a href="#testimonials" class="hover:text-blue-400 transition">Recommendations</a>
-                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
+                <a href="#code" class="nav-link hover:text-blue-400 transition">Code</a>
+                <a href="#testimonials" class="nav-link hover:text-blue-400 transition">Recommendations</a>
+                <a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a>
+                <a href="#contact" class="ml-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg shadow-blue-500/20">Contact</a>
             </div>
             <!-- Mobile Menu Button (Hidden on Desktop) -->
-             <button id="mobile-menu-button" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+             <button id="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
@@ -89,18 +169,22 @@
         
         <div class="container mx-auto px-6 text-center relative z-10">
             
-            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-slate-700 bg-slate-800/60 text-xs text-slate-400 uppercase tracking-widest">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Open to opportunities &middot; North Holland, NL
+            </div>
+
+            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-4 leading-[1.05] tracking-tight">
                 Senior Software Engineer
             </h1>
-            <div class="text-3xl md:text-5xl font-extrabold mb-6">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">XR Expert (Unity/Unreal)</span>
-            </div>
-            <div class="text-3xl md:text-5xl font-extrabold mb-6">
+            <div class="text-2xl md:text-4xl font-bold mb-8 leading-tight">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">XR Expert</span>
+                <span class="text-slate-600 mx-2">/</span>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Certified Mendix Developer</span>
             </div>
-
-
-
 
             <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
                 After a decade in XR, Simulations and Game Development, I'm expanding my skills into enterprise low-code development with Mendix.
@@ -147,7 +231,7 @@
                     <div class="h-1 w-20 bg-blue-500 mx-auto rounded"></div>
                 </div>
                 
-                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-xl">
+                <div class="reveal bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-xl">
                     <p class="text-lg text-slate-300 leading-relaxed mb-6 text-center">
                         I am a Senior Developer and Solution Architect with over 10 years of experience building complex,  <strong>Real-Time Simulation</strong>, interactive systems. 
                         Expanding to <strong>Enterprise Low-Code</strong>. My expertise sits at the intersection of Enterprise Engineering and Immersive Technology.
@@ -179,11 +263,11 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project 1: Homaysa -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
-                    <!-- Video Embed or Thumbnail -->
+                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                         <!-- Fallback for no thumbnail, typically you'd put an <img> here -->
-                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/xXxgG-rS_XE?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        <div class="lite-yt" data-video-id="xXxgG-rS_XE" style="background-image: url('https://i.ytimg.com/vi/xXxgG-rS_XE/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play Homaysa video">
+                            <span class="lite-yt-play" aria-hidden="true"></span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Homaysa (Metaverse Platform)</h3>
@@ -202,9 +286,11 @@
                 </div>
 
                 <!-- Project 2: Sniper's Ground -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/1V8csaKqblU?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        <div class="lite-yt" data-video-id="1V8csaKqblU" style="background-image: url('https://i.ytimg.com/vi/1V8csaKqblU/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play AR app video">
+                            <span class="lite-yt-play" aria-hidden="true"></span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Augmented Reality App</h3>
@@ -223,9 +309,11 @@
                 </div>
 
                 <!-- Project 3: AR Horror -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                <div class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
                     <div class="relative h-48 bg-black overflow-hidden">
-                         <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/RALHsddU-wo?autoplay=0&mute=1&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        <div class="lite-yt" data-video-id="RALHsddU-wo" style="background-image: url('https://i.ytimg.com/vi/RALHsddU-wo/hqdefault.jpg');" role="button" tabindex="0" aria-label="Play AR tracking video">
+                            <span class="lite-yt-play" aria-hidden="true"></span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">AR Tracking</h3>
@@ -586,33 +674,82 @@
             </div>
             
             <div class="mt-8 text-slate-600 text-sm">
-                &copy; 2025 Mohammed Marzouq.
+                &copy; <span id="footer-year">2026</span> Mohammed Marzouq.
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple JavaScript for mobile menu toggle
+        // --- Mobile menu toggle ---
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuButton.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.toggle('hidden');
-            // Change the icon based on the state
-            if (isHidden) {
-                menuButton.querySelector('i').className = 'fas fa-bars text-2xl';
-            } else {
-                menuButton.querySelector('i').className = 'fas fa-times text-2xl';
-            }
+            menuButton.setAttribute('aria-expanded', String(!isHidden));
+            menuButton.setAttribute('aria-label', isHidden ? 'Open menu' : 'Close menu');
+            menuButton.querySelector('i').className = isHidden ? 'fas fa-bars text-2xl' : 'fas fa-times text-2xl';
         });
 
-        // Hide menu when a link is clicked
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open menu');
                 menuButton.querySelector('i').className = 'fas fa-bars text-2xl';
             });
         });
+
+        // --- Footer year ---
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // --- Lite YouTube: load iframe only on click ---
+        document.querySelectorAll('.lite-yt').forEach(el => {
+            const activate = () => {
+                const id = el.dataset.videoId;
+                if (!id) return;
+                const iframe = document.createElement('iframe');
+                iframe.className = 'w-full h-full';
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`);
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                el.replaceWith(iframe);
+            };
+            el.addEventListener('click', activate);
+            el.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+            });
+        });
+
+        // --- Scroll reveal ---
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // --- Scroll-spy active nav ---
+        const sections = ['about', 'projects', 'code', 'testimonials', 'skills', 'contact']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+        const navLinks = document.querySelectorAll('.nav-link');
+        const spyObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        sections.forEach(s => spyObserver.observe(s));
     </script>
 </body>
 </html>
