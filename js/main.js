@@ -172,3 +172,68 @@
             // Start autoplay
             startAutoPlay();
         }
+
+        // --- Image Modal Logic ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+        const modalContent = document.getElementById('modal-content');
+
+        if (imageModal && modalImage && modalClose) {
+            // Find all images in the archive section
+            const archiveImages = document.querySelectorAll('#archive img');
+            
+            archiveImages.forEach(img => {
+                img.style.cursor = 'pointer'; // Add pointer cursor
+                
+                // Add hover effect
+                img.addEventListener('mouseenter', () => {
+                    img.style.opacity = '0.8';
+                });
+                img.addEventListener('mouseleave', () => {
+                    img.style.opacity = '1';
+                });
+
+                img.addEventListener('click', () => {
+                    modalImage.src = img.src;
+                    
+                    // Show modal (remove hidden class first)
+                    imageModal.classList.remove('hidden');
+                    
+                    // Small delay to allow display:flex to apply before animating opacity
+                    setTimeout(() => {
+                        imageModal.classList.remove('opacity-0');
+                        modalContent.classList.remove('scale-95');
+                        modalContent.classList.add('scale-100');
+                    }, 10);
+                });
+            });
+
+            const closeModal = () => {
+                imageModal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                // Wait for transition to finish before hiding
+                setTimeout(() => {
+                    imageModal.classList.add('hidden');
+                    modalImage.src = ''; // Clear source so it doesn't flash old image next time
+                }, 300);
+            };
+
+            modalClose.addEventListener('click', closeModal);
+            
+            // Close on click outside the image
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal || e.target.parentElement === imageModal && e.target !== modalContent && !modalContent.contains(e.target)) {
+                    closeModal();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        }

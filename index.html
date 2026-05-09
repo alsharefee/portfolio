@@ -1238,6 +1238,16 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-950/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <button id="modal-close" class="absolute top-6 right-6 text-white hover:text-blue-400 transition focus:outline-none z-[110]">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+        <div class="relative max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl border border-slate-700 transform scale-95 transition-transform duration-300 flex justify-center items-center" id="modal-content">
+            <img id="modal-image" src="" alt="Enlarged View" class="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-xl">
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 
