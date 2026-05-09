@@ -103,16 +103,16 @@
 
             const showImage = (index) => {
                 images.forEach((img, i) => {
-                    img.classList.remove('opacity-100', 'z-10');
-                    img.classList.add('opacity-0', 'z-0');
+                    img.style.opacity = '0';
+                    img.style.zIndex = '0';
                     if(dots[i]) {
                         dots[i].style.opacity = '0.5';
                     }
                 });
                 
                 if(images[index]) {
-                    images[index].classList.remove('opacity-0', 'z-0');
-                    images[index].classList.add('opacity-100', 'z-10');
+                    images[index].style.opacity = '1';
+                    images[index].style.zIndex = '10';
                 }
                 if(dots[index]) {
                     dots[index].style.opacity = '1';
