@@ -68,3 +68,107 @@
             });
         }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
         sections.forEach(s => spyObserver.observe(s));
+
+        // --- Awards Text Toggle ---
+        const awardsToggleBtn = document.getElementById('awards-text-toggle');
+        const awardsTextContent = document.getElementById('awards-text-content');
+        const awardsTextLabel = document.getElementById('awards-text-label');
+        const awardsTextIcon = document.getElementById('awards-text-icon');
+        
+        if (awardsToggleBtn && awardsTextContent) {
+            awardsToggleBtn.addEventListener('click', () => {
+                const isHidden = awardsTextContent.classList.contains('hidden');
+                if (isHidden) {
+                    awardsTextContent.classList.remove('hidden');
+                    awardsTextIcon.classList.add('rotate-180');
+                    awardsTextLabel.textContent = 'Read Less';
+                } else {
+                    awardsTextContent.classList.add('hidden');
+                    awardsTextIcon.classList.remove('rotate-180');
+                    awardsTextLabel.textContent = 'Read Full Story';
+                }
+            });
+        }
+
+        // --- Awards Carousel ---
+        const carousel = document.getElementById('awards-carousel');
+        if (carousel) {
+            const images = carousel.querySelectorAll('img');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const dots = document.getElementById('carousel-dots').querySelectorAll('button');
+            
+            let currentIndex = 0;
+            let intervalId;
+
+            const showImage = (index) => {
+                images.forEach((img, i) => {
+                    img.classList.remove('opacity-100', 'z-10');
+                    img.classList.add('opacity-0', 'z-0');
+                    if(dots[i]) {
+                        dots[i].style.opacity = '0.5';
+                    }
+                });
+                
+                if(images[index]) {
+                    images[index].classList.remove('opacity-0', 'z-0');
+                    images[index].classList.add('opacity-100', 'z-10');
+                }
+                if(dots[index]) {
+                    dots[index].style.opacity = '1';
+                }
+            };
+
+            const nextImage = () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            };
+
+            const prevImage = () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            };
+
+            const startAutoPlay = () => {
+                intervalId = setInterval(nextImage, 2000);
+            };
+
+            const stopAutoPlay = () => {
+                clearInterval(intervalId);
+            };
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextImage();
+                    stopAutoPlay();
+                    startAutoPlay();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevImage();
+                    stopAutoPlay();
+                    startAutoPlay();
+                });
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage(currentIndex);
+                    stopAutoPlay();
+                    startAutoPlay();
+                });
+            });
+
+            // Pause on hover
+            const carouselContainer = carousel.parentElement;
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            // Start autoplay
+            startAutoPlay();
+        }

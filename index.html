@@ -76,6 +76,7 @@
                 <a href="#code" class="nav-link hover:text-blue-400 transition">Code</a>
                 <a href="#testimonials" class="nav-link hover:text-blue-400 transition">Recommendations</a>
                 <a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a>
+                <a href="#awards" class="nav-link hover:text-blue-400 transition">Awards</a>
                 <a href="#articles" class="nav-link hover:text-blue-400 transition">Articles</a>
                 <a href="#contact"
                     class="ml-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg shadow-blue-500/20">Contact</a>
@@ -94,6 +95,7 @@
                 <a href="#code" class="text-white hover:text-blue-400 transition">Code</a>
                 <a href="#testimonials" class="text-white hover:text-blue-400 transition">Recommendations</a>
                 <a href="#skills" class="text-white hover:text-blue-400 transition">Skills</a>
+                <a href="#awards" class="text-white hover:text-blue-400 transition">Awards</a>
                 <a href="#articles" class="text-white hover:text-blue-400 transition">Articles</a>
                 <a href="#contact" class="text-blue-400 hover:text-white transition mt-8 font-bold">Contact Me</a>
             </div>
@@ -741,6 +743,93 @@
                                 <span
                                     class="px-4 py-2 bg-slate-900 text-slate-300 rounded-lg border border-slate-700 hover:border-slate-500 transition cursor-default">Git
                                     / GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognitions -->
+        <section id="awards" class="py-24 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Awards & Recognitions</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Highlighting key achievements, hackathon wins, and industry recognition.</p>
+                </div>
+
+                <div class="max-w-6xl mx-auto bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <!-- Left: Content -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Ajax x Team Rockstar IT Hackathon Impact Award 🚀🏆</h3>
+                            <p class="text-slate-400 text-sm mb-6 flex items-center gap-2">
+                                <i class="fas fa-building text-slate-500"></i> Ajax and Team Rockstar IT <span class="mx-1">&bull;</span> <i class="fas fa-calendar text-slate-500"></i> Mar 2026
+                            </p>
+                            
+                            <div class="text-slate-300 text-sm md:text-base leading-relaxed">
+                                
+                                <button id="awards-text-toggle" class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-sm font-bold uppercase tracking-widest outline-none mb-4">
+                                    <span id="awards-text-label">Read Full Story</span> <i id="awards-text-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="awards-text-content" class="hidden space-y-4">
+                                    <p>
+                                        I’m incredibly proud to announce that my team Sam Jager, Dante van der Pijl, Julian Bakker, Vladislav Manolov and I took home the Rockstars Impact Award at the AFC Ajax Hackathon this weekend, beating out ~200 talented developers across 24 teams! ⚽️💻
+                                    </p>
+                                    <p>
+                                        When I read that we will be presented with Ajax’s dataset, a detailed 21-point skeletal tracking system of player limb movements, I thought about how cool it would be to use Realtime 3D and Unity to make a Virtual Reality sim experience. So, I packed up my VR headset and headed to the hackathon.
+                                    </p>
+                                    <div class="mt-6 p-5 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                                        <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fas fa-vr-cardboard text-blue-400"></i> What we built:</h4>
+                                        <p class="text-sm">
+                                            While most teams focused on 2D analytics dashboards, we wanted to build an immersive spatial simulation. Leveraging my experience in C# and XR development, I built a Unity VR engine that reads the complex 21-point tracking data and translates it into a realtime, first-person Virtual Reality environment. We put the judges in a headset and took them on a tour of the match directly through the eyes of an Ajax player, allowing them to see the exact situation from the player's or referee's perspective.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Media (Video & Images) -->
+                        <div class="bg-slate-900/50 p-8 md:p-12 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-700 relative overflow-hidden">
+                            <!-- Background accent -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] -z-10"></div>
+                            
+                            <!-- Image Carousel -->
+                            <div class="w-full flex items-center justify-center mb-8">
+                                
+                                <!-- Left Arrow -->
+                                <button id="carousel-prev" class="cursor-pointer transition focus:outline-none" style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                                    <i class="fas fa-chevron-left" style="font-size: 40px;"></i>
+                                </button>
+                                
+                                <!-- Carousel Box -->
+                                <div class="mx-2 md:mx-6 relative rounded-xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-800 flex-shrink-0" style="width: 60%; padding-top: 60%;">
+                                    <div id="awards-carousel" class="absolute w-full h-full" style="top: 0; left: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/f21e7805-876f-4dc1-b65f-b643d540c05f.jpg" alt="Ajax Hackathon 1" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100 z-10" style="top: 0; left: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/AjaxHackathon.jpg" alt="Ajax Hackathon 2" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" style="top: 0; left: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/20260307_145932.jpg" alt="Ajax Hackathon 3" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" style="top: 0; left: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/1773955513680.jpg" alt="Ajax Hackathon 4" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" style="top: 0; left: 0;">
+                                        
+                                        <!-- Indicators -->
+                                        <div id="carousel-dots" class="absolute flex justify-center" style="bottom: 16px; left: 0; right: 0; z-index: 20; gap: 8px;">
+                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 1; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Arrow -->
+                                <button id="carousel-next" class="cursor-pointer transition focus:outline-none" style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                                    <i class="fas fa-chevron-right" style="font-size: 40px;"></i>
+                                </button>
+                            </div>
+
+                            <!-- LinkedIn Post Video Embed -->
+                            <div class="w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800 relative" style="padding-top: 79.16%;">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7441777667324071937?compact=1" class="absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
                             </div>
                         </div>
                     </div>
