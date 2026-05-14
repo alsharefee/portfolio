@@ -1,21 +1,36 @@
 // --- Mobile menu toggle ---
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'Open menu');
+            document.body.style.overflow = '';
+        };
+
+        const openMobileMenu = () => {
+            mobileMenu.classList.remove('hidden');
+            menuButton.setAttribute('aria-expanded', 'true');
+            menuButton.setAttribute('aria-label', 'Close menu');
+            document.body.style.overflow = 'hidden';
+        };
 
         menuButton.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            menuButton.setAttribute('aria-expanded', String(!isHidden));
-            menuButton.setAttribute('aria-label', isHidden ? 'Open menu' : 'Close menu');
-            menuButton.querySelector('i').className = isHidden ? 'fas fa-bars text-2xl' : 'fas fa-times text-2xl';
+            if (mobileMenu.classList.contains('hidden')) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
         });
 
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuButton.setAttribute('aria-expanded', 'false');
-                menuButton.setAttribute('aria-label', 'Open menu');
-                menuButton.querySelector('i').className = 'fas fa-bars text-2xl';
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
 
         // --- Footer year ---
