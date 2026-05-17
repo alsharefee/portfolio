@@ -104,7 +104,9 @@
             <a href="#skills" class="text-white hover:text-blue-400 transition">Skills</a>
             <a href="#awards" class="text-white hover:text-blue-400 transition">Awards</a>
             <a href="#articles" class="text-white hover:text-blue-400 transition">Articles</a>
-            <a href="#contact" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 mt-4">Contact Me</a>
+            <a href="#contact"
+                class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 mt-4">Contact
+                Me</a>
         </div>
     </div>
 
@@ -124,15 +126,7 @@
 
         <div class="container mx-auto px-6 text-center relative z-10">
 
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-slate-700 bg-slate-800/60 text-xs text-slate-400 uppercase tracking-widest">
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                Open to opportunities &middot; North Holland, NL
-            </div>
+
 
             <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-4 leading-[1.05] tracking-tight">
                 Senior Software Engineer
@@ -184,8 +178,632 @@
         </a>
     </header>
 
+
     <!-- About / The "Bridge" Section -->
     <main>
+
+        <!-- Selected High Complexity Projects -->
+        <section id="projects" class="py-24 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Selected High Complexity Projects</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Selected projects demonstrating
+                        architecture, networking, and physics logic, alongside a comprehensive collection of 15+ indie
+                        games and VR
+                        prototypes from my portfolio.</p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="mb-12 flex flex-wrap justify-center gap-2 max-w-5xl mx-auto" id="project-filters">
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-blue-500 bg-blue-600 text-white transition hover:bg-blue-700 shadow-md" data-filter="all">All</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="2D">2D</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="AI">AI</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="API Integration">API Integration</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="AR Logic">AR Logic</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="AR Physics">AR Physics</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="AR Simulation">AR Simulation</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Android">Android</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Apple ARKit">Apple ARKit</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Arcade">Arcade</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Browser">Browser</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Casual">Casual</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Escape Room">Escape Room</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="FPS">FPS</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Game Jam">Game Jam</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Horror">Horror</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Indie">Indie</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Mecha">Mecha</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Mobile">Mobile</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Multiplayer">Multiplayer</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="PC">PC</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Platformer">Platformer</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Puzzle">Puzzle</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="RTS">RTS</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Sci-Fi">Sci-Fi</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Shooter">Shooter</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Simulation">Simulation</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Strategy">Strategy</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Unity (C#)">Unity (C#)</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="VR">VR</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="VR Simulation">VR Simulation</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Virtual Reality">Virtual Reality</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="Voice Chat">Voice Chat</button>
+                    <button class="filter-btn text-xs px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-blue-300 transition hover:bg-slate-700 hover:text-white" data-filter="WebGL">WebGL</button>
+                </div>
+
+                <!-- VR, AR & Simulations -->
+                <div class="mb-6 mt-4 border-b border-slate-700 pb-2">
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i
+                            class="fas fa-vr-cardboard text-blue-400"></i> VR, AR & Simulations</h4>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+                    <!-- Project 1: Homaysa -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+
+                            <div class="lite-yt" data-video-id="xXxgG-rS_XE"
+                                style="background-image: url('https://i.ytimg.com/vi/xXxgG-rS_XE/hqdefault.jpg');"
+                                role="button" tabindex="0" aria-label="Play Homaysa video">
+                                <span class="lite-yt-play" aria-hidden="true"></span>
+                            </div>
+                        
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-homaysa-metaverse-platform.html" class="hover:underline">Homaysa
+                                (Metaverse Platform)</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                Architected a scalable real-time networked platform supporting massive user concurrency.
+                                Managed infrastructure, Voice Chat, auth, and data sync. Secured incubation from
+                                Unilever.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Virtual
+                                    Reality</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Voice
+                                    Chat</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR
+                                    Simulation</span>
+                            </div>
+                            <a href="project-homaysa-metaverse-platform.html" class="flex items-center justify-center w-full py-2 bg-slate-700 hover:bg-slate-600 border border-slate-600 text-white rounded font-medium transition shadow-lg shadow-slate-900/20 mt-4">
+<i class="fas fa-info-circle mr-2"></i> View Project Details
+</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Sniper's Ground -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+
+                            <div class="lite-yt" data-video-id="1V8csaKqblU"
+                                style="background-image: url('https://i.ytimg.com/vi/1V8csaKqblU/hqdefault.jpg');"
+                                role="button" tabindex="0" aria-label="Play AR app video">
+                                <span class="lite-yt-play" aria-hidden="true"></span>
+                            </div>
+                        
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-augmented-reality-app.html" class="hover:underline">Augmented
+                                Reality App</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A realistic Augmented Reality (AR) simulation built on Unity C# and ARKit that
+                                demonstrates
+                                advanced real-time 3D object placement and dynamic light/shadow rendering on physical
+                                surfaces.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity
+                                    (C#)</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Apple
+                                    ARKit</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">API
+                                    Integration</span>
+                            </div>
+                            <a href="project-augmented-reality-app.html" class="flex items-center justify-center w-full py-2 bg-slate-700 hover:bg-slate-600 border border-slate-600 text-white rounded font-medium transition shadow-lg shadow-slate-900/20 mt-4">
+<i class="fas fa-info-circle mr-2"></i> View Project Details
+</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AR Horror -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+
+                            <div class="lite-yt" data-video-id="RALHsddU-wo"
+                                style="background-image: url('https://i.ytimg.com/vi/RALHsddU-wo/hqdefault.jpg');"
+                                role="button" tabindex="0" aria-label="Play AR tracking video">
+                                <span class="lite-yt-play" aria-hidden="true"></span>
+                            </div>
+                        
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-ar-tracking.html" class="hover:underline">AR
+                                Tracking
+                            </a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                An interactive Augmented Reality (AR) application featuring real-time human foot
+                                tracking
+                                and physics engine integration to simulate digital object interaction (football) with
+                                the
+                                user's physical body.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                    Logic</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                    Simulation</span>
+                                <span
+                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
+                                    Physics</span>
+                            </div>
+                            <a href="project-ar-tracking.html" class="flex items-center justify-center w-full py-2 bg-slate-700 hover:bg-slate-600 border border-slate-600 text-white rounded font-medium transition shadow-lg shadow-slate-900/20 mt-4">
+<i class="fas fa-info-circle mr-2"></i> View Project Details
+</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 1 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-snipers-ground-vr-multiplayer-sniping-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/m2-res_480p-ezgif.com-optimize.gif"
+                                alt="Sniper's Ground" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-snipers-ground-vr-multiplayer-sniping-game.html" class="hover:underline">
+                                Sniper's Ground: VR Multiplayer Sniping Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Multiplayer</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">FPS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-relaxing-in-vr-experiences.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/RelaxInCode-ezgif.com-optimize.gif"
+                                alt="Relaxing In VR Experiences" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-relaxing-in-vr-experiences.html" class="hover:underline">
+                                Relaxing In VR Experiences</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Casual</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Simulation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-untitled-mecha-project-vr-mech-multiplayer-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/m2-res_480p1-ezgif.com-optimize.gif"
+                                alt="Untitled Mecha Project" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-untitled-mecha-project-vr-mech-multiplayer-game.html" class="hover:underline">
+                                Untitled Mecha Project: VR Mech Multiplayer Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Multiplayer</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Mecha</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-vr-real-time-strategy-rts.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/VRRTS2-ezgif.com-optimize.gif"
+                                alt="VR Real Time Strategy" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-vr-real-time-strategy-rts.html" class="hover:underline">
+                                VR Real Time Strategy (RTS)</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">RTS</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 7 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-vr-horror-dungeon-crawler-escape-the-room-style.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/DungeonVideo-ezgif.com-video-to-gif-converter.gif"
+                                alt="VR Horror Dungeon Crawler" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-vr-horror-dungeon-crawler-escape-the-room-style.html" class="hover:underline">
+                                VR Horror Dungeon Crawler - Escape the room style</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Horror</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Escape Room</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 9 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-vr-shooting-game-modes.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/OpenShootingRange-MadewithClipchamp1-ezgif.com-optimize.gif"
+                                alt="VR Shooting Game Modes" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-vr-shooting-game-modes.html" class="hover:underline">
+                                VR Shooting Game Modes</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Shooter</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Arcade</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 14 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-vr-spaceship-simulation.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/Screenshot 2023-03-11 163411.png"
+                                alt="VR Spaceship Simulation" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-vr-spaceship-simulation.html" class="hover:underline">
+                                VR Spaceship Simulation</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Simulation</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Sci-Fi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Games -->
+                <div class="mb-6 border-b border-slate-700 pb-2">
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i
+                            class="fas fa-mobile-alt text-blue-400"></i> Mobile Games</h4>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Project 4 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-true-horror-mobile-horrorpuzzle-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/TrueHorrorTrailer-ezgif.com-optimize.gif"
+                                alt="True Horror" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-true-horror-mobile-horrorpuzzle-game.html" class="hover:underline">
+                                True Horror: Mobile Horror/Puzzle Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Mobile</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Horror</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Puzzle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 10 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-get-rich-2d-android-ios-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/e5b27555264499.597d9967e6128.jpg" alt="Get Rich"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-get-rich-2d-android-ios-game.html" class="hover:underline">
+                                Get Rich: 2D Android & iOS game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Mobile</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">2D</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Casual</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 12 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-lost-in-nightmares-android-horror-puzzle-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/bf84051570f86b7f49bcbec6db169b3e_screen.jpg"
+                                alt="Lost In Nightmares" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-lost-in-nightmares-android-horror-puzzle-game.html" class="hover:underline">
+                                Lost In Nightmares: Android Horror / Puzzle Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Android</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Horror</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Puzzle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2D Games -->
+                <div class="mb-6 border-b border-slate-700 pb-2">
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i
+                            class="fas fa-gamepad text-blue-400"></i> 2D Games</h4>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Project 11 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-2d-platform-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/aadc7c71751971.5bd00d30194f6.png" alt="2D Platform Game"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-2d-platform-game.html" class="hover:underline">
+                                2D Platform Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">2D</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Platformer</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Indie</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 15 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-ai-made-game-2d-submarine-simulation.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/Gif Sub Game Large.gif" alt="AI Made Game"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-ai-made-game-2d-submarine-simulation.html" class="hover:underline">
+                                AI Made Game: 2D Submarine Simulation</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">2D</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Simulation</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PC & Web-Based -->
+                <div class="mb-6 border-b border-slate-700 pb-2">
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i
+                            class="fas fa-desktop text-blue-400"></i> PC & Web-Based</h4>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 5 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-herds-rts-pc-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/Tlolvq.gif" alt="Herds: RTS PC Game" loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-herds-rts-pc-game.html" class="hover:underline">
+                                Herds: RTS PC Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">PC</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">RTS</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 8 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-space-fight-2d-webgl-browser-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/d44610208399421.66edaf33bcdeb.gif" alt="Space Fight"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-space-fight-2d-webgl-browser-game.html" class="hover:underline">
+                                Space Fight: 2D WebGL Browser Game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">WebGL</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Browser</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">2D</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 13 -->
+                    <div
+                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
+                        <div class="relative h-48 bg-black overflow-hidden">
+<a href="project-the-savior-a-game-jam-game.html" class="block w-full h-full relative group/link">
+
+                            <img src="Assets/ProjectsThumbnails/Image Sequence_003_0080.jpg" alt="The Savior"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        
+</a>
+</div>
+<div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+<a href="project-the-savior-a-game-jam-game.html" class="hover:underline">
+                                "The" Savior: a Game jam game</a></h3>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                                A comprehensive indie game project demonstrating core mechanics, user experience design,
+                                and interactive gameplay. Developed to showcase technical skills.
+                            </p>
+                        
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Game Jam</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Indie</span>
+                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">PC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="py-20 bg-slate-900">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
@@ -633,35 +1251,54 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Awards & Recognitions</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Highlighting key achievements, hackathon wins, and industry recognition.</p>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Highlighting key achievements, hackathon wins, and
+                        industry recognition.</p>
                 </div>
 
-                <div class="max-w-6xl mx-auto bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl reveal">
+                <div
+                    class="max-w-6xl mx-auto bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl reveal">
                     <div class="grid lg:grid-cols-2 gap-0">
                         <!-- Left: Content -->
                         <div class="p-8 md:p-12 flex flex-col justify-center">
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Ajax x Team Rockstar IT Hackathon Impact Award 🚀🏆</h3>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Ajax x Team Rockstar IT Hackathon
+                                Impact Award 🚀🏆</h3>
                             <p class="text-slate-400 text-sm mb-6 flex items-center gap-2">
-                                <i class="fas fa-building text-slate-500"></i> Ajax and Team Rockstar IT <span class="mx-1">&bull;</span> <i class="fas fa-calendar text-slate-500"></i> Mar 2026
+                                <i class="fas fa-building text-slate-500"></i> Ajax and Team Rockstar IT <span
+                                    class="mx-1">&bull;</span> <i class="fas fa-calendar text-slate-500"></i> Mar 2026
                             </p>
-                            
+
                             <div class="text-slate-300 text-sm md:text-base leading-relaxed">
-                                
-                                <button id="awards-text-toggle" class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-sm font-bold uppercase tracking-widest outline-none mb-4">
-                                    <span id="awards-text-label">Read Full Story</span> <i id="awards-text-icon" class="fas fa-chevron-down transition-transform duration-300"></i>
+
+                                <button id="awards-text-toggle"
+                                    class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-sm font-bold uppercase tracking-widest outline-none mb-4">
+                                    <span id="awards-text-label">Read Full Story</span> <i id="awards-text-icon"
+                                        class="fas fa-chevron-down transition-transform duration-300"></i>
                                 </button>
-                                
+
                                 <div id="awards-text-content" class="hidden space-y-4">
                                     <p>
-                                        I’m incredibly proud to announce that my team Sam Jager, Dante van der Pijl, Julian Bakker, Vladislav Manolov and I took home the Rockstars Impact Award at the AFC Ajax Hackathon this weekend, beating out ~200 talented developers across 24 teams! ⚽️💻
+                                        I’m incredibly proud to announce that my team Sam Jager, Dante van der Pijl,
+                                        Julian Bakker, Vladislav Manolov and I took home the Rockstars Impact Award at
+                                        the AFC Ajax Hackathon this weekend, beating out ~200 talented developers across
+                                        24 teams! ⚽️💻
                                     </p>
                                     <p>
-                                        When I read that we will be presented with Ajax’s dataset, a detailed 21-point skeletal tracking system of player limb movements, I thought about how cool it would be to use Realtime 3D and Unity to make a Virtual Reality sim experience. So, I packed up my VR headset and headed to the hackathon.
+                                        When I read that we will be presented with Ajax’s dataset, a detailed 21-point
+                                        skeletal tracking system of player limb movements, I thought about how cool it
+                                        would be to use Realtime 3D and Unity to make a Virtual Reality sim experience.
+                                        So, I packed up my VR headset and headed to the hackathon.
                                     </p>
                                     <div class="mt-6 p-5 bg-slate-900/50 rounded-xl border border-slate-700/50">
-                                        <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fas fa-vr-cardboard text-blue-400"></i> What we built:</h4>
+                                        <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i
+                                                class="fas fa-vr-cardboard text-blue-400"></i> What we built:</h4>
                                         <p class="text-sm">
-                                            While most teams focused on 2D analytics dashboards, we wanted to build an immersive spatial simulation. Leveraging my experience in C# and XR development, I built a Unity VR engine that reads the complex 21-point tracking data and translates it into a realtime, first-person Virtual Reality environment. We put the judges in a headset and took them on a tour of the match directly through the eyes of an Ajax player, allowing them to see the exact situation from the player's or referee's perspective.
+                                            While most teams focused on 2D analytics dashboards, we wanted to build an
+                                            immersive spatial simulation. Leveraging my experience in C# and XR
+                                            development, I built a Unity VR engine that reads the complex 21-point
+                                            tracking data and translates it into a realtime, first-person Virtual
+                                            Reality environment. We put the judges in a headset and took them on a tour
+                                            of the match directly through the eyes of an Ajax player, allowing them to
+                                            see the exact situation from the player's or referee's perspective.
                                         </p>
                                     </div>
                                 </div>
@@ -669,45 +1306,74 @@
                         </div>
 
                         <!-- Right: Media (Video & Images) -->
-                        <div class="bg-slate-900/50 p-8 md:p-12 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-700 relative overflow-hidden">
+                        <div
+                            class="bg-slate-900/50 p-8 md:p-12 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-700 relative overflow-hidden">
                             <!-- Background accent -->
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] -z-10"></div>
-                            
+                            <div
+                                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] -z-10">
+                            </div>
+
                             <!-- Image Carousel -->
                             <div class="w-full flex items-center justify-center mb-8">
-                                
+
                                 <!-- Left Arrow -->
-                                <button id="carousel-prev" class="cursor-pointer transition focus:outline-none" style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                                <button id="carousel-prev" class="cursor-pointer transition focus:outline-none"
+                                    style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;"
+                                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
                                     <i class="fas fa-chevron-left" style="font-size: 40px;"></i>
                                 </button>
-                                
+
                                 <!-- Carousel Box -->
-                                <div class="mx-2 md:mx-6 relative rounded-xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-800 flex-shrink-0" style="width: 60%; padding-top: 60%;">
+                                <div class="mx-2 md:mx-6 relative rounded-xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-800 flex-shrink-0"
+                                    style="width: 60%; padding-top: 60%;">
                                     <div id="awards-carousel" class="absolute w-full h-full" style="top: 0; left: 0;">
-                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/f21e7805-876f-4dc1-b65f-b643d540c05f.jpg" alt="Ajax Hackathon 1" class="absolute w-full h-full object-cover transition-opacity duration-1000" style="top: 0; left: 0; opacity: 1; z-index: 10;">
-                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/AjaxHackathon.jpg" alt="Ajax Hackathon 2" class="absolute w-full h-full object-cover transition-opacity duration-1000" style="top: 0; left: 0; opacity: 0; z-index: 0;">
-                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/20260307_145932.jpg" alt="Ajax Hackathon 3" class="absolute w-full h-full object-cover transition-opacity duration-1000" style="top: 0; left: 0; opacity: 0; z-index: 0;">
-                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/1773955513680.jpg" alt="Ajax Hackathon 4" class="absolute w-full h-full object-cover transition-opacity duration-1000" style="top: 0; left: 0; opacity: 0; z-index: 0;">
-                                        
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/f21e7805-876f-4dc1-b65f-b643d540c05f.jpg"
+                                            alt="Ajax Hackathon 1"
+                                            class="absolute w-full h-full object-cover transition-opacity duration-1000"
+                                            style="top: 0; left: 0; opacity: 1; z-index: 10;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/AjaxHackathon.jpg"
+                                            alt="Ajax Hackathon 2"
+                                            class="absolute w-full h-full object-cover transition-opacity duration-1000"
+                                            style="top: 0; left: 0; opacity: 0; z-index: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/20260307_145932.jpg"
+                                            alt="Ajax Hackathon 3"
+                                            class="absolute w-full h-full object-cover transition-opacity duration-1000"
+                                            style="top: 0; left: 0; opacity: 0; z-index: 0;">
+                                        <img src="Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/1773955513680.jpg"
+                                            alt="Ajax Hackathon 4"
+                                            class="absolute w-full h-full object-cover transition-opacity duration-1000"
+                                            style="top: 0; left: 0; opacity: 0; z-index: 0;">
+
                                         <!-- Indicators -->
-                                        <div id="carousel-dots" class="absolute flex justify-center" style="bottom: 16px; left: 0; right: 0; z-index: 20; gap: 8px;">
-                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 1; border: none; padding: 0;"></button>
-                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
-                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
-                                            <button class="cursor-pointer focus:outline-none" style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                        <div id="carousel-dots" class="absolute flex justify-center"
+                                            style="bottom: 16px; left: 0; right: 0; z-index: 20; gap: 8px;">
+                                            <button class="cursor-pointer focus:outline-none"
+                                                style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 1; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none"
+                                                style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none"
+                                                style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
+                                            <button class="cursor-pointer focus:outline-none"
+                                                style="width: 8px; height: 8px; background-color: white; border-radius: 50%; opacity: 0.5; border: none; padding: 0;"></button>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Right Arrow -->
-                                <button id="carousel-next" class="cursor-pointer transition focus:outline-none" style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                                <button id="carousel-next" class="cursor-pointer transition focus:outline-none"
+                                    style="background: transparent; border: none; color: #94a3b8; outline: none; padding: 10px;"
+                                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
                                     <i class="fas fa-chevron-right" style="font-size: 40px;"></i>
                                 </button>
                             </div>
 
                             <!-- LinkedIn Post Video Embed -->
-                            <div class="w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800 relative" style="padding-top: 79.16%;">
-                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7441777667324071937?compact=1" class="absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                            <div class="w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800 relative"
+                                style="padding-top: 79.16%;">
+                                <iframe
+                                    src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7441777667324071937?compact=1"
+                                    class="absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen=""
+                                    title="Embedded post"></iframe>
                             </div>
                         </div>
                     </div>
@@ -855,367 +1521,6 @@
         </section>
 
 
-        <!-- Featured Projects (Simulations) -->
-        <section id="projects" class="py-24 bg-slate-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Games / Simulations / XR Projects</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Selected high-complexity projects demonstrating
-                        architecture, networking, and physics logic.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Project 1: Homaysa -->
-                    <div
-                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
-                        <div class="relative h-48 bg-black overflow-hidden">
-                            <div class="lite-yt" data-video-id="xXxgG-rS_XE"
-                                style="background-image: url('https://i.ytimg.com/vi/xXxgG-rS_XE/hqdefault.jpg');"
-                                role="button" tabindex="0" aria-label="Play Homaysa video">
-                                <span class="lite-yt-play" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Homaysa
-                                (Metaverse Platform)</h3>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                                Architected a scalable real-time networked platform supporting massive user concurrency.
-                                Managed infrastructure, Voice Chat, auth, and data sync. Secured incubation from
-                                Unilever.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Virtual
-                                    Reality</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Voice
-                                    Chat</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR
-                                    Simulation</span>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=xXxgG-rS_XE" target="_blank"
-                                class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
-                                <i class="fas fa-play mr-2"></i> Watch
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Sniper's Ground -->
-                    <div
-                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
-                        <div class="relative h-48 bg-black overflow-hidden">
-                            <div class="lite-yt" data-video-id="1V8csaKqblU"
-                                style="background-image: url('https://i.ytimg.com/vi/1V8csaKqblU/hqdefault.jpg');"
-                                role="button" tabindex="0" aria-label="Play AR app video">
-                                <span class="lite-yt-play" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">Augmented
-                                Reality App</h3>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                                A realistic Augmented Reality (AR) simulation built on Unity C# and ARKit that
-                                demonstrates
-                                advanced real-time 3D object placement and dynamic light/shadow rendering on physical
-                                surfaces.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity
-                                    (C#)</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Apple
-                                    ARKit</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">API
-                                    Integration</span>
-                            </div>
-                            <a href="https://youtube.com/shorts/1V8csaKqblU" target="_blank"
-                                class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
-                                <i class="fas fa-play mr-2"></i> Watch
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: AR Horror -->
-                    <div
-                        class="reveal bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700 group hover:border-blue-500/50 transition duration-300 transform hover:scale-[1.01]">
-                        <div class="relative h-48 bg-black overflow-hidden">
-                            <div class="lite-yt" data-video-id="RALHsddU-wo"
-                                style="background-image: url('https://i.ytimg.com/vi/RALHsddU-wo/hqdefault.jpg');"
-                                role="button" tabindex="0" aria-label="Play AR tracking video">
-                                <span class="lite-yt-play" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">AR
-                                Tracking
-                            </h3>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                                An interactive Augmented Reality (AR) application featuring real-time human foot
-                                tracking
-                                and physics engine integration to simulate digital object interaction (football) with
-                                the
-                                user's physical body.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
-                                    Logic</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
-                                    Simulation</span>
-                                <span
-                                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">AR
-                                    Physics</span>
-                            </div>
-                            <a href="https://youtube.com/shorts/RALHsddU-wo" target="_blank"
-                                class="flex items-center justify-center w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition shadow-lg shadow-blue-900/20">
-                                <i class="fas fa-play mr-2"></i> Watch
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Full Indie Game Archive -->
-        <section id="archive" class="py-24 bg-slate-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Full Indie Game Archive</h3>
-                    <p class="text-slate-400 max-w-2xl mx-auto">A comprehensive collection of 15+ indie games and VR
-                        prototypes from my Fiverr portfolio.</p>
-                </div>
-
-                <!-- VR & Simulations -->
-                <div class="mb-6 mt-4 border-b border-slate-700 pb-2">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i class="fas fa-vr-cardboard text-blue-400"></i> VR & Simulations</h4>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-                    <!-- Project 1 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/m2-res_480p-ezgif.com-optimize.gif"
-                                alt="Sniper's Ground" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Sniper's Ground: VR Multiplayer Sniping Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/RelaxInCode-ezgif.com-optimize.gif"
-                                alt="Relaxing In VR Experiences" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Relaxing In VR Experiences</h4>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/m2-res_480p1-ezgif.com-optimize.gif"
-                                alt="Untitled Mecha Project" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Untitled Mecha Project: VR Mech Multiplayer Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 6 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/VRRTS2-ezgif.com-optimize.gif"
-                                alt="VR Real Time Strategy" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                VR Real Time Strategy (RTS)</h4>
-                        </div>
-                    </div>
-                    <!-- Project 7 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/DungeonVideo-ezgif.com-video-to-gif-converter.gif"
-                                alt="VR Horror Dungeon Crawler" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                VR Horror Dungeon Crawler - Escape the room style</h4>
-                        </div>
-                    </div>
-                    <!-- Project 9 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/OpenShootingRange-MadewithClipchamp1-ezgif.com-optimize.gif"
-                                alt="VR Shooting Game Modes" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                VR Shooting Game Modes</h4>
-                        </div>
-                    </div>
-                    <!-- Project 14 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/Screenshot 2023-03-11 163411.png"
-                                alt="VR Spaceship Simulation" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                VR Spaceship Simulation</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Games -->
-                <div class="mb-6 border-b border-slate-700 pb-2">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i class="fas fa-mobile-alt text-blue-400"></i> Mobile Games</h4>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-                    <!-- Project 4 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/TrueHorrorTrailer-ezgif.com-optimize.gif"
-                                alt="True Horror" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                True Horror: Mobile Horror/Puzzle Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 10 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/e5b27555264499.597d9967e6128.jpg" alt="Get Rich"
-                                loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Get Rich: 2D Android & iOS game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 12 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/bf84051570f86b7f49bcbec6db169b3e_screen.jpg"
-                                alt="Lost In Nightmares" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Lost In Nightmares: Android Horror / Puzzle Game</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2D Games -->
-                <div class="mb-6 border-b border-slate-700 pb-2">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i class="fas fa-gamepad text-blue-400"></i> 2D Games</h4>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-                    <!-- Project 11 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/aadc7c71751971.5bd00d30194f6.png" alt="2D Platform Game"
-                                loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                2D Platform Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 15 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/Gif Sub Game Large.gif" alt="AI Made Game"
-                                loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                AI Made Game: 2D Submarine Simulation</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PC & Web-Based -->
-                <div class="mb-6 border-b border-slate-700 pb-2">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-2"><i class="fas fa-desktop text-blue-400"></i> PC & Web-Based</h4>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Project 5 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/Tlolvq.gif" alt="Herds: RTS PC Game" loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Herds: RTS PC Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 8 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/d44610208399421.66edaf33bcdeb.gif" alt="Space Fight"
-                                loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                Space Fight: 2D WebGL Browser Game</h4>
-                        </div>
-                    </div>
-                    <!-- Project 13 -->
-                    <div
-                        class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 group hover:border-blue-500/50 transition duration-300">
-                        <div class="relative aspect-video bg-black overflow-hidden">
-                            <img src="Assets/ProjectsThumbnails/Image Sequence_003_0080.jpg" alt="The Savior"
-                                loading="lazy"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-4">
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition line-clamp-2">
-                                "The" Savior: a Game jam game</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
     </main>
 
 
@@ -1224,7 +1529,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
             <p class="text-slate-400 mb-8 max-w-xl mx-auto">
-                I am currently based in <strong>North Holland</strong> and open to opportunities in <strong>Mendix
+                I am open to opportunities in <strong>Mendix
                     Development</strong>, Game Development and <strong>Simulation Engineering</strong>.
             </p>
 
@@ -1270,12 +1575,16 @@
     </footer>
 
     <!-- Image Modal -->
-    <div id="image-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-950/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-        <button id="modal-close" class="absolute top-6 right-6 text-white hover:text-blue-400 transition focus:outline-none z-[110]">
+    <div id="image-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-950/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <button id="modal-close"
+            class="absolute top-6 right-6 text-white hover:text-blue-400 transition focus:outline-none z-[110]">
             <i class="fas fa-times text-4xl"></i>
         </button>
-        <div class="relative max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl border border-slate-700 transform scale-95 transition-transform duration-300 flex justify-center items-center" id="modal-content">
-            <img id="modal-image" src="" alt="Enlarged View" class="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-xl">
+        <div class="relative max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl border border-slate-700 transform scale-95 transition-transform duration-300 flex justify-center items-center"
+            id="modal-content">
+            <img id="modal-image" src="" alt="Enlarged View"
+                class="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-xl">
         </div>
     </div>
 

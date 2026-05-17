@@ -252,3 +252,95 @@
                 }
             });
         }
+
+        // --- Project Keyword Filtering ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('#projects .reveal.bg-slate-800');
+
+        if (filterBtns.length > 0 && projectCards.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active styling
+                    filterBtns.forEach(b => {
+                        b.classList.remove('border-blue-500', 'bg-blue-600', 'text-white');
+                        b.classList.add('border-slate-700', 'bg-slate-800', 'text-blue-300');
+                    });
+                    
+                    btn.classList.remove('border-slate-700', 'bg-slate-800', 'text-blue-300');
+                    btn.classList.add('border-blue-500', 'bg-blue-600', 'text-white');
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        // Apply a smooth transition if not already present
+                        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        
+                        if (filterValue === 'all') {
+                            card.style.display = '';
+                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
+                        } else {
+                            // Find all keyword spans in this card
+                            const spans = card.querySelectorAll('span.text-xs.bg-slate-900.text-blue-300');
+                            let hasKeyword = false;
+                            spans.forEach(span => {
+                                if (span.textContent.trim() === filterValue) {
+                                    hasKeyword = true;
+                                }
+                            });
+                            
+                            if (hasKeyword) {
+                                card.style.display = '';
+                                setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
+                            } else {
+                                card.style.opacity = '0';
+                                card.style.transform = 'scale(0.95)';
+                                setTimeout(() => {
+                                    if(btn.getAttribute('data-filter') === filterValue) {
+                                        card.style.display = 'none';
+                                    }
+                                }, 300); // Wait for transition
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Make keyword spans inside project cards clickable to trigger the same filter
+            const projectKeywords = document.querySelectorAll('#projects span.text-xs.bg-slate-900.text-blue-300');
+            projectKeywords.forEach(kw => {
+                kw.style.cursor = 'pointer';
+                kw.style.transition = 'border-color 0.2s ease, background-color 0.2s ease';
+                
+                kw.addEventListener('mouseenter', () => {
+                    kw.style.borderColor = '#3b82f6'; // Tailwind blue-500
+                    kw.style.backgroundColor = '#1e293b'; // Tailwind slate-800
+                });
+                kw.addEventListener('mouseleave', () => {
+                    kw.style.borderColor = '';
+                    kw.style.backgroundColor = '';
+                });
+                
+                kw.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const filterValue = kw.textContent.trim();
+                    const targetBtn = Array.from(filterBtns).find(b => b.getAttribute('data-filter') === filterValue);
+                    if (targetBtn) {
+                        targetBtn.click();
+                        // Scroll up to the filter section smoothly
+                        const filterSection = document.getElementById('project-filters');
+                        if (filterSection) {
+                            const offset = 100; // Account for fixed navbar
+                            const bodyRect = document.body.getBoundingClientRect().top;
+                            const elementRect = filterSection.getBoundingClientRect().top;
+                            const elementPosition = elementRect - bodyRect;
+                            const offsetPosition = elementPosition - offset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        }
