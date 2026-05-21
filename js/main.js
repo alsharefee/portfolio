@@ -283,7 +283,7 @@
                             const spans = card.querySelectorAll('span.text-xs.bg-slate-900.text-blue-300');
                             let hasKeyword = false;
                             spans.forEach(span => {
-                                if (span.textContent.trim() === filterValue) {
+                                if (span.textContent.replace(/\s+/g, ' ').trim() === filterValue) {
                                     hasKeyword = true;
                                 }
                             });
@@ -322,7 +322,7 @@
                 
                 kw.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const filterValue = kw.textContent.trim();
+                    const filterValue = kw.textContent.replace(/\s+/g, ' ').trim();
                     const targetBtn = Array.from(filterBtns).find(b => b.getAttribute('data-filter') === filterValue);
                     if (targetBtn) {
                         targetBtn.click();
