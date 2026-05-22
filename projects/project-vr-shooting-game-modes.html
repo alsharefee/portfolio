@@ -28,41 +28,68 @@
     <main class="pt-32 pb-20 lg:pt-40 min-h-screen">
         <div class="container mx-auto px-6 max-w-5xl">
             <!-- Back Button -->
-            <a href="../index.html#projects" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition group">
+            <a href="../index.html#projects"
+                class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition group">
                 <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Projects
             </a>
 
             <!-- Project Header -->
             <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight">VR Shooting Game Modes</h1>
             <p class="text-blue-400 font-semibold mb-6">Release Date: 2026</p>
-            
+            <!-- Download Button -->
+            <div class="mb-8">
+                <a href="https://store.steampowered.com/app/2170860/Homaysa/" target="_blank"
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:-translate-y-1">
+                    <i class="fab fa-steam text-2xl"></i>
+                    <span>Download on Steam</span>
+                </a>
+            </div>
+
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 mb-10">
                 <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
-                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Shooter</span>
-                                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Arcade</span>
+                <span
+                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Shooter</span>
+                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Arcade</span>
             </div>
 
             <!-- Media Section -->
-            <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 mb-12 bg-black">
+            <div
+                class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 mb-12 bg-black flex flex-col gap-4">
                 <img src="../Assets/ProjectsThumbnails/OpenShootingRange-MadewithClipchamp1-ezgif.com-optimize.gif"
-                                alt="VR Shooting Game Modes" loading="lazy"
-                                class="w-full max-h-[70vh] object-contain">
+                    alt="VR Shooting Game Modes" loading="lazy" class="w-full max-h-[70vh] object-contain">
+                <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/RHzc5XcDk_0?si=9t6z1aOj28E_E4DW"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/OLTmu8_DZqo?si=zCpnHH7IqQDGrsBZ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- Screenshot Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <img src="../Assets/ProjectsAssets/VRShooting/HighresScreenshot00001%20(2).png"
+                    alt="VR Shooting Game Modes Screenshot" loading="lazy"
+                    class="rounded-xl shadow-2xl border border-slate-700 w-full h-auto object-cover md:col-span-2">
+                <img src="../Assets/ProjectsAssets/VRShooting/New%20Sniper%20Character%20small.jpg"
+                    alt="VR Shooting Game Modes Character" loading="lazy"
+                    class="rounded-xl shadow-2xl border border-slate-700 w-full h-auto object-cover">
+                <img src="../Assets/ProjectsAssets/VRShooting/Open_Range%20very%20small.jpg"
+                    alt="VR Shooting Game Modes Open Range" loading="lazy"
+                    class="rounded-xl shadow-2xl border border-slate-700 w-full h-auto object-cover">
             </div>
 
             <!-- Description -->
             <div class="prose prose-invert prose-lg max-w-none">
-                <p class="text-slate-300 leading-relaxed">VR shooting ranges open and closed. These are game modes I made for Homaysa.</p>
-                
-                <!-- Under Development Notice -->
-                <div class="mt-12 flex flex-col items-center justify-center text-center py-16 px-6 rounded-2xl border-2 border-dashed border-slate-600 bg-slate-800/40">
-                    <span class="text-6xl mb-6" role="img" aria-label="Construction worker">?????</span>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Under Development</h3>
-                    <p class="text-slate-400 max-w-md">This project page is currently being built. Check back soon for detailed write-ups, screenshots, and more!</p>
-                    <a href="https://www.fiverr.com/users/alsharefee/portfolio/" target="_blank" class="mt-6 inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-bold text-lg md:text-xl">
-                        <i class="fas fa-external-link-alt"></i> In the meantime, you can view my complete portfolio on Fiverr
-                    </a>
-                </div>
+                <p class="text-slate-300 leading-relaxed">VR shooting ranges open and closed. These are game modes I
+                    made for Homaysa.
+
+                    Homaysa is a VR Steam game that has many virtual reality experience and VR game modes that support
+                    multiplayer environment.</p>
+
+
             </div>
         </div>
     </main>
@@ -76,4 +103,5 @@
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>
