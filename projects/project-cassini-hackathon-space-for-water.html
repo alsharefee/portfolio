@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterSim - Cassini Hackathon 2026 | Mohammed Marzouq</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-white tracking-tight">Mohammed<span
+                    class="text-blue-500">Marzouq</span></a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="../index.html#projects" class="nav-link hover:text-blue-400 transition">Back to Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 lg:pt-40 min-h-screen">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- Back Button -->
+            <a href="../index.html#projects"
+                class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition group">
+                <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Projects
+            </a>
+
+            <!-- Project Header -->
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight">WaterSim - 11th CASSINI
+                Hackathon (Space for Water)</h1>
+            <p class="text-blue-400 font-semibold mb-6">Release Date: 2026</p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-10">
+                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Unity
+                    (C#)</span>
+                <span
+                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Hackathon</span>
+                <span
+                    class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Simulation</span>
+                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Satellite
+                    Data</span>
+                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Machine
+                    Learning</span>
+            </div>
+
+            <!-- Media Section -->
+            <div class="space-y-8 mb-12">
+                <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                    <video src="../Assets/ProjectsAssets/SataliteVisulaisation/Satalite_Data_Video.mp4" autoplay loop
+                        muted playsinline controls class="w-full max-h-[70vh] object-contain"></video>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                    <img src="../Assets/ProjectsAssets/SataliteVisulaisation/20260425-134334-Par-pa-fotografie-CassiniHackathon-Noordwijk-2059-1.jpg"
+                        alt="Cassini Hackathon Space for Water" loading="lazy" class="w-full max-h-[70vh] object-cover">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="prose prose-invert prose-lg max-w-none">
+                <p class="text-slate-300 leading-relaxed">
+                    The 11th CASSINI Hackathon (Space for Water) took place in the Netherlands on April 24–26, 2026, at
+                    the NL Space Campus in Noordwijk.
+
+                </p>
+
+                <p class="text-slate-300 leading-relaxed mt-4">
+                    Our team (consisting of myself as the Unity Visualization Expert, a UX expert, two Machine Learning
+                    Engineers, and a PhD candidate specializing in water studies) used European satellite data to
+                    predict floods in Den Haag. My primary responsibility was to visualize this concept using Unity. The
+                    user can drag a slider to a chosen year and observe the prediction for that specific year. The
+                    machine learning engineers provided the data, and I leveraged the Cesium Unity plugin to integrate
+                    real Earth data and visuals.
+                </p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-4">Project Information</h3>
+                <ul class="list-disc pl-6 text-slate-300 space-y-2">
+                    <li><strong>GitHub Repository:</strong> <a href="https://github.com/mn5hk/watersim-cassini2026"
+                            target="_blank" rel="noopener noreferrer"
+                            class="text-blue-400 hover:underline">watersim-cassini2026</a></li>
+                    <li><strong>Hackathon Overview:</strong> <a href="https://taikai.network/cassinihackathons/hackathons/space-for-water/overview"
+                            target="_blank" rel="noopener noreferrer"
+                            class="text-blue-400 hover:underline">CASSINI Hackathon (Space for Water)</a></li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-4">Description (From Our Submission)</h3>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    Globally floods cause damages of around 400 billion USD a year. Similarly, the catastrophe insurance
+                    market is currently valued at 215 billion USD and projected to grow to 360 billion USD by 2035.
+                    Nonetheless, the tyranny of the changing climate presents a necessary opportunity for technological
+                    solutions to protect our businesses and economy, and a profitable business opportunity.
+                </p>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    We leverage European space data and state-of-the-art machine learning technology to predict climate
+                    risks such as floods, that affect property valuation and significant business risk. Furthermore, we
+                    present novel solutions such as realistic visualization and virtual reality experiences to help
+                    asset developers and businesses plan their business ventures and ensure climate risk management.
+                </p>
+
+                <h4 class="text-xl font-bold text-white mt-6 mb-2">Technological Solution</h4>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    We’ve used the EO4Flood dataset with multiple hydrometeorological datasets such as rainfall, snow,
+                    soil moisture, river water height, river width, etc. from European space missions, such as Sentinel
+                    1,2,3,6, SWOT, Jason 1,2,3, etc. We use machine learning to fill spatiotemporally sparse data gaps,
+                    applying GCN + GRU architecture on graph models of river networks to learn parameters like river
+                    flow.
+                </p>
+
+                <h4 class="text-xl font-bold text-white mt-6 mb-2">Team Formation</h4>
+                <ul class="list-disc pl-6 text-slate-300 space-y-2">
+                    <li>🌊 Amin Shakya | PhD (ongoing) in Space-borne Hydrology</li>
+                    <li>👩‍🔬 Dr. Salima Bahri | Machine Learning Engineer</li>
+                    <li>🌍 José Miguel Olvera Puentes | Climatologist, Machine Learning & Data Engineering</li>
+                    <li>🎨 Rucha Nagare | UX/UI designer</li>
+                    <li>🥽 Mohammed Marzouq | Spatial Computing & 3D Data Visualization Engineer</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-900">
+        <div class="container mx-auto px-6 text-center text-slate-600 text-sm">
+            &copy; 2026 Mohammed Marzouq.
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
