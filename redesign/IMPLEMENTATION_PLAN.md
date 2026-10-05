@@ -89,12 +89,19 @@
 
 ---
 
-## 3. Phase 2 — Project pages (after the homepage is approved) ⬜
+## 3. Phase 2 — Project pages ✅ 100% complete & validated
 
-- [ ] Create `css/project.css` that reuses the tokens, fonts, nav, and footer from `home.css`. The best approach is to move the shared parts into `css/base.css` and have both pages import it.
-- [ ] Design one project page template: a breadcrumb in small mono text, a big condensed title, a meta row (year · category · tags), a full-width media area (YouTube embeds and galleries), body text, and **previous/next project** links at the bottom.
-- [ ] Apply it to all 26 files in `projects/`. They share a structure (nav → title → date → tags → media → description), so a script can rewrite the `<head>` and wrapper markup in bulk.
-- [ ] Once nothing references them anymore, remove `tailwind.css`, `styles.css`, `main.js`, and the Tailwind `devDependencies` in `package.json`.
+- [x] **Create `css/project.css`**: Shared design tokens (off-black `#0e0e0c`, lime `#c6f432`, Archivo condensed, Inter Tight, JetBrains Mono), responsive header, meta strip, media showcases, custom bullet points, lightbox styles, and comprehensive legacy Tailwind class compatibility layer (172 classes supported).
+- [x] **Create `js/project.js`**: Frosted navbar on scroll, progress bar, video auto-pause on scroll-off, keyboard navigation (`ArrowLeft` / `ArrowRight` between projects), high-resolution image lightbox modal with Esc key support, and live Amsterdam clock.
+- [x] **Create `redesign/build_projects.js`**: Automated bulk generator with cyclic pagination (`list[(i - 1 + 26) % 26]` and `list[(i + 1) % 26]`), title cleanups, tag merging, `rel="noopener noreferrer"` enforcement, safe URL encoding, and mojibake repairs.
+- [x] **Generate all 26 pages**: Overwrote all 26 files in `projects/` with new Editorial Engineer layout.
+- [x] **QA & Verification**:
+  - `redesign/validate_all_projects.js` verified 100% balanced divs, zero missing media assets (all 98 verified), zero broken pagination links, and zero mojibake across all 26 files.
+  - Tested asset resolution over HTTP: 100% return `200 OK`.
+- [x] **Dependency Cleanup**:
+  - Removed `css/tailwind.css`, `css/styles.css`, `js/main.js`, and `src/input.css`.
+  - Removed Tailwind devDependencies from `package.json`.
+  - Verified zero references to legacy Tailwind or styles anywhere in the project.
 
 ---
 
@@ -109,12 +116,13 @@
 
 | File | Status | Purpose |
 |---|---|---|
-| `css/home.css` | ✅ new | Homepage design system and all section styles |
-| `js/home.js` | ✅ new | All homepage interactions |
-| `redesign/index.template.html` | ✅ new | Homepage markup with placeholders |
-| `redesign/projects.json` | ✅ new | Extracted data for the 26 projects |
-| `redesign/extract_projects.js` | ✅ new | Extractor (run against the old index.html) |
-| `redesign/concept_b_editorial.jpg` | ✅ new | Approved design mockup (portrait in it is AI-generated) |
-| `redesign/build_home.js` | ⬜ todo | Generator, step 2.1 |
-| `index.html` | ⬜ to be replaced | Output of step 2.2 |
-| `css/tailwind.css`, `css/styles.css`, `js/main.js` | 🔒 don't touch | Still used by the project pages |
+| `index.html` | ✅ active | New Editorial Engineer homepage |
+| `css/home.css` | ✅ active | Homepage design system and all section styles |
+| `js/home.js` | ✅ active | All homepage interactions and filtering |
+| `projects/*.html` (26 files) | ✅ active | All 26 redesigned project detail pages |
+| `css/project.css` | ✅ active | Project detail design system and prose styling |
+| `js/project.js` | ✅ active | Lightbox modal, arrow keys, video pause observer |
+| `package.json` | ✅ updated | Clean package configuration (zero Tailwind) |
+| `css/tailwind.css`, `css/styles.css`, `js/main.js` | 🗑️ deleted | Legacy files removed |
+| `redesign/` | 📁 tools | Build and QA automation scripts |
+

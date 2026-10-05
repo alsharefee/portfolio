@@ -1,25 +1,26 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Portfolio of Mohammed Marzouq — Senior Software Engineer",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node redesign/validate_all_projects.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alsharefee/portfolio.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "unity",
+    "xr",
+    "vr",
+    "ar",
+    "simulation",
+    "mendix"
+  ],
+  "author": "Mohammed Marzouq",
   "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/alsharefee/portfolio/issues"
-  },
-  "homepage": "https://github.com/alsharefee/portfolio#readme",
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.2.4",
-    "tailwindcss": "^4.2.4"
-  }
+  "homepage": "https://alsharefee.github.io/portfolio#readme"
 }

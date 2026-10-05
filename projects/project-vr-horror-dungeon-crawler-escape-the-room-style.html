@@ -1,52 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VR Horror Dungeon Crawler - Escape the room style | Mohammed Marzouq</title>
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="../css/tailwind.css">
+    <meta name="description" content="A VR dungeon crawler horror / puzzle / escape the room type of game mode/experience for users of Homaysa.">
+    <meta name="author" content="Mohammed Marzouq">
+    <meta name="theme-color" content="#0e0e0c">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://alsharefee.github.io/portfolio/projects/project-vr-horror-dungeon-crawler-escape-the-room-style.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="VR Horror Dungeon Crawler - Escape the room style | Mohammed Marzouq">
+    <meta property="og:description" content="A VR dungeon crawler horror / puzzle / escape the room type of game mode/experience for users of Homaysa.">
+    <meta property="og:url" content="https://alsharefee.github.io/portfolio/projects/project-vr-horror-dungeon-crawler-escape-the-room-style.html">
+    <meta property="og:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/DungeonVideo-ezgif.com-video-to-gif-converter.mp4">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VR Horror Dungeon Crawler - Escape the room style">
+    <meta name="twitter:description" content="A VR dungeon crawler horror / puzzle / escape the room type of game mode/experience for users of Homaysa.">
+    <meta name="twitter:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/DungeonVideo-ezgif.com-video-to-gif-converter.mp4">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23c6f432'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Narrow,Arial,sans-serif' font-size='34' font-weight='900' fill='%230e0e0c'%3EMM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    
     <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Project Stylesheet -->
+    <link rel="stylesheet" href="../css/project.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-blue-500 selection:text-white">
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800 shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-xl font-bold text-white tracking-tight">Mohammed<span
-                    class="text-blue-500">Marzouq</span></a>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="../index.html#projects" class="nav-link hover:text-blue-400 transition">Back to Portfolio</a>
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand" aria-label="Mohammed Marzouq Home">
+                <span class="brand-mark">MM</span>
+                <div class="brand-meta mono">
+                    <span>INDEX</span>
+                    <span class="sep">/</span>
+                    <span class="title-trunc">[05] VR Horror Dungeon Crawler - Escape the room style</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="back-link">
+                    <span class="arrow-left">←</span> Back to Projects
+                </a>
+                <a href="../index.html#contact" class="btn btn-sm btn-accent">
+                    Contact <span class="arrow">↗</span>
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 lg:pt-40 min-h-screen">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <!-- Back Button -->
-            <a href="../index.html#projects"
-                class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition group">
-                <i class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"></i> Back to Projects
-            </a>
-
+    <!-- Main Project Content -->
+    <main class="project-main">
+        <div class="container">
             <!-- Project Header -->
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight">VR Horror Dungeon Crawler -
-                Escape the room style</h1>
-            <p class="text-blue-400 font-semibold mb-6">Release Date: 2024</p>
+            <header class="project-header">
+                <div class="project-breadcrumbs mono">
+                    <a href="../index.html">Mohammed Marzouq</a>
+                    <span class="muted">/</span>
+                    <a href="../index.html#projects">Projects</a>
+                    <span class="muted">/</span>
+                    <span class="accent">[INDEX 05/26 · VR &amp; SIMULATIONS]</span>
+                </div>
 
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-8">
-                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">VR</span>
-                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Horror</span>
-                <span class="text-xs bg-slate-900 text-blue-300 px-2 py-1 rounded border border-slate-700">Escape
-                    Room</span>
-            </div>
+                <h1 class="project-title display">VR Horror Dungeon Crawler - Escape the room style</h1>
 
-            <!-- Call to Action -->
+                <dl class="project-meta-strip">
+                    <div class="meta-item">
+                        <dt>TIMELINE</dt>
+                        <dd class="mono-val">2024</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>CATEGORY</dt>
+                        <dd>VR &amp; Simulations</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>ROLE / STACK</dt>
+                        <dd>Lead Developer · Unity (C#) &amp; VR</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>TAGS</dt>
+                        <dd>
+                            <div class="tags-list">
+                                <span class="tag-badge">VR</span>
+                            <span class="tag-badge">Voice Chat</span>
+                            <span class="tag-badge">Horror</span>
+                            <span class="tag-badge">Escape Room</span>
+                            <span class="tag-badge">Multiplayer</span>
+                            </div>
+                        </dd>
+                    </div>
+                </dl>
+            </header>
+
+            <!-- Extracted Body Content -->
+            <div class="project-body prose">
+                <!-- Call to Action -->
             <div class="mb-12">
                 <a href="https://store.steampowered.com/app/2170860/Homaysa/" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg hover:shadow-blue-500/50">
@@ -107,17 +175,49 @@
                     </div>
                 </div>
             </div>
+        
+            </div>
+
+            <!-- Pagination: Previous / Next Project -->
+            <section class="pagination-section" aria-label="Project pagination">
+                <div class="pagination-grid">
+                    <a href="project-vr-real-time-strategy-rts.html" class="nav-card prev" id="prev-project-link">
+                        <span class="nav-card-label mono"><span class="arrow-left">←</span> Previous Project [04]</span>
+                        <span class="nav-card-title">VR Real Time Strategy (RTS)</span>
+                        <span class="nav-card-year mono">2023 · VR &amp; Simulations</span>
+                    </a>
+                    <a href="project-vr-shooting-game-modes.html" class="nav-card next" id="next-project-link">
+                        <span class="nav-card-label mono">Next Project [06] <span class="arrow-right">→</span></span>
+                        <span class="nav-card-title">VR Shooting Game Modes</span>
+                        <span class="nav-card-year mono">2023 · VR &amp; Simulations</span>
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 36px;">
+                    <a href="../index.html#projects" class="back-link">
+                        ↑ Return to All 26 Projects
+                    </a>
+                </div>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 py-12 border-t border-slate-900">
-        <div class="container mx-auto px-6 text-center text-slate-600 text-sm">
-            &copy; 2026 Mohammed Marzouq.
+    <footer class="project-footer">
+        <div class="container footer-inner mono">
+            <div>&copy; 2026 Mohammed Marzouq. All rights reserved.</div>
+            <div>AMSTERDAM, NL · <span data-clock>--:--</span> CET</div>
+            <div><a href="../index.html" class="accent">Home ↗</a></div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Interactive Script -->
+    <script src="../js/project.js"></script>
 </body>
 
 </html>
