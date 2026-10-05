@@ -5,6 +5,24 @@ const projectsData = JSON.parse(fs.readFileSync('redesign/projects.json', 'utf8'
 const list = [];
 projectsData.forEach(cat => cat.items.forEach(item => list.push({ ...item, category: cat.category })));
 
+// Sort by year descending (newest first)
+list.sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));
+
+// First, read all bodies from existing files before any file is rewritten
+const bodies = new Map();
+list.forEach(p => {
+  const content = fs.readFileSync(p.href, 'utf8');
+  const startMark = '<div class="project-body prose">';
+  const endMark = '<!-- Pagination: Previous / Next Project -->';
+  const startIdx = content.indexOf(startMark);
+  const endIdx = content.indexOf(endMark);
+  if (startIdx === -1 || endIdx === -1) {
+    throw new Error(`Markers not found in ${p.href}`);
+  }
+  const body = content.slice(startIdx + startMark.length, endIdx).trim().replace(/<\/div>\s*$/, '').trim();
+  bodies.set(p.href, body);
+});
+
 function escapeHtml(str) {
   if (!str) return '';
   return str
@@ -58,76 +76,11 @@ function buildProjectPage(idx) {
   const nextIndexStr = String(nextIdx + 1).padStart(2, '0');
   const currentIndexStr = String(idx + 1).padStart(2, '0');
 
-  const content = fs.readFileSync(p.href, 'utf8');
-
-  // Extract HTML tags
-  const tagsIdx = content.indexOf('<!-- Tags -->');
-  let htmlTags = [];
-  if (tagsIdx !== -1) {
-    const after = content.slice(tagsIdx, tagsIdx + 1200);
-    const divMatch = after.match(/<div[^>]*>([\s\S]*?)<\/div>/i);
-    if (divMatch) {
-      htmlTags = [...divMatch[1].matchAll(/<span[^>]*>([\s\S]*?)<\/span>/gi)]
-        .map(m => m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
-        .filter(Boolean);
-    }
-  }
-
-  // Merge tags
-  const tagSet = new Set();
-  const mergedTags = [];
-  [...(p.tags || []), ...htmlTags].forEach(t => {
-    const clean = t.trim();
-    const lower = clean.toLowerCase();
-    if (!tagSet.has(lower) && clean.length > 0) {
-      tagSet.add(lower);
-      mergedTags.push(clean);
-    }
-  });
-
-  const primaryStack = getPrimaryStack(p, mergedTags);
-
-  // Extract body
-  const afterTagsComment = content.slice(tagsIdx);
-  const firstDivIdx = afterTagsComment.indexOf('<div');
-  const divCloseIdx = afterTagsComment.indexOf('</div>', firstDivIdx);
-  const contentStart = tagsIdx + divCloseIdx + '</div>'.length;
-  const mainEnd = content.indexOf('</main>');
-
-  let body = content.slice(contentStart, mainEnd).trim();
-
-  // Strip trailing container div(s)
-  if (p.href.includes('project-augmented-reality-app.html')) {
-    body = body.replace(/<\/div>\s*<\/div>\s*$/, '');
-  } else {
-    body = body.replace(/<\/div>\s*$/, '');
-  }
-
-  // Mojibake fix
-  body = body.replace(/\?{4,5}/g, '👷');
-
-  // Fix broken Next Reality URL
-  body = body.replace(
-    /https:\/\/mobile-ar\.reality\.news\/news\/apple-ar-take-walk-\s*moon-with-new-space-door-demo-0179522\/?/g,
-    '<a href="https://mobile-ar.reality.news/news/apple-ar-take-walk-moon-with-new-space-door-demo-0179522/" target="_blank" rel="noopener noreferrer">Next Reality article ↗</a>'
-  );
-
-  // Normalize src URLs with unencoded spaces
-  body = body.replace(/src=["']([^"']+)["']/g, (match, url) => {
-    if (url.startsWith('http://') || url.startsWith('https://')) return match;
-    return `src="${encodeURI(decodeURI(url))}"`;
-  });
-
-  // Ensure rel="noopener noreferrer" on target="_blank"
-  body = body.replace(/<a\s+([^>]*?)>/gi, (match, attrs) => {
-    if (/target=["']_blank["']/i.test(attrs) && !/rel=/i.test(attrs)) {
-      return `<a ${attrs} rel="noopener noreferrer">`;
-    }
-    return match;
-  });
+  const body = bodies.get(p.href);
+  const primaryStack = getPrimaryStack(p, p.tags);
 
   // Tags HTML
-  const tagsHtml = mergedTags
+  const tagsHtml = p.tags
     .map(t => `<span class="tag-badge">${escapeHtml(t)}</span>`)
     .join('\n                            ');
 

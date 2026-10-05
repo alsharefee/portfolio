@@ -4,6 +4,7 @@
   "description": "Portfolio of Mohammed Marzouq — Senior Software Engineer",
   "main": "index.html",
   "scripts": {
+    "start": "node redesign/serve.js",
     "test": "node redesign/validate_all_projects.js"
   },
   "repository": {

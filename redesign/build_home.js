@@ -20,8 +20,8 @@ const CATS = {
 };
 
 const FEATURED = [
-    'projects/project-untitled-mecha-project-vr-mech-multiplayer-game.html',
     'projects/project-cassini-hackathon-space-for-water.html',
+    'projects/project-untitled-mecha-project-vr-mech-multiplayer-game.html',
     'projects/project-snipers-ground-vr-multiplayer-sniping-game.html',
 ];
 
@@ -53,6 +53,9 @@ for (const group of data) {
         });
     }
 }
+
+// Sort projects by year descending (newest first)
+projects.sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));
 
 // Featured
 const featured = FEATURED.map((href, i) => {
