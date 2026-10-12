@@ -2032,15 +2032,15 @@ body::after {
     color: var(--ink-soft);
 }
 
-/* Featured 05 Card (Real-Time Sports) */
+/* 05 Card (spans 2 columns) */
 .service-card.is-featured {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--bg-raised) 0%, #151a10 100%);
+    background: var(--bg-raised);
     border-top: 1px solid var(--line-strong);
 }
 
 .service-card.is-featured:hover {
-    background: linear-gradient(135deg, #181914 0%, #1a2212 100%);
+    background: #191915;
 }
 
 .service-featured-body {
