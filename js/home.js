@@ -266,7 +266,15 @@
             let m;
             if (el.dataset.previewType === 'video') {
                 m = document.createElement('video');
-                m.muted = true; m.loop = true; m.playsInline = true; m.preload = 'auto';
+                m.muted = true;
+                m.loop = true;
+                m.playsInline = true;
+                m.autoplay = true;
+                m.setAttribute('muted', '');
+                m.setAttribute('playsinline', '');
+                m.setAttribute('autoplay', '');
+                m.setAttribute('loop', '');
+                m.preload = 'auto';
                 m.src = key;
             } else {
                 m = document.createElement('img');
@@ -421,10 +429,13 @@
                 if (next && next.hasAttribute('data-preview')) prioritize(next);
             });
             el.addEventListener('mousemove', e => setTarget(e.clientX, e.clientY));
-            el.addEventListener('mouseleave', () => {
+            el.addEventListener('mouseleave', e => {
+                const nextEl = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest('[data-preview]') : null;
+                if (nextEl) return;
                 preview.classList.remove('is-on');
                 preview.classList.remove('is-loading');
                 if (active && active.tagName === 'VIDEO') active.pause();
+                active = null;
             });
         });
     }
