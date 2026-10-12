@@ -6,8 +6,8 @@
       {
         "href": "projects/project-snipers-ground-vr-multiplayer-sniping-game.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/m2-res_480p-ezgif.com-optimize.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/m2-res_480p-ezgif.com-optimize.mp4"
         },
         "alt": "Sniper's Ground",
         "title": "Sniper's Ground: VR Multiplayer Sniping Game",
@@ -25,8 +25,8 @@
       {
         "href": "projects/project-relaxing-in-vr-experiences.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/RelaxInCode-ezgif.com-optimize.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/RelaxInCode-ezgif.com-optimize.mp4"
         },
         "alt": "Relaxing In VR Experiences",
         "title": "Relaxing In VR Experiences",
@@ -63,8 +63,8 @@
       {
         "href": "projects/project-vr-real-time-strategy-rts.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/VRRTS2-ezgif.com-optimize.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/VRRTS2-ezgif.com-optimize.mp4"
         },
         "alt": "VR Real Time Strategy",
         "title": "VR Real Time Strategy (RTS)",
@@ -101,8 +101,8 @@
       {
         "href": "projects/project-vr-shooting-game-modes.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/OpenShootingRange-MadewithClipchamp1-ezgif.com-optimize.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/OpenShootingRange-MadewithClipchamp1-ezgif.com-optimize.mp4"
         },
         "alt": "VR Shooting Game Modes",
         "title": "VR Shooting Game Modes",
@@ -140,8 +140,8 @@
       {
         "href": "projects/project-pwc-vr-game-mode.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.mp4"
         },
         "alt": "PWC VR Game mode",
         "title": "PWC VR Game mode",
@@ -364,8 +364,8 @@
       {
         "href": "projects/project-ai-made-game-2d-submarine-simulation.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/Gif Sub Game Large.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/Gif Sub Game Large.mp4"
         },
         "alt": "AI Made Game",
         "title": "AI Made Game: 2D Submarine Simulation",
@@ -387,8 +387,8 @@
       {
         "href": "projects/project-herds-rts-pc-game.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/Tlolvq.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/Tlolvq.mp4"
         },
         "alt": "Herds: RTS PC Game",
         "title": "Herds: RTS PC Game",
@@ -478,8 +478,8 @@
       {
         "href": "projects/project-space-fight-2d-webgl-browser-game.html",
         "media": {
-          "type": "img",
-          "src": "Assets/ProjectsThumbnails/d44610208399421.66edaf33bcdeb.gif"
+          "type": "video",
+          "src": "Assets/ProjectsThumbnails/d44610208399421.66edaf33bcdeb.mp4"
         },
         "alt": "Space Fight",
         "title": "Space Fight: 2D WebGL Browser Game",
