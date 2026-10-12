@@ -1304,11 +1304,13 @@ body::after {
     opacity: 0;
     transform: scale(1.08);
     transition: opacity .35s var(--ease-out), transform .7s var(--ease-out);
+    z-index: 1;
 }
 
 .pv-item.is-on {
     opacity: 1;
     transform: none;
+    z-index: 2;
 }
 
 @media (hover: none),

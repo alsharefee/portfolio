@@ -405,14 +405,34 @@
             $$('#project-index .row[data-preview]:not([hidden])').slice(0, 3).forEach(prioritize);
         });
 
+        const hidePreview = () => {
+            preview.classList.remove('is-on');
+            preview.classList.remove('is-loading');
+            if (active) {
+                active.classList.remove('is-on');
+                if (active.tagName === 'VIDEO') active.pause();
+                active = null;
+            }
+            $$('.pv-item.is-on', preview).forEach(item => {
+                item.classList.remove('is-on');
+                if (item.tagName === 'VIDEO') item.pause();
+            });
+        };
+
         $$('[data-preview]').forEach(el => {
             el.addEventListener('mouseenter', e => {
                 if (!finePointer.matches || window.innerWidth < 900) return;
                 const m = getMedia(el);
-                if (active && active !== m) {
-                    active.classList.remove('is-on');
-                    if (active.tagName === 'VIDEO') active.pause();
-                }
+                if (!m) return;
+
+                // Deactivate any currently active preview element
+                $$('.pv-item.is-on', preview).forEach(item => {
+                    if (item !== m) {
+                        item.classList.remove('is-on');
+                        if (item.tagName === 'VIDEO') item.pause();
+                    }
+                });
+
                 active = m;
                 updateLoadingState(m);
                 m.classList.add('is-on');
@@ -435,10 +455,7 @@
             el.addEventListener('mouseleave', e => {
                 const nextEl = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest('[data-preview]') : null;
                 if (nextEl) return;
-                preview.classList.remove('is-on');
-                preview.classList.remove('is-loading');
-                if (active && active.tagName === 'VIDEO') active.pause();
-                active = null;
+                hidePreview();
             });
         });
     }
