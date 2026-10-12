@@ -47,6 +47,7 @@ for (const group of data) {
             desc: fixText(p.desc),
             alt: p.alt ? fixText(p.alt) : fixText(p.title),
             src: safePath(p.media.src),
+            poster: p.media.poster ? safePath(p.media.poster) : null,
             type: p.media.type === 'video' ? 'video' : 'img',
             category: group.category,
             cat,
@@ -61,8 +62,9 @@ projects.sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));
 const featured = FEATURED.map((href, i) => {
     const p = projects.find(x => x.href === href);
     if (!p) throw new Error(`Featured project not found: ${href}`);
+    const posterAttr = p.poster ? ` poster="${p.poster}"` : '';
     const media = p.type === 'video'
-        ? `<video src="${p.src}" autoplay muted loop playsinline preload="metadata" data-autoplay aria-hidden="true"></video>`
+        ? `<video src="${p.src}"${posterAttr} autoplay muted loop playsinline preload="metadata" data-autoplay aria-hidden="true"></video>`
         : `<img src="${p.src}" alt="${esc(p.alt)}" loading="lazy">`;
     return `<article class="feat reveal${i ? ` d${i}` : ''}">
                     <div class="feat-media">
@@ -101,13 +103,15 @@ const tagChips = [...tagMap.entries()]
 
 // Rows
 const rows = projects.map((p, i) => {
+    const posterAttr = p.poster ? ` poster="${p.poster}"` : '';
     const thumb = p.type === 'video'
-        ? `<video data-src="${p.src}" muted loop playsinline preload="none"></video>`
+        ? `<video data-src="${p.src}"${posterAttr} muted loop playsinline preload="none"></video>`
         : `<img data-src="${p.src}" alt="">`;
     const tags = p.tags.map(t =>
         `<button class="tag" type="button" data-tag="${esc(tagKey(t))}" aria-label="Filter by ${esc(t)}">${esc(t)}</button>`
     ).join('');
-    return `<li class="row" data-cat="${p.cat.slug}" data-tags="${esc(p.tags.map(tagKey).join('|'))}" data-preview="${p.src}" data-preview-type="${p.type}">
+    const dataPoster = p.poster ? ` data-poster="${p.poster}"` : '';
+    return `<li class="row" data-cat="${p.cat.slug}" data-tags="${esc(p.tags.map(tagKey).join('|'))}" data-preview="${p.src}" data-preview-type="${p.type}"${dataPoster}>
                     <span class="row-idx mono">${pad(i + 1)}</span>
                     <div class="row-thumb" aria-hidden="true">${thumb}</div>
                     <h3 class="row-title"><a class="stretch" href="${esc(p.href)}">${esc(p.title)}</a></h3>

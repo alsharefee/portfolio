@@ -275,6 +275,9 @@
                 m.setAttribute('autoplay', '');
                 m.setAttribute('loop', '');
                 m.preload = 'auto';
+                if (el.dataset.poster) {
+                    m.poster = el.dataset.poster;
+                }
                 m.src = key;
             } else {
                 m = document.createElement('img');
