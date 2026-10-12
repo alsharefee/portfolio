@@ -94,6 +94,25 @@ function buildProjectPage(idx) {
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) - Excludes local dev & opt-out visits -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      if (new URLSearchParams(location.search).get('ga_optout') === '1') {
+        localStorage.setItem('ga_optout', 'true');
+      }
+      var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.endsWith('.local');
+      var isOptedOut = localStorage.getItem('ga_optout') === 'true';
+      if (!isLocal && !isOptedOut) {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DNRMDZQ2GC';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-DNRMDZQ2GC');
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${escapeHtml(currentTitle)} | Mohammed Marzouq</title>
