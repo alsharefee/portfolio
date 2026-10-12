@@ -1949,6 +1949,142 @@ body::after {
     transform: rotate(45deg);
 }
 
+/* ---------- Services ---------- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: clamp(32px, 4vw, 52px);
+}
+
+.service-card {
+    background: var(--bg-raised);
+    padding: clamp(28px, 3.5vw, 44px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background .3s var(--ease-out);
+}
+
+.service-card:hover {
+    background: #191915;
+}
+
+.service-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.service-idx {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.service-badge {
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: .02em;
+}
+
+.service-badge.highlight {
+    color: var(--accent);
+}
+
+.service-title {
+    margin-top: 18px;
+    font-size: clamp(24px, 2.4vw, 34px);
+    line-height: 1.15;
+}
+
+.service-desc {
+    margin-top: 14px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.service-tags span {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .02em;
+    transition: color .2s, border-color .2s;
+}
+
+.service-card:hover .service-tags span {
+    border-color: rgba(240, 237, 228, .35);
+    color: var(--ink-soft);
+}
+
+/* Featured 05 Card (Real-Time Sports) */
+.service-card.is-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--bg-raised) 0%, #151a10 100%);
+    border-top: 1px solid var(--line-strong);
+}
+
+.service-card.is-featured:hover {
+    background: linear-gradient(135deg, #181914 0%, #1a2212 100%);
+}
+
+.service-featured-body {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: var(--gutter);
+    align-items: end;
+    margin-top: 6px;
+}
+
+.service-featured-body .service-tags {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Services Footer Banner */
+.services-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 32px;
+    padding: 24px 32px;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+}
+
+.services-footer span {
+    color: var(--ink-soft);
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-featured-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 /* ---------- Contact / footer ---------- */
 .contact {
     position: relative;
