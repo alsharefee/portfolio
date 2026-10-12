@@ -1273,6 +1273,28 @@ body::after {
     opacity: 1;
 }
 
+.preview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, .06) 50%, transparent 100%);
+    background-size: 200% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 1;
+}
+
+.preview.is-loading::before {
+    opacity: 1;
+    animation: pv-shimmer 1.4s infinite linear;
+}
+
+@keyframes pv-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
 .pv-item {
     position: absolute;
     inset: 0;

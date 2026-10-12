@@ -163,6 +163,7 @@
         countEl.textContent = `${String(shown).padStart(2, '0')} / ${String(rows.length).padStart(2, '0')}`;
         clearBtn.hidden = state.cat === 'all' && !state.tag;
         emptyEl.hidden = shown !== 0;
+        document.dispatchEvent(new CustomEvent('project-filters-applied'));
     };
 
     catChips.forEach(chip => chip.addEventListener('click', () => {
@@ -232,8 +233,35 @@
             tx = nx; ty = ny;
             if (!raf) raf = requestAnimationFrame(loop);
         };
+
+        const checkLoaded = m => {
+            if (!m) return true;
+            if (m.tagName === 'IMG') return m.complete && m.naturalWidth > 0;
+            if (m.tagName === 'VIDEO') return m.readyState >= 2;
+            return true;
+        };
+
+        const updateLoadingState = m => {
+            if (!m || checkLoaded(m)) {
+                preview.classList.remove('is-loading');
+                return;
+            }
+            preview.classList.add('is-loading');
+            const onReady = () => {
+                if (active === m) preview.classList.remove('is-loading');
+            };
+            if (m.tagName === 'IMG') {
+                m.addEventListener('load', onReady, { once: true });
+                m.addEventListener('error', onReady, { once: true });
+            } else if (m.tagName === 'VIDEO') {
+                m.addEventListener('canplay', onReady, { once: true });
+                m.addEventListener('error', onReady, { once: true });
+            }
+        };
+
         const getMedia = el => {
             const key = el.dataset.preview;
+            if (!key) return null;
             if (cache.has(key)) return cache.get(key);
             let m;
             if (el.dataset.previewType === 'video') {
@@ -252,6 +280,120 @@
             return m;
         };
 
+        /* --- Smart background preloader queue --- */
+        const preloadQueue = [];
+        let isPreloading = false;
+
+        const processQueue = () => {
+            if (!preloadQueue.length) {
+                isPreloading = false;
+                return;
+            }
+            isPreloading = true;
+            const el = preloadQueue.shift();
+            const key = el.dataset.preview;
+
+            if (cache.has(key)) {
+                processQueue();
+                return;
+            }
+
+            const m = getMedia(el);
+            if (!m) {
+                processQueue();
+                return;
+            }
+
+            let nextCalled = false;
+            const scheduleNext = () => {
+                if (nextCalled) return;
+                nextCalled = true;
+                const schedule = window.requestIdleCallback
+                    ? cb => window.requestIdleCallback(cb, { timeout: 1500 })
+                    : cb => setTimeout(cb, 120);
+                schedule(processQueue);
+            };
+
+            const timer = setTimeout(scheduleNext, 2500);
+
+            if (m.tagName === 'IMG') {
+                if (m.complete) {
+                    clearTimeout(timer);
+                    scheduleNext();
+                } else {
+                    m.addEventListener('load', () => { clearTimeout(timer); scheduleNext(); }, { once: true });
+                    m.addEventListener('error', () => { clearTimeout(timer); scheduleNext(); }, { once: true });
+                }
+            } else if (m.tagName === 'VIDEO') {
+                if (m.readyState >= 2) {
+                    clearTimeout(timer);
+                    scheduleNext();
+                } else {
+                    m.addEventListener('canplay', () => { clearTimeout(timer); scheduleNext(); }, { once: true });
+                    m.addEventListener('error', () => { clearTimeout(timer); scheduleNext(); }, { once: true });
+                }
+            }
+        };
+
+        const enqueue = el => {
+            if (!el || !el.dataset || !el.dataset.preview) return;
+            if (cache.has(el.dataset.preview)) return;
+            if (!preloadQueue.includes(el)) preloadQueue.push(el);
+            if (!isPreloading) processQueue();
+        };
+
+        const prioritize = el => {
+            if (!el || !el.dataset || !el.dataset.preview) return;
+            const key = el.dataset.preview;
+            if (cache.has(key)) return;
+            getMedia(el);
+            const idx = preloadQueue.indexOf(el);
+            if (idx > -1) preloadQueue.splice(idx, 1);
+        };
+
+        // Scroll proximity triggers
+        const canPreload = finePointer.matches && window.innerWidth >= 900 && !(navigator.connection && navigator.connection.saveData);
+        if (canPreload) {
+            const projectsSec = $('#projects');
+            if (projectsSec && 'IntersectionObserver' in window) {
+                const io = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        io.unobserve(entry.target);
+                        $$('#project-index .row[data-preview]').forEach(enqueue);
+                    });
+                }, { rootMargin: '600px 0px' });
+                io.observe(projectsSec);
+            }
+
+            const writingSec = $('#writing');
+            if (writingSec && 'IntersectionObserver' in window) {
+                const ioW = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        ioW.unobserve(entry.target);
+                        $$('.article[data-preview]', writingSec).forEach(enqueue);
+                    });
+                }, { rootMargin: '400px 0px' });
+                ioW.observe(writingSec);
+            }
+        }
+
+        // Table mouse proximity trigger
+        const indexTable = $('#project-index');
+        if (indexTable) {
+            indexTable.addEventListener('mouseenter', () => {
+                if (!finePointer.matches || window.innerWidth < 900) return;
+                $$('.row[data-preview]:not([hidden])', indexTable).slice(0, 4).forEach(prioritize);
+            }, { passive: true });
+        }
+
+        // Filter update trigger
+        document.addEventListener('project-filters-applied', () => {
+            if (!finePointer.matches || window.innerWidth < 900) return;
+            $$('#project-index .row[data-preview]:not([hidden])').slice(0, 3).forEach(prioritize);
+        });
+
         $$('[data-preview]').forEach(el => {
             el.addEventListener('mouseenter', e => {
                 if (!finePointer.matches || window.innerWidth < 900) return;
@@ -261,6 +403,7 @@
                     if (active.tagName === 'VIDEO') active.pause();
                 }
                 active = m;
+                updateLoadingState(m);
                 m.classList.add('is-on');
                 if (m.tagName === 'VIDEO') { const p = m.play(); if (p && p.catch) p.catch(() => { }); }
                 if (!preview.classList.contains('is-on')) {
@@ -270,10 +413,17 @@
                     preview.style.transform = `translate3d(${x}px, ${y}px, 0)`;
                 }
                 preview.classList.add('is-on');
+
+                // Preload adjacent items immediately for buttery sequential browsing
+                const prev = el.previousElementSibling;
+                const next = el.nextElementSibling;
+                if (prev && prev.hasAttribute('data-preview')) prioritize(prev);
+                if (next && next.hasAttribute('data-preview')) prioritize(next);
             });
             el.addEventListener('mousemove', e => setTarget(e.clientX, e.clientY));
             el.addEventListener('mouseleave', () => {
                 preview.classList.remove('is-on');
+                preview.classList.remove('is-loading');
                 if (active && active.tagName === 'VIDEO') active.pause();
             });
         });
