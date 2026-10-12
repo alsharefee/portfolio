@@ -1640,28 +1640,16 @@ body::after {
     color: var(--ink-soft);
 }
 
-.award-more {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows .6s var(--ease-out);
-}
-
-.award-more.is-open {
-    grid-template-rows: 1fr;
-}
-
-.award-more>div {
-    overflow: hidden;
-}
-
-.award-more p {
+.award-story p {
     margin-top: 18px;
     color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .built {
     margin-top: 24px;
-    padding: 4px 0 4px 20px;
+    padding: 6px 0 6px 20px;
     border-left: 2px solid var(--accent);
 }
 
@@ -1676,24 +1664,26 @@ body::after {
 
 .built p {
     margin-top: 10px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.55;
 }
 
-.toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+.award-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 24px;
-    color: var(--accent);
 }
 
-.toggle .plus {
+.award-tags span {
     display: inline-block;
-    font-size: 16px;
-    transition: transform .35s var(--ease-out);
-}
-
-.toggle[aria-expanded="true"] .plus {
-    transform: rotate(45deg);
+    padding: 4px 10px;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .02em;
 }
 
 .award-media {

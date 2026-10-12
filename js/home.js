@@ -460,18 +460,6 @@
         });
     }
 
-    /* ---------- Awards: read more ---------- */
-    const awardToggle = $('#awards-text-toggle');
-    const awardMore = $('#awards-text-content');
-    if (awardToggle && awardMore) {
-        awardToggle.addEventListener('click', () => {
-            const open = awardToggle.getAttribute('aria-expanded') === 'true';
-            awardToggle.setAttribute('aria-expanded', String(!open));
-            awardMore.classList.toggle('is-open', !open);
-            awardMore.setAttribute('aria-hidden', String(open));
-            $('#awards-text-label').textContent = open ? 'Read the full story' : 'Show less';
-        });
-    }
 
     /* ---------- Awards: carousel ---------- */
     const carousel = $('#awards-carousel');
