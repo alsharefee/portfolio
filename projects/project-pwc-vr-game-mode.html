@@ -2,22 +2,41 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) - Excludes local dev & opt-out visits -->
+    <!-- Google tag (gtag.js) with Google Consent Mode v2 (GDPR / ePrivacy compliant) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      if (new URLSearchParams(location.search).get('ga_optout') === '1') {
-        localStorage.setItem('ga_optout', 'true');
+
+      // Respect opt-out query param (?ga_optout=1) or existing opt-out preference
+      if (new URLSearchParams(location.search).get('ga_optout') === '1' || localStorage.getItem('ga_optout') === 'true') {
+        localStorage.setItem('portfolio_ga_consent', 'denied');
       }
+
       var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.endsWith('.local');
-      var isOptedOut = localStorage.getItem('ga_optout') === 'true';
-      if (!isLocal && !isOptedOut) {
+      var storedConsent = localStorage.getItem('portfolio_ga_consent'); // 'granted' | 'denied' | null
+
+      // Set default consent state: DENIED by default (GDPR requirement)
+      gtag('consent', 'default', {
+        'analytics_storage': storedConsent === 'granted' ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+
+      // If user previously granted consent and not in local dev environment, load GA4 immediately
+      if (!isLocal && storedConsent === 'granted') {
         var s = document.createElement('script');
+        s.id = 'ga-gtag-script';
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DNRMDZQ2GC';
         document.head.appendChild(s);
         gtag('js', new Date());
-        gtag('config', 'G-DNRMDZQ2GC');
+        gtag('config', 'G-DNRMDZQ2GC', {
+          'anonymize_ip': true,
+          'allow_google_signals': false,
+          'allow_ad_personalization_signals': false
+        });
       }
     </script>
 
@@ -35,13 +54,13 @@
     <meta property="og:title" content="PWC VR Game mode | Mohammed Marzouq">
     <meta property="og:description" content="Summer vacation is here and I thought maybe a driving a personal water craft will be amazing for the summer in VR.">
     <meta property="og:url" content="https://alsharefee.github.io/portfolio/projects/project-pwc-vr-game-mode.html">
-    <meta property="og:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.gif">
+    <meta property="og:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.mp4">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PWC VR Game mode">
     <meta name="twitter:description" content="Summer vacation is here and I thought maybe a driving a personal water craft will be amazing for the summer in VR.">
-    <meta name="twitter:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.gif">
+    <meta name="twitter:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/Homaysa5_4-UnrealEditor2025-07-1319-48-35-ezgif.com-optimize.mp4">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
@@ -192,6 +211,7 @@
         <div class="container footer-inner mono">
             <div>&copy; 2026 Mohammed Marzouq. All rights reserved.</div>
             <div>AMSTERDAM, NL · <span data-clock>--:--</span> CET</div>
+            <div><button type="button" class="cookie-settings-trigger" id="cookie-settings-btn" aria-label="Open cookie and privacy settings">Cookie Settings</button></div>
             <div><a href="../index.html" class="accent">Home ↗</a></div>
         </div>
     </footer>
@@ -204,6 +224,32 @@
 
     <!-- Interactive Script -->
     <script src="../js/project.js"></script>
+
+    <!-- Privacy & Cookies Consent Banner -->
+    <aside class="consent-banner" id="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-desc" aria-hidden="true">
+        <div class="consent-inner">
+            <div class="consent-header">
+                <span class="consent-badge mono"><span class="accent-dot">●</span> PRIVACY &amp; COOKIES</span>
+                <span class="consent-status mono" id="consent-status" aria-live="polite"></span>
+            </div>
+            <div class="consent-content">
+                <h3 class="consent-title display" id="consent-title">Analytics Preferences</h3>
+                <p class="consent-desc" id="consent-desc">
+                    I use anonymous Google Analytics to understand website traffic and improve my portfolio. No personal data, advertising trackers, or profiling cookies are collected.
+                </p>
+            </div>
+            <div class="consent-actions">
+                <button type="button" class="btn btn-accent btn-sm consent-btn" id="consent-accept-btn">
+                    Accept Analytics
+                </button>
+                <button type="button" class="btn btn-outline btn-sm consent-btn" id="consent-decline-btn">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <script src="../js/consent.js"></script>
 </body>
 
 </html>
