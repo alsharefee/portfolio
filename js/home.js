@@ -539,4 +539,18 @@
     /* ---------- Footer year ---------- */
     const yr = $('#footer-year');
     if (yr) yr.textContent = new Date().getFullYear();
+
+    /* ---------- Resume / CV analytics tracking ---------- */
+    $$('[data-cv]').forEach(link => {
+        link.addEventListener('click', () => {
+            const lang = link.dataset.cv || 'en';
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'cv_view', {
+                    event_category: 'engagement',
+                    event_label: lang === 'nl' ? 'Dutch 1-Page CV' : 'English 1-Page CV',
+                    file_name: lang === 'nl' ? 'Mohammed_Marzouq_CV_NL.pdf' : 'Mohammed_Marzouq_CV.pdf'
+                });
+            }
+        });
+    });
 })();

@@ -62,7 +62,8 @@ portfolio/
 │   ├── OpenSourceWorkThumbnails/          # GitHub project preview images
 │   ├── ProjectsAssets/                    # In-depth screenshots & diagrams
 │   ├── ProjectsPosters/                   # Video poster fallback frames
-│   └── ProjectsThumbnails/                # High-res GIFs & images for cards
+│   ├── ProjectsThumbnails/                # High-res GIFs & images for cards
+│   └── Resumes/                           # Downloadable CVs (English & Dutch 1-pagers)
 ├── css/
 │   ├── home.css                           # Homepage design tokens, layout & animations
 │   └── project.css                        # Project detail page styles & legacy compatibility

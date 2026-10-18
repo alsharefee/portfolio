@@ -488,9 +488,41 @@ body::after {
 
 .menu-foot {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 28px;
     color: var(--muted);
+}
+
+.menu-foot-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-foot-cv {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.menu-foot-cv a {
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+    transition: color .2s;
+}
+
+.menu-foot-cv a:hover {
+    color: var(--accent);
+}
+
+.menu-foot-cv .dim {
+    color: var(--faint);
 }
 
 /* ---------- Hero ---------- */
@@ -586,6 +618,43 @@ body::after {
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 34px;
+}
+
+.hero-cv-sub {
+    margin-top: 14px;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hero-cv-sub-label {
+    color: var(--faint);
+}
+
+.hero-cv-sub-link {
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line-strong);
+    transition: color .2s var(--ease-out), text-decoration-color .2s var(--ease-out);
+}
+
+.hero-cv-sub-link:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+.hero-cv-sub-link .arrow {
+    display: inline-block;
+    transition: transform .2s var(--ease-out);
+}
+
+.hero-cv-sub-link:hover .arrow {
+    transform: translate(2px, -2px);
 }
 
 .status {
@@ -842,6 +911,24 @@ body::after {
 .facts dd {
     font-size: 15px;
     color: var(--ink);
+}
+
+.facts dd .fact-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line-strong);
+    transition: color .2s var(--ease-out), text-decoration-color .2s var(--ease-out);
+}
+
+.facts dd .fact-link:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+.facts dd .dim {
+    color: var(--faint);
+    margin-inline: 4px;
 }
 
 .about-body {

@@ -15,7 +15,8 @@ const MIME = {
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.mp4': 'video/mp4',
-  '.webm': 'video/webm'
+  '.webm': 'video/webm',
+  '.pdf': 'application/pdf'
 };
 
 const root = path.resolve(__dirname, '..');
