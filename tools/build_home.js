@@ -1,6 +1,6 @@
-// Builds the redesigned homepage: fills redesign/index.template.html with
-// data from redesign/projects.json and writes ../index.html.
-// Usage: node redesign/build_home.js
+// Builds the homepage: fills tools/index.template.html with
+// data from tools/projects.json and writes ../index.html.
+// Usage: node tools/build_home.js
 const fs = require('fs');
 const path = require('path');
 

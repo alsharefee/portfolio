@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectsData = JSON.parse(fs.readFileSync('redesign/projects.json', 'utf8'));
+const projectsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'projects.json'), 'utf8'));
 const list = [];
 projectsData.forEach(cat => cat.items.forEach(item => list.push({ ...item, category: cat.category })));
 list.sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));

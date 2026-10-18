@@ -45,9 +45,9 @@ The visual design language is based on the "Editorial Engineer" concept:
 
 ### 2.3 Data-Driven Build Pipeline
 Instead of manually synchronizing 26 project cards, filters, and individual showcase pages:
-- Project data is maintained as structured JSON in [`redesign/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/redesign/projects.json).
+- Project data is maintained as structured JSON in [`tools/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/projects.json).
 - Native Node.js scripts compile the data into [`index.html`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/index.html) and all 26 pages under [`projects/`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/projects).
-- An automated validation suite ([`redesign/validate_all_projects.js`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/redesign/validate_all_projects.js)) verifies asset integrity, HTML tag balancing, and pagination consistency before release.
+- An automated validation suite ([`tools/validate_all_projects.js`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/validate_all_projects.js)) verifies asset integrity, HTML tag balancing, and pagination consistency before release.
 
 ---
 
@@ -76,11 +76,9 @@ portfolio/
 │   ├── project-ar-business-card-logo.html
 │   ├── ... (23 additional project pages)
 │   └── project-vr-sports-simulations.html
-├── redesign/                              # Build scripts, data source & QA tooling
+├── tools/                                 # Build scripts, data source & QA tooling
 │   ├── build_home.js                      # Compiles projects.json + index.template.html -> index.html
 │   ├── build_projects.js                  # Standardizes & generates all 26 project pages
-│   ├── concept_b_editorial.jpg            # Visual design mockup reference
-│   ├── IMPLEMENTATION_PLAN.md             # Detailed engineering audit and roadmap log
 │   ├── index.template.html                # Master homepage HTML template with tokens
 │   ├── projects.json                      # Single source of truth for all 26 projects
 │   ├── serve.js                           # Zero-dependency local Node.js HTTP server
@@ -133,9 +131,9 @@ Each project in [`projects/`](file:///c:/Users/alsha/Documents/First%20Party%20P
 
 ---
 
-## 5. Project Database & Schema (`redesign/projects.json`)
+## 5. Project Database & Schema (`tools/projects.json`)
 
-The canonical project list is defined in [`redesign/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/redesign/projects.json). The JSON structure is organized as an array of categories, each containing item records:
+The canonical project list is defined in [`tools/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/projects.json). The JSON structure is organized as an array of categories, each containing item records:
 
 ```json
 [
@@ -186,7 +184,7 @@ To run the local preview server:
 ```powershell
 npm start
 ```
-*Equivalent command:* `node redesign/serve.js`
+*Equivalent command:* `node tools/serve.js`
 
 This starts an HTTP server at `http://localhost:8088/` with proper MIME type handling for videos, images, fonts, and HTML documents. Localhost automatically bypasses Google Analytics.
 
@@ -195,7 +193,7 @@ To run the automated validation suite:
 ```powershell
 npm test
 ```
-*Equivalent command:* `node redesign/validate_all_projects.js`
+*Equivalent command:* `node tools/validate_all_projects.js`
 
 The QA script checks:
 - **Zero Legacy References:** Asserts that no pages reference `tailwind.css`, `styles.css`, or `main.js`.
@@ -209,16 +207,18 @@ The QA script checks:
 ### 6.4 Adding or Modifying a Project
 When adding a new project or updating an existing one:
 1. **Add Assets:** Place screenshots, videos, and thumbnails in `Assets/ProjectsThumbnails/` and `Assets/ProjectsAssets/`.
-2. **Update Data:** Add or update the entry in [`redesign/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/redesign/projects.json).
+2. **Update Data:** Add or update the entry in [`tools/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/projects.json).
 3. **Rebuild Homepage:**
    ```powershell
-   node redesign/build_home.js
+   npm run build:home
+   # or: node tools/build_home.js
    ```
 4. **Rebuild or Create Project Detail Page:**
    - If adding a new page, create `projects/project-my-new-project.html` following the standard template structure.
    - Run the project generator to update pagination across all pages:
      ```powershell
-     node redesign/build_projects.js
+     npm run build:projects
+     # or: node tools/build_projects.js
      ```
 5. **Update Sitemap:** If a new page was added, append the new URL to [`sitemap.xml`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/sitemap.xml).
 6. **Verify:** Run `npm test` to confirm zero errors.
