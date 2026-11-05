@@ -20,9 +20,9 @@ const CATS = {
 };
 
 const FEATURED = [
+    'projects/project-hologram-scanner-3d-radar-suite.html',
     'projects/project-cassini-hackathon-space-for-water.html',
     'projects/project-untitled-mecha-project-vr-mech-multiplayer-game.html',
-    'projects/project-snipers-ground-vr-multiplayer-sniping-game.html',
 ];
 
 const esc = s => String(s)

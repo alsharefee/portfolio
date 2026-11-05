@@ -8,7 +8,7 @@ list.sort((a, b) => parseInt(b.year, 10) - parseInt(a.year, 10));
 
 let totalErrors = 0;
 
-console.log('--- Starting Comprehensive QA on All 26 Project Pages ---');
+console.log(`--- Starting Comprehensive QA on All ${list.length} Project Pages ---`);
 
 list.forEach((p, idx) => {
   const filePath = p.href;
@@ -81,7 +81,7 @@ list.forEach((p, idx) => {
 
 console.log('--- QA Results ---');
 if (totalErrors === 0) {
-  console.log(`✅ ALL 26 PROJECT PAGES PASSED VALIDATION! ZERO ERRORS.`);
+  console.log(`✅ ALL ${list.length} PROJECT PAGES PASSED VALIDATION! ZERO ERRORS.`);
 } else {
   console.error(`❌ QA FAILED with ${totalErrors} errors.`);
 }

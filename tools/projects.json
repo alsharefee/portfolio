@@ -4,6 +4,27 @@
     "icon": "fas fa-vr-cardboard",
     "items": [
       {
+        "href": "projects/project-hologram-scanner-3d-radar-suite.html",
+        "media": {
+          "type": "video",
+          "src": "Assets/ProjectsAssets/Hologram Radar/Hologram plugin short video.mp4",
+          "poster": "Assets/ProjectsPosters/HologramRadarShortVideoPoster.jpg"
+        },
+        "alt": "Hologram Scanner & 3D Radar Suite: LiDAR, Pulse Scanner & Holo-Twin",
+        "title": "Hologram Scanner & 3D Radar Suite: LiDAR, Pulse Scanner & Holo-Twin",
+        "year": "2026",
+        "desc": "AAA in-world holographic radars, LiDAR scanners & vehicle holo-twins for Unreal Engine 5. Built for sci-fi cockpits, mech combat, space simulators, and open-world games.",
+        "tags": [
+          "Unreal Engine",
+          "C++",
+          "Plugin",
+          "Simulation",
+          "VR",
+          "Sci-Fi"
+        ],
+        "latest": true
+      },
+      {
         "href": "projects/project-snipers-ground-vr-multiplayer-sniping-game.html",
         "media": {
           "type": "video",
@@ -61,7 +82,7 @@
           "Multiplayer",
           "Mecha"
         ],
-        "latest": true
+        "latest": false
       },
       {
         "href": "projects/project-vr-real-time-strategy-rts.html",

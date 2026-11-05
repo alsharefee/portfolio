@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) with Google Consent Mode v2 (GDPR / ePrivacy compliant) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Respect opt-out query param (?ga_optout=1) or existing opt-out preference
+      if (new URLSearchParams(location.search).get('ga_optout') === '1' || localStorage.getItem('ga_optout') === 'true') {
+        localStorage.setItem('portfolio_ga_consent', 'denied');
+      }
+
+      var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.endsWith('.local');
+      var storedConsent = localStorage.getItem('portfolio_ga_consent'); // 'granted' | 'denied' | null
+
+      // Set default consent state: DENIED by default (GDPR requirement)
+      gtag('consent', 'default', {
+        'analytics_storage': storedConsent === 'granted' ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+
+      // If user previously granted consent and not in local dev environment, load GA4 immediately
+      if (!isLocal && storedConsent === 'granted') {
+        var s = document.createElement('script');
+        s.id = 'ga-gtag-script';
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DNRMDZQ2GC';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-DNRMDZQ2GC', {
+          'anonymize_ip': true,
+          'allow_google_signals': false,
+          'allow_ad_personalization_signals': false
+        });
+      }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin | Mohammed Marzouq</title>
+    <meta name="description" content="AAA in-world holographic radars, LiDAR scanners &amp; vehicle holo-twins for Unreal Engine 5. Built for sci-fi cockpits, mech combat, space simulators, and open-wor">
+    <meta name="author" content="Mohammed Marzouq">
+    <meta name="theme-color" content="#0e0e0c">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://alsharefee.github.io/portfolio/projects/project-hologram-scanner-3d-radar-suite.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin | Mohammed Marzouq">
+    <meta property="og:description" content="AAA in-world holographic radars, LiDAR scanners &amp; vehicle holo-twins for Unreal Engine 5. Built for sci-fi cockpits, mech combat, space simulators, and open-world games.">
+    <meta property="og:url" content="https://alsharefee.github.io/portfolio/projects/project-hologram-scanner-3d-radar-suite.html">
+    <meta property="og:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsAssets/Hologram%20Radar/Hologram%20plugin%20short%20video.mp4">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin">
+    <meta name="twitter:description" content="AAA in-world holographic radars, LiDAR scanners &amp; vehicle holo-twins for Unreal Engine 5. Built for sci-fi cockpits, mech combat, space simu">
+    <meta name="twitter:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsAssets/Hologram%20Radar/Hologram%20plugin%20short%20video.mp4">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23c6f432'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Narrow,Arial,sans-serif' font-size='34' font-weight='900' fill='%230e0e0c'%3EMM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Project Stylesheet -->
+    <link rel="stylesheet" href="../css/project.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand" aria-label="Mohammed Marzouq Home">
+                <span class="brand-mark">MM</span>
+                <div class="brand-meta mono">
+                    <span>INDEX</span>
+                    <span class="sep">/</span>
+                    <span class="title-trunc">[01] Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="back-link">
+                    <span class="arrow-left">←</span> Back to Projects
+                </a>
+                <a href="../index.html#contact" class="btn btn-sm btn-accent">
+                    Contact <span class="arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Project Content -->
+    <main class="project-main">
+        <div class="container">
+            <!-- Project Header -->
+            <header class="project-header">
+                <div class="project-breadcrumbs mono">
+                    <a href="../index.html">Mohammed Marzouq</a>
+                    <span class="muted">/</span>
+                    <a href="../index.html#projects">Projects</a>
+                    <span class="muted">/</span>
+                    <span class="accent">[INDEX 01/27 · VR &amp; SIMULATIONS]</span>
+                </div>
+
+                <h1 class="project-title display">Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin</h1>
+
+                <dl class="project-meta-strip">
+                    <div class="meta-item">
+                        <dt>TIMELINE</dt>
+                        <dd class="mono-val">2026</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>CATEGORY</dt>
+                        <dd>VR &amp; Simulations</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>ROLE / STACK</dt>
+                        <dd>Unreal Engine 5 (C++) · Plugin Developer</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>TAGS</dt>
+                        <dd>
+                            <div class="tags-list">
+                                <span class="tag-badge">Unreal Engine</span>
+                            <span class="tag-badge">C++</span>
+                            <span class="tag-badge">Plugin</span>
+                            <span class="tag-badge">Simulation</span>
+                            <span class="tag-badge">VR</span>
+                            <span class="tag-badge">Sci-Fi</span>
+                            </div>
+                        </dd>
+                    </div>
+                </dl>
+            </header>
+
+            <!-- Extracted Body Content -->
+            <div class="project-body prose">
+                <!-- Action Buttons / Links -->
+                <div class="flex flex-wrap items-center gap-4 mb-10">
+                    <a href="https://www.fab.com/listings/98656b9b-457e-4460-a569-80c395f2b3bb" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1 no-underline">
+                        <i class="fa-solid fa-cube text-xl"></i>
+                        <span>Get on Epic Fab</span>
+                        <span class="mono text-xs opacity-75">↗</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Nl_tW3RPPH4" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg border border-slate-700 transition transform hover:-translate-y-1 no-underline">
+                        <i class="fa-brands fa-youtube text-red-500 text-xl"></i>
+                        <span>Watch on YouTube</span>
+                        <span class="mono text-xs opacity-75">↗</span>
+                    </a>
+                </div>
+
+                <!-- Video Showcase Section -->
+                <div class="space-y-8 mb-12">
+                    <!-- YouTube Full Showcase -->
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black aspect-video relative">
+                        <iframe class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/Nl_tW3RPPH4" title="Hologram Scanner &amp; 3D Radar Suite — Full Showcase"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Short Video Loop & Cockpit Hero Preview -->
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <video src="../Assets/ProjectsAssets/Hologram%20Radar/Hologram%20plugin%20short%20video.mp4"
+                            poster="../Assets/ProjectsPosters/HologramRadarShortVideoPoster.jpg" autoplay loop muted playsinline controls
+                            class="w-full max-h-[70vh] object-contain"></video>
+                    </div>
+                </div>
+
+                <!-- Overview & Value Proposition -->
+                <div class="prose prose-invert prose-lg max-w-none">
+                    <p class="text-slate-300 leading-relaxed text-xl font-medium">
+                        <strong>Tired of flat 2D minimaps that break immersion?</strong> Hologram Scanner &amp; 3D Radar Suite creates real 3D holograms right inside your game world. Place them inside vehicle cockpits, wear them on a character&rsquo;s wrist, project them onto command tables, or scan entire landscapes with an expanding pulse wave.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong>100% Plug &amp; Play:</strong> Drag and drop any of the included Blueprints into your level or character&mdash;it works immediately with zero code or complex setup. Designed from the ground up for sci-fi cockpits, mech combat, space simulators, and open-world games.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">⚡ Performance &amp; Low-Overhead Architecture</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Built in native C++ for high-performance projects where every single millisecond counts:
+                    </p>
+                    <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-8">
+                        <li><strong>Sub-Millisecond CPU Time:</strong> Efficient C++ ray traces and sweep math minimize game-thread execution time.</li>
+                        <li><strong>Zero GC Hitching:</strong> Pre-allocated circular ring buffers ensure 0 new memory allocations per frame, eliminating micro-stutters and garbage collection spikes.</li>
+                        <li><strong>1 Draw Call GPU Instancing:</strong> Thousands of holographic blip dots render seamlessly in a single GPU draw call.</li>
+                        <li><strong>GPU-Driven Dot Decay:</strong> Dot lifetimes and smooth fading curves are computed on the GPU inside the material, keeping CPU threads entirely free.</li>
+                        <li><strong>~80% CPU Savings on Vehicle Twins:</strong> Replaces heavy Animation Blueprints with direct bone sampling, forced low LODs, and an authentic sci-fi low FPS update rate.</li>
+                        <li><strong>VR, PC &amp; Console Ready:</strong> Ultra-lightweight footprint leaves maximum headroom for VR headsets and demanding graphical scenes.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">🎮 Three Complete Gameplay Systems</h3>
+
+                    <!-- System 1 -->
+                    <div class="mt-8 mb-10">
+                        <h4 class="text-xl font-bold text-white mb-2">1. 📡 Volumetric 3D Holographic Radar (<code>ARadarHologram</code>)</h4>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Scans floors, walls, ceilings, and dynamic obstacles into a miniature 3D hologram in real time. Perfect for tactical command tables and cockpit displays.
+                        </p>
+                        <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-6">
+                            <li><strong>Real 3D Scanning:</strong> Detects full three-dimensional geometry around the player or vehicle.</li>
+                            <li><strong>Full Room Coverage:</strong> Equal-Distance mode spaces dots evenly across floors, roofs, walls, and airborne drones.</li>
+                            <li><strong>Sci-Fi Micro-Cube Voxels:</strong> Sharp digital cube blips deliver a crisp, futuristic aesthetic.</li>
+                            <li><strong>Sweep Beam &amp; Audio:</strong> 360&deg; sweeping beam flashes red on enemy contact with procedural MetaSound audio pings.</li>
+                            <li><strong>Target Tracking:</strong> Distinguishes terrain from hostiles and hovers floating 3D distance tags above active targets.</li>
+                        </ul>
+                    </div>
+
+                    <!-- System 1 Screenshots -->
+                    <div class="space-y-6 mb-12">
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                            <img src="../Assets/ProjectsAssets/Hologram%20Radar/Space%20ship%203D%20radar.jpg"
+                                alt="Volumetric 3D Holographic Radar in Spaceship Cockpit" loading="lazy"
+                                class="w-full max-h-[70vh] object-contain">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                            <img src="../Assets/ProjectsAssets/Hologram%20Radar/3D%20radar%20inside%20the%20mech.jpg"
+                                alt="3D Radar Inside Combat Mech Cockpit" loading="lazy"
+                                class="w-full max-h-[70vh] object-contain">
+                        </div>
+                    </div>
+
+                    <!-- System 2 -->
+                    <div class="mt-8 mb-10">
+                        <h4 class="text-xl font-bold text-white mb-2">2. 🌐 1:1 Ground Pulse Terrain Scanner (<code>AHologramPulseScanner</code>)</h4>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Sends an expansive impulse wavefront across uneven ground up to 50m+ in an organic honeycomb pattern to reveal terrain contours and hidden threats.
+                        </p>
+                        <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-6">
+                            <li><strong>Expanding Wavefront:</strong> Organic honeycomb pulse sweeping outward across landscape polygons.</li>
+                            <li><strong>Live Slope Colors:</strong> Evaluates ground steepness in real time to guide player traversal and navigation:
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>🟢 <strong>Safe Ground (&lt; 25&deg;):</strong> Neon Cyan (Easy walking)</li>
+                                    <li>🟡 <strong>Caution Slope (25&deg;&ndash;45&deg;):</strong> Amber (Steep climb)</li>
+                                    <li>🔴 <strong>Hazard Wall (&ge; 45&deg;):</strong> Danger Red (Sheer cliff / impassable wall)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Zero-Clipping Placement:</strong> Markers intelligently elevate above ground geometry so they never sink into terrain or flicker.</li>
+                            <li><strong>Enemy Tagging:</strong> Highlights concealed enemies with 3D floating markers and real-time distance measurements.</li>
+                        </ul>
+                    </div>
+
+                    <!-- System 2 Screenshot -->
+                    <div class="mb-12 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <img src="../Assets/ProjectsAssets/Hologram%20Radar/Hologram%20pulse%20scanner%20in%20desert.jpg"
+                            alt="Hologram Pulse Scanner in Desert Environment" loading="lazy"
+                            class="w-full max-h-[70vh] object-contain">
+                    </div>
+
+                    <!-- System 3 -->
+                    <div class="mt-8 mb-10">
+                        <h4 class="text-xl font-bold text-white mb-2">3. 🤖 Vehicle &amp; Mech Hologram Twin (<code>UVehicleHologramComponent</code>)</h4>
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Creates a live holographic mini-twin of your vehicle or mech right inside the cockpit, mirroring movements, steering inputs, articulation, and thrusters in real time.
+                        </p>
+                        <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-6">
+                            <li><strong>Live Animated Hologram:</strong> 3D mini-hologram mirroring steering wheels, mech legs, or ship thrusters in sync with the real vehicle.</li>
+                            <li><strong>Authentic Sci-Fi Stutter:</strong> Updates at a controllable low FPS for a classic holographic aesthetic while saving ~80% CPU cycles over Animation Blueprints.</li>
+                            <li><strong>Rotating Display:</strong> Optional turntable spin for UI menu screens, vehicle selection, or cockpit consoles.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Additional System Visuals -->
+                    <div class="space-y-6 mb-12">
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                            <img src="../Assets/ProjectsAssets/Hologram%20Radar/Timeline%201_01_00_01_00.jpg"
+                                alt="Hologram Scanner &amp; 3D Radar Suite — Holo-Twin Close-Up" loading="lazy"
+                                class="w-full max-h-[70vh] object-contain">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                            <img src="../Assets/ProjectsAssets/Hologram%20Radar/Timeline%201_01_00_03_04.jpg"
+                                alt="Volumetric Radar Room Scanning in Environment" loading="lazy"
+                                class="w-full max-h-[70vh] object-contain">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                            <img src="../Assets/ProjectsAssets/Hologram%20Radar/Timeline%201_01_00_14_20.jpg"
+                                alt="Sci-Fi Radar Scanning &amp; Target Tracking" loading="lazy"
+                                class="w-full max-h-[70vh] object-contain">
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">📦 Ready-to-Use Drag-and-Drop Blueprints</h3>
+                    <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-8">
+                        <li><code>BP_Radar_VerySmall</code> <strong>(15 cm):</strong> Personal wrist gadgets, wearable pip-boys, handheld scanners.</li>
+                        <li><code>BP_Radar_Small</code> <strong>(50 cm):</strong> Fighter jet cockpits, mech consoles, rover dashboards.</li>
+                        <li><code>BP_Radar_Medium</code> <strong>(1.2 m):</strong> Tactical command briefing tables, starship bridge maps.</li>
+                        <li><code>BP_Radar_Large</code> <strong>(3.5 m):</strong> Base perimeter defense, planetary radar installations.</li>
+                        <li><code>BP_Radar_1to1_Environment</code> <strong>(1:1 Scale):</strong> Full-scale holographic arena LiDAR sweeps.</li>
+                        <li><code>BP_HologramPulseScanner</code> <strong>(50m+ Wave):</strong> Open-world terrain scanning &amp; slope hazard detection.</li>
+                        <li><code>BP_HoloShowroomCharacter</code> <strong>(Playable Pawn):</strong> First-person character with wrist radar (<kbd>[Q]</kbd>) and pulse scanner (<kbd>[F]</kbd>) pre-attached.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">🛠️ Easy Customization (Details Panel)</h3>
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        Customize almost everything directly in the Unreal Editor with simple checkboxes and sliders:
+                    </p>
+                    <ul class="list-disc pl-6 text-slate-300 space-y-2 mb-8">
+                        <li><strong>Checkboxes:</strong> Toggle Enemy 3D Text, Range Readout, Target Counter, and Equal Distance Dots.</li>
+                        <li><strong>Visuals:</strong> Choose cube or sphere dots, adjust dot scale, and pick custom beam and alert colors.</li>
+                    </ul>
+
+                    <!-- Final Call to Action -->
+                    <div class="mt-12 p-8 rounded-xl border border-slate-700 bg-slate-900/60 text-center">
+                        <h4 class="text-2xl font-bold text-white mb-3">Available Now on Epic Fab</h4>
+                        <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+                            Plug &amp; play C++ plugin for Unreal Engine 5. Compatible with PC, VR, and consoles with zero configuration needed.
+                        </p>
+                        <a href="https://www.fab.com/listings/98656b9b-457e-4460-a569-80c395f2b3bb" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-lg shadow-blue-500/30 transform hover:-translate-y-1 no-underline text-lg">
+                            <i class="fa-solid fa-cube text-2xl"></i>
+                            <span>View on Epic Fab Store</span>
+                            <span class="mono text-sm opacity-75">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination: Previous / Next Project -->
+            <section class="pagination-section" aria-label="Project pagination">
+                <div class="pagination-grid">
+                    <a href="project-lost-in-nightmares-android-horror-puzzle-game.html" class="nav-card prev" id="prev-project-link">
+                        <span class="nav-card-label mono"><span class="arrow-left">←</span> Previous Project [27]</span>
+                        <span class="nav-card-title">Lost In Nightmares: Android Horror / Puzzle Game</span>
+                        <span class="nav-card-year mono">2013 · Mobile Games</span>
+                    </a>
+                    <a href="project-cassini-hackathon-space-for-water.html" class="nav-card next" id="next-project-link">
+                        <span class="nav-card-label mono">Next Project [02] <span class="arrow-right">→</span></span>
+                        <span class="nav-card-title">WaterSim — Satellite Data Visualization</span>
+                        <span class="nav-card-year mono">2026 · VR &amp; Simulations</span>
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 36px;">
+                    <a href="../index.html#projects" class="back-link">
+                        ↑ Return to All 27 Projects
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+        <div class="container footer-inner mono">
+            <div>&copy; 2026 Mohammed Marzouq. All rights reserved.</div>
+            <div>AMSTERDAM, NL · <span data-clock>--:--</span> CET</div>
+            <div><button type="button" class="cookie-settings-trigger" id="cookie-settings-btn" aria-label="Open cookie and privacy settings">Cookie Settings</button></div>
+            <div><a href="../index.html" class="accent">Home ↗</a></div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Interactive Script -->
+    <script src="../js/project.js"></script>
+
+    <!-- Privacy & Cookies Consent Banner -->
+    <aside class="consent-banner" id="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-desc" aria-hidden="true">
+        <div class="consent-inner">
+            <div class="consent-header">
+                <span class="consent-badge mono"><span class="accent-dot">●</span> PRIVACY &amp; COOKIES</span>
+                <span class="consent-status mono" id="consent-status" aria-live="polite"></span>
+            </div>
+            <div class="consent-content">
+                <h3 class="consent-title display" id="consent-title">Analytics Preferences</h3>
+                <p class="consent-desc" id="consent-desc">
+                    I use anonymous Google Analytics to understand website traffic and improve my portfolio. No personal data, advertising trackers, or profiling cookies are collected.
+                </p>
+            </div>
+            <div class="consent-actions">
+                <button type="button" class="btn btn-accent btn-sm consent-btn" id="consent-accept-btn">
+                    Accept Analytics
+                </button>
+                <button type="button" class="btn btn-outline btn-sm consent-btn" id="consent-decline-btn">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <script src="../js/consent.js"></script>
+</body>
+
+</html>

@@ -14,7 +14,7 @@
 - **Primary Domain:** Senior Software Engineer specializing in Unity (C#), Unreal Engine (C++/Blueprints), XR (VR/AR), Real-Time Simulation, and Enterprise Low-Code (Mendix).
 - **Hosting Platform:** GitHub Pages (static web deployment directly from the root repository).
 
-This project is a high-performance, responsive personal portfolio website showcasing 10+ years of professional engineering work across 26 projects, hackathons, open-source contributions, technical writing, and industry recommendations.
+This project is a high-performance, responsive personal portfolio website showcasing 10+ years of professional engineering work across 27 projects, hackathons, open-source contributions, technical writing, and industry recommendations.
 
 ---
 
@@ -44,9 +44,9 @@ The visual design language is based on the "Editorial Engineer" concept:
   - Smooth micro-interactions and scroll-triggered animations.
 
 ### 2.3 Data-Driven Build Pipeline
-Instead of manually synchronizing 26 project cards, filters, and individual showcase pages:
+Instead of manually synchronizing 27 project cards, filters, and individual showcase pages:
 - Project data is maintained as structured JSON in [`tools/projects.json`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/projects.json).
-- Native Node.js scripts compile the data into [`index.html`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/index.html) and all 26 pages under [`projects/`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/projects).
+- Native Node.js scripts compile the data into [`index.html`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/index.html) and all 27 pages under [`projects/`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/projects).
 - An automated validation suite ([`tools/validate_all_projects.js`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/tools/validate_all_projects.js)) verifies asset integrity, HTML tag balancing, and pagination consistency before release.
 
 ---
@@ -71,17 +71,17 @@ portfolio/
 │   ├── consent.js                         # Google Consent Mode v2 & GDPR cookie controller
 │   ├── home.js                            # Homepage interactive behavior & filters
 │   └── project.js                         # Project page lightbox, keyboard navigation & observers
-├── projects/                              # 26 standalone project detail pages
+├── projects/                              # 27 standalone project detail pages
 │   ├── project-2d-platform-game.html
 │   ├── project-ai-made-game-2d-submarine-simulation.html
 │   ├── project-ar-business-card-logo.html
-│   ├── ... (23 additional project pages)
+│   ├── ... (24 additional project pages)
 │   └── project-vr-sports-simulations.html
 ├── tools/                                 # Build scripts, data source & QA tooling
 │   ├── build_home.js                      # Compiles projects.json + index.template.html -> index.html
-│   ├── build_projects.js                  # Standardizes & generates all 26 project pages
+│   ├── build_projects.js                  # Standardizes & generates all 27 project pages
 │   ├── index.template.html                # Master homepage HTML template with tokens
-│   ├── projects.json                      # Single source of truth for all 26 projects
+│   ├── projects.json                      # Single source of truth for all 27 projects
 │   ├── serve.js                           # Zero-dependency local Node.js HTTP server
 │   └── validate_all_projects.js           # Automated QA and asset integrity checker
 ├── DOCUMENTATION.md                       # Comprehensive internal project documentation
@@ -112,7 +112,7 @@ The portfolio implements a strict, GDPR- and ePrivacy-compliant consent workflow
 3. **Multi-Faceted Project Filter:**
    - Filters projects across 7 categories: `VR & Sim`, `AR`, `Mobile`, `2D`, `AI`, `PC`, and `Web`.
    - Supports cross-filtering by specific technology tags (e.g., Unity, C#, Shader Graph, WebGL).
-   - Dynamically updates active project count indicators (e.g. `Showing 05 / 26 projects`) and provides a clear/reset action.
+   - Dynamically updates active project count indicators (e.g. `Showing 05 / 27 projects`) and provides a clear/reset action.
 4. **Floating Hover Preview:** On desktop viewports, hovering over any project row in the list or article item displays a smooth, floating media preview card that tracks mouse coordinates using requestAnimationFrame.
 5. **Battery & Performance Optimization:**
    - `IntersectionObserver` instances automatically pause off-screen autoplaying loop videos.
@@ -198,7 +198,7 @@ npm test
 
 The QA script checks:
 - **Zero Legacy References:** Asserts that no pages reference `tailwind.css`, `styles.css`, or `main.js`.
-- **Styles & Scripts Check:** Confirms all 26 pages import `project.css` and `project.js`.
+- **Styles & Scripts Check:** Confirms all 27 pages import `project.css` and `project.js`.
 - **Character Encoding:** Scans for mojibake or corrupt UTF-8 sequences (e.g. `Ã`, `?????`).
 - **DOM Balance:** Verifies that all opening `<div\b[^>]*>` tags match closing `</div>` tags.
 - **Media Asset Resolution:** Confirms that 100% of referenced image/video paths exist on disk.
@@ -230,7 +230,7 @@ When adding a new project or updating an existing one:
 
 - **Structured Data (JSON-LD):** Implements `Person` schema in [`index.html`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/index.html) including `name`, `jobTitle`, `sameAs` (LinkedIn, GitHub, ArtStation, YouTube, X), and professional summary.
 - **Open Graph & Twitter Cards:** Complete `og:title`, `og:description`, `og:image`, `og:url`, `twitter:card`, `twitter:title`, and `twitter:image` tags configured for rich link previews.
-- **Robots & Sitemap:** [`robots.txt`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/robots.txt) enables crawling for all user-agents and points to [`sitemap.xml`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/sitemap.xml), which enumerates the homepage and all 26 project pages with update frequencies and priorities.
+- **Robots & Sitemap:** [`robots.txt`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/robots.txt) enables crawling for all user-agents and points to [`sitemap.xml`](file:///c:/Users/alsha/Documents/First%20Party%20Projects/portfolio/sitemap.xml), which enumerates the homepage and all 27 project pages with update frequencies and priorities.
 - **Security & Integrity:** External outbound links enforce `rel="noopener noreferrer"`. Inline scripts avoid unsafe evals.
 
 ---

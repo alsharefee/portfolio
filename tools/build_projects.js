@@ -47,6 +47,9 @@ function getCleanTitle(p) {
 
 function getPrimaryStack(p, tags) {
   const tStr = tags.join(' ').toLowerCase();
+  if (tStr.includes('unreal engine') && (tStr.includes('plugin') || tStr.includes('c++'))) {
+    return 'Unreal Engine 5 (C++) · Plugin Developer';
+  }
   if (tStr.includes('unreal engine')) return 'Unreal Engine · Simulation';
   if (tStr.includes('javascript')) return 'Unity (JS) · Mobile Game';
   if (tStr.includes('dots')) return 'Unity DOTS / ECS (C#)';
@@ -209,7 +212,7 @@ function buildProjectPage(idx) {
                     <span class="muted">/</span>
                     <a href="../index.html#projects">Projects</a>
                     <span class="muted">/</span>
-                    <span class="accent">[INDEX ${currentIndexStr}/26 · ${escapeHtml(p.category.toUpperCase())}]</span>
+                    <span class="accent">[INDEX ${currentIndexStr}/${list.length} · ${escapeHtml(p.category.toUpperCase())}]</span>
                 </div>
 
                 <h1 class="project-title display">${escapeHtml(currentTitle)}</h1>
@@ -259,7 +262,7 @@ function buildProjectPage(idx) {
                 </div>
                 <div style="text-align: center; margin-top: 36px;">
                     <a href="../index.html#projects" class="back-link">
-                        ↑ Return to All 26 Projects
+                        ↑ Return to All ${list.length} Projects
                     </a>
                 </div>
             </section>
@@ -325,7 +328,7 @@ list.forEach((p, idx) => {
   const pageHtml = buildProjectPage(idx);
   fs.writeFileSync(p.href, pageHtml, 'utf8');
   count++;
-  console.log(`[${String(count).padStart(2, '0')}/26] Wrote ${p.href} (${pageHtml.length} bytes)`);
+  console.log(`[${String(count).padStart(2, '0')}/${list.length}] Wrote ${p.href} (${pageHtml.length} bytes)`);
 });
 
 console.log(`\nSuccessfully generated and updated all ${count} project pages!`);
