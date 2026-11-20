@@ -77,6 +77,27 @@ list.forEach((p, idx) => {
     console.error(`[ERROR in ${filePath}] Missing .project-title heading!`);
     totalErrors++;
   }
+
+  // Check og:image validity (must not point to .mp4 or .gif, and must exist on disk)
+  const ogMatch = content.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
+  if (!ogMatch) {
+    console.error(`[ERROR in ${filePath}] Missing og:image meta tag!`);
+    totalErrors++;
+  } else {
+    const ogUrl = ogMatch[1];
+    if (/\.(mp4|webm|gif)$/i.test(ogUrl)) {
+      console.error(`[ERROR in ${filePath}] og:image points to video/GIF (${ogUrl})!`);
+      totalErrors++;
+    }
+    const prefix = 'https://alsharefee.github.io/portfolio/';
+    if (ogUrl.startsWith(prefix)) {
+      const relOg = decodeURI(ogUrl.slice(prefix.length));
+      if (!fs.existsSync(path.resolve(relOg))) {
+        console.error(`[ERROR in ${filePath}] og:image file missing on disk: ${relOg}`);
+        totalErrors++;
+      }
+    }
+  }
 });
 
 console.log('--- QA Results ---');

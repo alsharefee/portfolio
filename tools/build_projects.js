@@ -87,11 +87,18 @@ function buildProjectPage(idx) {
     .map(t => `<span class="tag-badge">${escapeHtml(t)}</span>`)
     .join('\n                            ');
 
-  // Open Graph Image
-  let ogImage = 'https://alsharefee.github.io/portfolio/Assets/ProjectsThumbnails/m2-res_480p-ezgif.com-optimize.gif';
-  if (p.media && p.media.src) {
-    ogImage = `https://alsharefee.github.io/portfolio/${encodeURI(decodeURI(p.media.src))}`;
+  // Open Graph Image (prefer static poster or static image; never point social cards at .mp4 or .gif)
+  let ogAsset = 'Assets/MyImage/og-portfolio-bw.jpg';
+  if (p.media && p.media.poster) {
+    ogAsset = p.media.poster;
+  } else if (
+    p.media &&
+    p.media.src &&
+    !/\.(mp4|webm|gif)$/i.test(p.media.src)
+  ) {
+    ogAsset = p.media.src;
   }
+  const ogImage = `https://alsharefee.github.io/portfolio/${encodeURI(decodeURI(ogAsset))}`;
 
   const pageHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -272,8 +279,8 @@ function buildProjectPage(idx) {
     <!-- Footer -->
     <footer class="project-footer">
         <div class="container footer-inner mono">
-            <div>&copy; 2026 Mohammed Marzouq. All rights reserved.</div>
-            <div>AMSTERDAM, NL · <span data-clock>--:--</span> CET</div>
+            <div>&copy; <span id="footer-year">2026</span> Mohammed Marzouq. All rights reserved.</div>
+            <div>AMSTERDAM, NL · <span data-clock>--:--</span> <span data-tz>CET</span></div>
             <div><button type="button" class="cookie-settings-trigger" id="cookie-settings-btn" aria-label="Open cookie and privacy settings">Cookie Settings</button></div>
             <div><a href="../index.html" class="accent">Home ↗</a></div>
         </div>

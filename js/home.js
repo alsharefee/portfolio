@@ -377,7 +377,7 @@
                 io.observe(projectsSec);
             }
 
-            const writingSec = $('#writing');
+            const writingSec = $('#articles');
             if (writingSec && 'IntersectionObserver' in window) {
                 const ioW = new IntersectionObserver(entries => {
                     entries.forEach(entry => {

@@ -1436,7 +1436,8 @@ body::after {
     background: #000;
 }
 
-.oss-media img {
+.oss-media img,
+.oss-media video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1445,7 +1446,8 @@ body::after {
     transition: transform 1s var(--ease-out);
 }
 
-.oss:hover .oss-media img {
+.oss:hover .oss-media img,
+.oss:hover .oss-media video {
     transform: scale(1.06);
 }
 

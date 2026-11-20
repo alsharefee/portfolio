@@ -93,14 +93,19 @@
         }
     });
 
-    // Local time in footer
+    // Local time and year in footer
     const clock = $('[data-clock]');
     if (clock) {
         const fmt = new Intl.DateTimeFormat('en-GB', {
             hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Amsterdam', hour12: false
         });
+        const tz = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Amsterdam', timeZoneName: 'short' })
+            .formatToParts(new Date()).find(p => p.type === 'timeZoneName');
         const tick = () => { clock.textContent = fmt.format(new Date()); };
         tick();
         setInterval(tick, 15000);
+        $$('[data-tz]').forEach(el => { if (tz) el.textContent = tz.value; });
     }
+    const yr = $('#footer-year');
+    if (yr) yr.textContent = new Date().getFullYear();
 })();
