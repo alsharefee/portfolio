@@ -504,6 +504,19 @@
         }
     }
 
+    /* ---------- Awards: secondary photo switcher ---------- */
+    $$('[data-award-gallery]').forEach(gallery => {
+        const slides = $$('.award-stage img', gallery);
+        const thumbs = $$('.award-thumb[data-slide]', gallery);
+        thumbs.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const idx = parseInt(btn.dataset.slide, 10);
+                slides.forEach((s, k) => s.classList.toggle('is-active', k === idx));
+                thumbs.forEach((t, k) => t.setAttribute('aria-pressed', String(k === idx)));
+            });
+        });
+    });
+
     /* ---------- Copy email ---------- */
     const copyBtn = $('#copy-email');
     if (copyBtn) {
