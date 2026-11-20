@@ -140,7 +140,36 @@
     const drawer = $('#tag-drawer');
     const state = { cat: 'all', tag: null };
 
-    const applyFilters = () => {
+    const readFiltersFromUrl = () => {
+        const params = new URLSearchParams(window.location.search);
+        const catParam = (params.get('cat') || '').toLowerCase();
+        const tagParam = (params.get('tag') || '').toLowerCase();
+        const validCat = catChips.some(c => c.dataset.filterCat === catParam);
+        const validTag = tagChips.some(c => c.dataset.filterTag === tagParam);
+        state.cat = validCat ? catParam : 'all';
+        state.tag = validTag ? tagParam : null;
+        if (state.tag && drawer) drawer.open = true;
+    };
+
+    const syncFiltersToUrl = () => {
+        if (!window.history || !window.history.replaceState) return;
+        const url = new URL(window.location.href);
+        if (state.cat && state.cat !== 'all') {
+            url.searchParams.set('cat', state.cat);
+        } else {
+            url.searchParams.delete('cat');
+        }
+        if (state.tag) {
+            url.searchParams.set('tag', state.tag);
+        } else {
+            url.searchParams.delete('tag');
+        }
+        const next = `${url.pathname}${url.search}${url.hash}`;
+        const cur = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+        if (next !== cur) window.history.replaceState(null, '', next);
+    };
+
+    const applyFilters = (syncUrl = true) => {
         let shown = 0;
         rows.forEach(row => {
             const catOk = state.cat === 'all' || row.dataset.cat === state.cat;
@@ -163,6 +192,7 @@
         countEl.textContent = `${String(shown).padStart(2, '0')} / ${String(rows.length).padStart(2, '0')}`;
         clearBtn.hidden = state.cat === 'all' && !state.tag;
         emptyEl.hidden = shown !== 0;
+        if (syncUrl) syncFiltersToUrl();
         document.dispatchEvent(new CustomEvent('project-filters-applied'));
     };
 
@@ -191,7 +221,14 @@
         const top = filters.getBoundingClientRect().top + window.scrollY - (nav.offsetHeight + 16);
         window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
     }));
-    if (rows.length) applyFilters();
+    if (rows.length) {
+        readFiltersFromUrl();
+        applyFilters(false);
+        window.addEventListener('popstate', () => {
+            readFiltersFromUrl();
+            applyFilters(false);
+        });
+    }
 
     /* ---------- Lazy thumbnails (mobile list view) ---------- */
     const thumbIO = new IntersectionObserver(entries => {

@@ -739,6 +739,69 @@ ul, ol {
     color: var(--accent-ink);
 }
 
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line-strong);
+    background: rgba(14, 14, 12, .85);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s;
+}
+
+.lightbox-nav[hidden],
+.lightbox-meta[hidden] {
+    display: none;
+}
+
+.lightbox-nav:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
+}
+
+.lightbox-meta {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--ink-soft);
+    pointer-events: none;
+    text-align: center;
+}
+
+.lightbox-meta #lightbox-count {
+    color: var(--accent);
+}
+
+.lightbox-caption {
+    max-width: 68ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--muted);
+}
+
 /* Responsive */
 @media (max-width: 899px) {
     .content-sidebar,
