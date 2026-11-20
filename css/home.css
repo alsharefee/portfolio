@@ -1868,41 +1868,57 @@ body::after {
     border: 0;
 }
 
-/* Secondary recognition entry */
-.award-secondary {
+/* Secondary recognition archive grid */
+.award-archive {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--gutter);
-    align-items: start;
     margin-top: clamp(56px, 7vw, 96px);
     padding-top: clamp(48px, 6vw, 80px);
     border-top: 1px solid var(--line);
 }
 
-.award-secondary-text {
-    grid-column: 1 / span 5;
+.award-card {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(20px, 2.4vw, 32px);
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+}
+
+.award-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 24px;
 }
 
 .award-eyebrow.is-subtle {
-    background: var(--bg-raised);
+    background: var(--bg);
     color: var(--accent);
     border: 1px solid var(--line-strong);
 }
 
-.award-secondary-title {
-    margin-top: 18px;
-    font-size: clamp(28px, 3.1vw, 48px);
+.award-card-title {
+    margin-top: 16px;
+    font-size: clamp(26px, 2.5vw, 38px);
+    line-height: .96;
 }
 
-.award-secondary-desc {
-    margin-top: 20px;
-    font-size: 16px;
+.award-card-desc {
+    margin-top: 16px;
+    font-size: 15.5px;
     line-height: 1.6;
     color: var(--ink-soft);
 }
 
-.award-secondary-media {
-    grid-column: 7 / span 6;
+.award-card .award-tags {
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.award-card .award-tags span {
+    background: var(--bg);
 }
 
 .award-stage {
@@ -1938,12 +1954,16 @@ body::after {
     margin-top: 12px;
 }
 
+.award-thumbs.is-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .award-thumb {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 6px;
-    background: var(--bg-raised);
+    background: var(--bg);
     border: 1px solid var(--line);
     text-align: left;
     transition: border-color .25s, background .25s;
@@ -1962,7 +1982,7 @@ body::after {
     position: relative;
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    height: 54px;
     overflow: hidden;
     background: #000;
 }
@@ -2512,11 +2532,13 @@ body::after {
     .rating,
     .award-text,
     .award-media,
-    .award-secondary-text,
-    .award-secondary-media,
     .stack,
     .certs {
         grid-column: 1 / -1;
+    }
+
+    .award-archive {
+        grid-template-columns: 1fr;
     }
 
     .hero-portrait {
@@ -2721,6 +2743,10 @@ body::after {
 
     .award-thumbs {
         gap: 8px;
+    }
+
+    .award-thumb-frame {
+        height: 44px;
     }
 
     .award-thumb-label {
