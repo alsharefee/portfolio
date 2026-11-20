@@ -25,6 +25,25 @@
         "latest": true
       },
       {
+        "href": "projects/project-ajax-hackathon-vr-sports-tracking.html",
+        "media": {
+          "type": "img",
+          "src": "Assets/ProjectsPosters/AjaxHackathonWinner.webp"
+        },
+        "alt": "AFC Ajax Hackathon — Real-Time 3D Tracking & VR Simulation",
+        "title": "AFC Ajax Hackathon — Real-Time 3D Tracking & VR Simulation",
+        "year": "2026",
+        "desc": "1st Place Rockstars Impact Award winner (~200 developers, 24 teams at Johan Cruyff ArenA). Real-time 3D sports telemetry and first-person VR match simulation engine in Unity ingesting Ajax's 21-point skeletal tracking data.",
+        "tags": [
+          "Unity (C#)",
+          "VR",
+          "Simulation",
+          "Sports-Tech",
+          "Hackathon"
+        ],
+        "latest": true
+      },
+      {
         "href": "projects/project-snipers-ground-vr-multiplayer-sniping-game.html",
         "media": {
           "type": "video",
@@ -54,7 +73,7 @@
         "alt": "Relaxing In VR Experiences",
         "title": "Relaxing In VR Experiences",
         "year": "2023",
-        "desc": "A comprehensive game project demonstrating core mechanics, user experience design, and interactive gameplay. Developed to showcase technical skills.",
+        "desc": "Multiplayer VR relaxation environments and spatial audio scenes built for the Homaysa Steam VR platform, featuring interactive desert starlight camps and tranquil social spaces with spatial voice chat.",
         "tags": [
           "Unity (C#)",
           "VR",
@@ -154,7 +173,7 @@
         },
         "title": "VR Spaceship Simulation",
         "year": "2023",
-        "desc": "VR spaceship simulation game mode where users can pilot a spaceship in a zero gravity expeirence. This game mode was made for Homaysa.",
+        "desc": "VR spaceship simulation game mode where users can pilot a spaceship in a zero-gravity experience. Built as a multiplayer VR game mode for Homaysa.",
         "tags": [
           "Unity (C#)",
           "VR",
@@ -175,7 +194,7 @@
         "alt": "PWC VR Game mode",
         "title": "PWC VR Game mode",
         "year": "2025",
-        "desc": "Summer vacation is here and I thought maybe a driving a personal water craft will be amazing for the summer in VR.",
+        "desc": "VR personal watercraft (jet-ski) simulation game mode in Unreal Engine 5 featuring water buoyancy physics and first-person handlebars locomotion.",
         "tags": [
           "Unreal Engine",
           "Simulation",
@@ -229,11 +248,11 @@
           "src": "Assets/ProjectsThumbnails/XRArabia1-ezgif.com-gif-maker.mp4",
           "poster": "Assets/ProjectsPosters/XRArabia1-ezgif.com-gif-maker.webp"
         },
-        "title": "AR Business Car Logo",
+        "title": "AR Business Card Logo",
         "year": "2018",
-        "desc": "AR business card logo made using Unity and EasyAR AR SDK.",
+        "desc": "AR business card logo built using Unity and the EasyAR SDK.",
         "tags": [
-          "Unity3D",
+          "Unity (C#)",
           "EasyAR SDK",
           "AR"
         ],
@@ -248,9 +267,9 @@
         },
         "title": "Augmented Reality (AR) for a Business Card",
         "year": "2017",
-        "desc": "AR logo for Gamified Labs business cards. By clicking the button on the business card a hologram of Gamified Labs logo would show up.",
+        "desc": "Interactive AR hologram for Gamified Labs business cards. Tapping the virtual button on the card projects a 3D hologram of the company logo.",
         "tags": [
-          "Unity3D",
+          "Unity (C#)",
           "Vuforia SDK",
           "AR"
         ],
@@ -265,7 +284,7 @@
         },
         "title": "Augmented Reality Space Door/Portal (AR)",
         "year": "2017",
-        "desc": "This is an Augmented Reality app inside a mall, using Unity3D and Apple ARKit I made while working in GamfiedLabs. In the video you can see it was to motivate malls to use AR in their marketing.",
+        "desc": "Augmented Reality portal installation built with Unity and Apple ARKit at Gamified Labs, allowing mall visitors to step through a virtual doorway onto the Moon.",
         "tags": [
           "Unity (C#)",
           "Apple ARKit",
@@ -322,7 +341,7 @@
         },
         "title": "True Horror: Mobile Horror/Puzzle Game",
         "year": "2018",
-        "desc": "The trailer for the mobile IOS and Android game, a puzzle and horror experience \"True Horror\".In a house that has been touched by a demonic presences, lives a family that can't leave their home and in there happens horrific things that can't be imagined.",
+        "desc": "First-person horror and puzzle game for iOS and Android built in Unity. Set inside a haunted family home afflicted by a demonic presence, combining atmospheric tension with environmental puzzles.",
         "tags": [
           "Unity (C#)",
           "Mobile",
@@ -341,7 +360,7 @@
         },
         "title": "Lost In Nightmares: Android Horror / Puzzle Game",
         "year": "2013",
-        "desc": "My first ever released game on Google Play on Android system.The game is a horror / puzzle game where players can move in FPS.",
+        "desc": "My first commercial release on Google Play for Android—a first-person horror and puzzle adventure built in Unity.",
         "tags": [
           "Unity (JavaScript)",
           "Android",
@@ -432,7 +451,7 @@
         "alt": "Herds: RTS PC Game",
         "title": "Herds: RTS PC Game",
         "year": "2018",
-        "desc": "Our zombie find himself in a town filled with fresh humans and he just want one bite.This game uses a new idea, if you like the idea of growing your own army of zombies please like and share the game, it would also help us if you tell us any opinion or suggestion you may have. This is a Real Time Strategy (RTS) game. It was made using Unity 3D and its URP (Universal Render Pipeline). The idea of the game is to control a group of zombies and infect humans to make them join your army.",
+        "desc": "Real-Time Strategy (RTS) PC game built in Unity (URP). Our zombie finds himself in a town filled with humans and just wants one bite—infecting townspeople to dynamically grow and command an expanding zombie horde.",
         "tags": [
           "Unity (C#)",
           "PC",
@@ -450,7 +469,7 @@
         "alt": "The Savior",
         "title": "\"The\" Savior: a Game jam game",
         "year": "2024",
-        "desc": "A hero with two consciences fighting inside her, Who wins? Who lose? You decide?Requires 2 controllers, Triggers and thumb sticks to control the character.",
+        "desc": "A hero with two consciences fighting inside her—who wins, who loses? You decide. Co-op dual-controller game jam prototype where two players share triggers and thumbsticks to control one character.",
         "tags": [
           "Unity (C#)",
           "Game Jam",
@@ -467,7 +486,7 @@
         },
         "title": "Blindwaves: A Game Jam Game",
         "year": "2017",
-        "desc": "A 2017 Global Game Jam game that uses Keijiro Takahashi waves shader where the player is a blind man who can only sees the sound waves and there is a zombie that he must evade and save the princess.",
+        "desc": "A 2017 Global Game Jam entry integrating Keijiro Takahashi's wave shader: play as a blind protagonist who can only see echolocation sound waves while evading enemies.",
         "tags": [
           "Unity (C#)",
           "Game Jam",

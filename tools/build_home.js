@@ -21,8 +21,8 @@ const CATS = {
 
 const FEATURED = [
     'projects/project-hologram-scanner-3d-radar-suite.html',
+    'projects/project-ajax-hackathon-vr-sports-tracking.html',
     'projects/project-cassini-hackathon-space-for-water.html',
-    'projects/project-untitled-mecha-project-vr-mech-multiplayer-game.html',
 ];
 
 const esc = s => String(s)

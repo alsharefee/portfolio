@@ -665,6 +665,42 @@ body::after {
     color: var(--muted);
 }
 
+.hero-proof {
+    margin-top: 14px;
+}
+
+.hero-proof-link {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 8px 14px;
+    border: 1px solid var(--line-strong);
+    background: var(--bg-raised);
+    color: var(--ink-soft);
+    transition: border-color .25s var(--ease-out), color .25s var(--ease-out), background .25s var(--ease-out);
+}
+
+.hero-proof-link:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+    background: var(--accent-soft);
+}
+
+.hero-proof-badge {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.hero-proof-link .arrow {
+    color: var(--accent);
+    transition: transform .25s var(--ease-out);
+}
+
+.hero-proof-link:hover .arrow {
+    transform: translate(3px, -3px);
+}
+
 .status .dot {
     position: relative;
     width: 8px;

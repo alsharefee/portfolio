@@ -50,6 +50,7 @@ function getPrimaryStack(p, tags) {
   if (tStr.includes('unreal engine') && (tStr.includes('plugin') || tStr.includes('c++'))) {
     return 'Unreal Engine 5 (C++) · Plugin Developer';
   }
+  if (tStr.includes('sports-tech')) return 'Lead Unity & VR Engineer · Sports Telemetry';
   if (tStr.includes('unreal engine')) return 'Unreal Engine · Simulation';
   if (tStr.includes('javascript')) return 'Unity (JS) · Mobile Game';
   if (tStr.includes('dots')) return 'Unity DOTS / ECS (C#)';

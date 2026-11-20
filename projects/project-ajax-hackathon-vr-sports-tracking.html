@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) with Google Consent Mode v2 (GDPR / ePrivacy compliant) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Respect opt-out query param (?ga_optout=1) or existing opt-out preference
+      if (new URLSearchParams(location.search).get('ga_optout') === '1' || localStorage.getItem('ga_optout') === 'true') {
+        localStorage.setItem('portfolio_ga_consent', 'denied');
+      }
+
+      var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.endsWith('.local');
+      var storedConsent = localStorage.getItem('portfolio_ga_consent'); // 'granted' | 'denied' | null
+
+      // Set default consent state: DENIED by default (GDPR requirement)
+      gtag('consent', 'default', {
+        'analytics_storage': storedConsent === 'granted' ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+
+      // If user previously granted consent and not in local dev environment, load GA4 immediately
+      if (!isLocal && storedConsent === 'granted') {
+        var s = document.createElement('script');
+        s.id = 'ga-gtag-script';
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DNRMDZQ2GC';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-DNRMDZQ2GC', {
+          'anonymize_ip': true,
+          'allow_google_signals': false,
+          'allow_ad_personalization_signals': false
+        });
+      }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFC Ajax Hackathon — Real-Time 3D Tracking &amp; VR Simulation | Mohammed Marzouq</title>
+    <meta name="description" content="1st Place Rockstars Impact Award winner (~200 developers, 24 teams at Johan Cruyff ArenA). Real-time 3D sports telemetry and first-person VR match simulation en">
+    <meta name="author" content="Mohammed Marzouq">
+    <meta name="theme-color" content="#0e0e0c">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://alsharefee.github.io/portfolio/projects/project-ajax-hackathon-vr-sports-tracking.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AFC Ajax Hackathon — Real-Time 3D Tracking &amp; VR Simulation | Mohammed Marzouq">
+    <meta property="og:description" content="1st Place Rockstars Impact Award winner (~200 developers, 24 teams at Johan Cruyff ArenA). Real-time 3D sports telemetry and first-person VR match simulation engine in Unity ingesting Ajax's 21-point skeletal tracking data.">
+    <meta property="og:url" content="https://alsharefee.github.io/portfolio/projects/project-ajax-hackathon-vr-sports-tracking.html">
+    <meta property="og:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsPosters/AjaxHackathonWinner.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AFC Ajax Hackathon — Real-Time 3D Tracking &amp; VR Simulation">
+    <meta name="twitter:description" content="1st Place Rockstars Impact Award winner (~200 developers, 24 teams at Johan Cruyff ArenA). Real-time 3D sports telemetry and first-person VR">
+    <meta name="twitter:image" content="https://alsharefee.github.io/portfolio/Assets/ProjectsPosters/AjaxHackathonWinner.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23c6f432'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial Narrow,Arial,sans-serif' font-size='34' font-weight='900' fill='%230e0e0c'%3EMM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Project Stylesheet -->
+    <link rel="stylesheet" href="../css/project.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand" aria-label="Mohammed Marzouq Home">
+                <span class="brand-mark">MM</span>
+                <div class="brand-meta mono">
+                    <span>INDEX</span>
+                    <span class="sep">/</span>
+                    <span class="title-trunc">[02] AFC Ajax Hackathon — Real-Time 3D Tracking &amp; VR Simulation</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="back-link">
+                    <span class="arrow-left">←</span> Back to Projects
+                </a>
+                <a href="../index.html#contact" class="btn btn-sm btn-accent">
+                    Contact <span class="arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Project Content -->
+    <main class="project-main">
+        <div class="container">
+            <!-- Project Header -->
+            <header class="project-header">
+                <div class="project-breadcrumbs mono">
+                    <a href="../index.html">Mohammed Marzouq</a>
+                    <span class="muted">/</span>
+                    <a href="../index.html#projects">Projects</a>
+                    <span class="muted">/</span>
+                    <span class="accent">[INDEX 02/28 · VR &amp; SIMULATIONS]</span>
+                </div>
+
+                <h1 class="project-title display">AFC Ajax Hackathon — Real-Time 3D Tracking &amp; VR Simulation</h1>
+
+                <dl class="project-meta-strip">
+                    <div class="meta-item">
+                        <dt>TIMELINE</dt>
+                        <dd class="mono-val">2026</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>CATEGORY</dt>
+                        <dd>VR &amp; Simulations</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>ROLE / STACK</dt>
+                        <dd>Lead Unity &amp; VR Engineer · Sports Telemetry</dd>
+                    </div>
+                    <div class="meta-item">
+                        <dt>TAGS</dt>
+                        <dd>
+                            <div class="tags-list">
+                                <span class="tag-badge">Unity (C#)</span>
+                            <span class="tag-badge">VR</span>
+                            <span class="tag-badge">Simulation</span>
+                            <span class="tag-badge">Sports-Tech</span>
+                            <span class="tag-badge">Hackathon</span>
+                            </div>
+                        </dd>
+                    </div>
+                </dl>
+            </header>
+
+            <!-- Extracted Body Content -->
+            <div class="project-body prose">
+                <!-- Media Showcase: Official LinkedIn Event Video + Award & Stadium Photos -->
+            <div class="space-y-8 mb-12">
+                <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7441777667324071937?compact=1"
+                        class="w-full" style="min-height: 520px; border: 0;"
+                        loading="lazy" allowfullscreen
+                        title="Official LinkedIn video and post from the AFC Ajax Hackathon at Johan Cruyff ArenA"></iframe>
+                    <div class="media-caption">Official event recap video — ~200 developers across 24 teams competing inside the Johan Cruyff ArenA (March 2026).</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <img src="../Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/AjaxHackathon.jpg"
+                            alt="Team 20 winning 1st place Rockstars Impact Award at the AFC Ajax Hackathon"
+                            loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <img src="../Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/20260307_145932.jpg"
+                            alt="Mohammed Marzouq pitchside at the Johan Cruyff ArenA during the AFC Ajax Hackathon"
+                            loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <img src="../Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/1773955513680.jpg"
+                            alt="Live VR headset demonstration of the real-time 3D player tracking simulation to Ajax judges"
+                            loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-black">
+                        <img src="../Assets/AwardsAndRecognitionsImages/AjaxHackathon2026/f21e7805-876f-4dc1-b65f-b643d540c05f.jpg"
+                            alt="Receiving the Rockstars Impact Award check at the AFC Ajax Hackathon closing ceremony"
+                            loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study Narrative -->
+            <div class="prose prose-invert prose-lg max-w-none">
+                <p class="text-slate-300 leading-relaxed">
+                    Awarded <strong>1st Place — Rockstars Impact Award</strong> at the official <strong>AFC Ajax &amp; Team Rockstars IT Hackathon (CTRL THE GAME)</strong> in March 2026, competing against <strong>~200 developers across 24 teams</strong> inside the <strong>Johan Cruyff ArenA</strong> in Amsterdam. While most analytics teams built conventional 2D dashboards and heatmaps, I architected a real-time <strong>Unity (C#) 3D telemetry and Virtual Reality match simulation engine</strong> that ingested Ajax's official <strong>21-point skeletal tracking dataset</strong> and placed coaches and judges directly onto the pitch in first-person VR.
+                </p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-4">The Challenge</h3>
+                <p class="text-slate-300 leading-relaxed">
+                    Modern football clubs capture high-frequency optical and skeletal tracking feeds—21 three-dimensional joint coordinates per athlete streamed dozens of times per second—yet tactical staff still review that spatial data primarily on flat 2D screens. Turning raw skeletal coordinates into a smooth, interactive 3D simulation normally demands heavy enterprise broadcast pipelines. Under hackathon time constraints at the Johan Cruyff ArenA, we set out to prove that a lightweight, real-time Unity engine could reconstruct full-match skeletal telemetry into an immersive VR tactical environment.
+                </p>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-4">Engineering &amp; Architecture (Unity C# + 21-Point Skeletal Telemetry)</h3>
+                <ul class="list-disc pl-6 text-slate-300 space-y-2">
+                    <li><strong>High-Frequency Telemetry Ingestion:</strong> Built a custom C# data parser and frame-interpolation pipeline in Unity capable of ingesting Ajax's 21-point skeletal tracking streams across all 22 players and the ball in real time.</li>
+                    <li><strong>Skeletal Rig Mapping &amp; Kinematics:</strong> Mapped raw 3D joint positions and limb vectors onto rigged humanoid player avatars with sub-frame temporal smoothing so stride cadence, body orientation, head scanning, and goalkeeper posture remained biomechanically accurate.</li>
+                    <li><strong>First-Person VR &amp; Tactical Camera Modes:</strong> Enabled instant switching between a free-roaming bird's-eye tactical table and first-person VR perspectives—allowing coaches or analysts inside a Meta Quest headset to stand directly inside any player's or referee's field of view at any moment of the match.</li>
+                    <li><strong>Spatial Match Intelligence:</strong> Rendered live spatial cues—passing lanes, defensive compactness, line-of-sight occlusion, and off-the-ball scanning angles—that are invisible on traditional 2D top-down pitch maps.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-white mt-8 mb-4">Outcome &amp; Recognition</h3>
+                <p class="text-slate-300 leading-relaxed">
+                    Instead of pitching slides, we placed the AFC Ajax data team and jury directly inside the VR headset on the virtual Johan Cruyff ArenA pitch. Experiencing tactical spacing and player decision-making from an athlete's exact eye level stood out across all 24 competing teams, earning <strong>Team 20</strong> the <strong>Rockstars Impact Award</strong> and an invitation to visit the Ajax Data Team at Sportpark De Toekomst.
+                </p>
+            </div>
+            </div>
+
+            <!-- Pagination: Previous / Next Project -->
+            <section class="pagination-section" aria-label="Project pagination">
+                <div class="pagination-grid">
+                    <a href="project-hologram-scanner-3d-radar-suite.html" class="nav-card prev" id="prev-project-link">
+                        <span class="nav-card-label mono"><span class="arrow-left">←</span> Previous Project [01]</span>
+                        <span class="nav-card-title">Hologram Scanner &amp; 3D Radar Suite: LiDAR, Pulse Scanner &amp; Holo-Twin</span>
+                        <span class="nav-card-year mono">2026 · VR &amp; Simulations</span>
+                    </a>
+                    <a href="project-cassini-hackathon-space-for-water.html" class="nav-card next" id="next-project-link">
+                        <span class="nav-card-label mono">Next Project [03] <span class="arrow-right">→</span></span>
+                        <span class="nav-card-title">WaterSim — Satellite Data Visualization</span>
+                        <span class="nav-card-year mono">2026 · VR &amp; Simulations</span>
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 36px;">
+                    <a href="../index.html#projects" class="back-link">
+                        ↑ Return to All 28 Projects
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+        <div class="container footer-inner mono">
+            <div>&copy; <span id="footer-year">2026</span> Mohammed Marzouq. All rights reserved.</div>
+            <div>AMSTERDAM, NL · <span data-clock>--:--</span> <span data-tz>CET</span></div>
+            <div><button type="button" class="cookie-settings-trigger" id="cookie-settings-btn" aria-label="Open cookie and privacy settings">Cookie Settings</button></div>
+            <div><a href="../index.html" class="accent">Home ↗</a></div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Interactive Script -->
+    <script src="../js/project.js"></script>
+
+    <!-- Privacy & Cookies Consent Banner -->
+    <aside class="consent-banner" id="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-desc" aria-hidden="true">
+        <div class="consent-inner">
+            <div class="consent-header">
+                <span class="consent-badge mono"><span class="accent-dot">●</span> PRIVACY &amp; COOKIES</span>
+                <span class="consent-status mono" id="consent-status" aria-live="polite"></span>
+            </div>
+            <div class="consent-content">
+                <h3 class="consent-title display" id="consent-title">Analytics Preferences</h3>
+                <p class="consent-desc" id="consent-desc">
+                    I use anonymous Google Analytics to understand website traffic and improve my portfolio. No personal data, advertising trackers, or profiling cookies are collected.
+                </p>
+            </div>
+            <div class="consent-actions">
+                <button type="button" class="btn btn-accent btn-sm consent-btn" id="consent-accept-btn">
+                    Accept Analytics
+                </button>
+                <button type="button" class="btn btn-outline btn-sm consent-btn" id="consent-decline-btn">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <script src="../js/consent.js"></script>
+</body>
+
+</html>
